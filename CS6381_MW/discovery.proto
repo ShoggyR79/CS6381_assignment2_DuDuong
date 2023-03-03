@@ -68,13 +68,23 @@ message RegisterReqDHT
     repeated string topiclist = 3; // an array of topic names (published or subscribed to)
     boolean end = 4; // true if this is the node to process
     string dest = 5; // destination node
+    string src = 6; // hash of the first node
 }
 
 // // Response to registration can be a success or a failure accompanied by a reason.
 message RegisterResp
 {
     Status status = 1;   // success or failure
-    optional string reason = 2; // reason for failure
+    string reason = 2; // reason for failure
+
+    
+}
+message RegisterRespDHT{
+    Status status = 1;   // success or failure
+    string id = 2; // id of the registrant
+    string src = 3; // hash of the original node
+    string reason = 4; // reason for failure
+    string cur = 6; // hash of the current node for buffer
 }
 
 // define a message type that publishers might send to a discovery service
@@ -95,16 +105,16 @@ message IsReadyReqDHT
     // propage number of publisher and subscriber
     int32 count_sub = 1;
     int32 count_pub = 2;
-    string origin = 3; // original request node so that we know when to end the loop
+    string src = 3; // original request node so that we know when to end the loop
+}
+message IsReadyRespDHT
+{
+    bool status = 1; // yes or no
+    string src = 2; // hash of the origin node
+    string cur = 3; 
+
 }
 
-// Response to the IsReady request
-message IsReadyResp
-{
-    int32 count_sub = 1;
-    int32 count_pub = 2;
-    bool status = 3; // maybe not needed
-}
 
 // TO-DO
 // define more message types. For example, a subscriber middleware may want to know
@@ -119,6 +129,22 @@ message LookupPubByTopicReq
     repeated string topiclist = 1; // modify this appropriately
 }
 
+message RegisterReqDHT
+{
+    repeated string topiclist = 1; // an array of size 1 that has the topic for the chord topic
+    boolean end = 2; // true if this is the node to process
+    string dest = 3; // destination node
+    string src = 4; // hash of the first node
+}
+
+
+message LookupPubByTopicReqDHT{
+    repeated string topiclist = 1; // an array of size 1 that has the topic for the chord topic
+    boolean end = 2; // true if this is the node to process
+    string dest = 3; // destination node
+    string src = 4; // hash of the first node
+}
+
 // TO-DO
 // Have a corresponding response to the lookupPubByTopic request
 // accordingly there will be a response to the above message
@@ -128,6 +154,8 @@ message LookupPubByTopicResp
      // decide what fields go here. It wil be a list of publishers (with their details)
     // Maybe the RegistrantInfo message can be reused.
     repeated RegistrantInfo publist = 1;
+    optional string src = 3; // hash of the original node
+    
 }
 
 // Finally, we are going to make a union of all these request and response messages
@@ -156,6 +184,9 @@ message DiscoveryResp
               IsReadyResp isready_resp = 3;
               LookupPubByTopicResp lookup_resp = 4;
               // add more 
+              RegisterRespDHT register_resp_dht = 5;
+              IsReadyRespDHT isready_resp_dht = 6;
+              LookupPubByTopicRespDHT lookup_resp_dht = 7;
         }
 }
 

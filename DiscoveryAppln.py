@@ -74,6 +74,12 @@ class DiscoveryAppln():
         self.dht = None   # centralized hash table for all nodes
         self.hash = None    # the hash value of THIS node
         self.table = None   # finger table
+        self.register_jobs = None  # dictionary of jobs to be registered
+        self.register_job_status = None  # dictionary of register job status
+        self.register_buffer = None
+        self.lookup_jobs = None
+        self.lookup_jobs_result = None
+        self.job_id = 0
 
     def configure(self, args):
         try:
@@ -85,6 +91,11 @@ class DiscoveryAppln():
             self.exp_subscribers = args.exp_subscribers
             self.topics_to_publishers = {}
             self.publisher_to_ip = {}
+            self.register_jobs = {}  # dictionary of jobs to be registered
+            self.register_job_status = {}  # dictionary of register job status
+            self.register_buffer = {}
+            self.lookup_jobs = {}
+            self.lookup_jobs_result = {}
 
             # get the configuration object
             self.logger.debug("DiscoveryAppln::configure - parsing {}".format(args.config))
@@ -155,17 +166,22 @@ class DiscoveryAppln():
         try:
             if (reg_req.role == discovery_pb2.ROLE_PUBLISHER):
                 if self.lookup == "Distributed":
-                    node_hash = self.hash_func(reg_req.info.id + reg_req.info.ip + str(reg_req.info.port))
-                    disc_req = discovery_pb2.DiscoveryReq()
-                    disc_req.msg_type = discovery_pb2.TYPE_REGISTER_DHT
-                    disc_req.register_req_dht.role = reg_req.role
-                    disc_req.register_req_dht.info.CopyFrom(reg_req.info)
-                    disc_req.register_req_dht.topiclist[:] = reg_req.topiclist
-                    disc_req.register_req_dht.end = False
-                    disc_req.register_req_dht.dest = node_hash
+                    self.register_jobs[reg_req.info.id] = 0
+                    for topic in reg_req.topiclist:
+                        node_hash = self.hash_func(topic)
+                        register_req_dht = discovery_pb2.TYPE_REGISTER_DHT
+                        register_req_dht.role = reg_req.role
+                        register_req_dht.info.CopyFrom(reg_req.info)
+                        register_req_dht.topiclist[:] = reg_req.topiclist
+                        register_req_dht.end = False
+                        register_req_dht.dest = node_hash
+                        register_req_dht.src = self.hash
+                        self.register_jobs[reg_req.info.id] += 1
+                        self.register_chord(register_req_dht)
+                    self.register_job_status[reg_req.info.id] = True                     
                 else:
                     self.handle_register_dht(reg_req)
-                return self.register_chord(disc_req)
+                return None
                  
             elif (reg_req.role == discovery_pb2.ROLE_SUBSCRIBER):
                 self.logger.info("DiscoveryAppln::handle_register increment number of seen subscribers")
@@ -196,23 +212,40 @@ class DiscoveryAppln():
             elif (reg_req.role == discovery_pb2.ROLE_BOTH and self.dissemination == "Broker"):
                 self.logger.info("DiscoveryAppln::handle_register broker registered and saved")
                 self.broker = reg_req.info
-
-            self.mw_obj.register_reply( discovery_pb2.STATUS_SUCCESS)
-
+            if (self.lookup == 'Centralized'):
+                self.mw_obj.register_reply( discovery_pb2.STATUS_SUCCESS)
+            else:
+                self.mw_obj.register_reply_dht( discovery_pb2.STATUS_SUCCESS, reg_req.info.id, reg_req.src, "", self.hash)
+            return None
         except Exception as e:
             raise e
-    
+    def handle_register_reply_dht(self, reg_resp):
+        # if we are at the original source, accumulate the status
+        if (self.hash == reg_resp.src):
+            # decrement value by 1
+            self.register_jobs[reg_resp.id] -= 1
+            self.register_job_status[reg_resp.id] =  self.register_job_status[reg_resp.id] and reg_resp.status
+            # send reply if value is 0
+            if (self.register_jobs[reg_resp.id] == 0):
+                self.mw_obj.register_reply(self.register_job_status[reg_resp.id])
+        # else propagate the reply
+        else:
+            self.mw_obj.register_reply_dht(reg_resp.status, reg_resp.id, reg_resp.src, reg_resp.reason, self.hash)
+        return None
     def register_chord(self, reg_req):
         id = reg_req.dest
+        endHash = 0
+        status = False
         if self.hash < id and id <= self.table[0].hash:
-            self.mw_obj.propagate(self.table[0], reg_req, True, id)
+            endHash = self.table[0]
+            status = True
         else:
             n0 = self.closest_preceding_node(id)
-            self.mw_obj.propagate(n0, reg_req, False, id)
+            endHash =  n0
+            status = False
+        self.mw_obj.propagateRegister(endHash, reg_req, status, reg_req.dest, reg_req.src)
         return None        
-    def handle_register_dht_reply(self, reg_resp):
-        self.mw_obj.register_reply(reg_resp.status)
-    # program to handle isready request
+        
 
 
     def isready_request(self):
@@ -220,7 +253,7 @@ class DiscoveryAppln():
             ready_req = discovery_pb2.IsReadyReqDHT()
             ready_req.count_sub = 0
             ready_req.count_pub = 0
-            ready_req.origin = self.hash
+            ready_req.src = self.hash
             self.isready_loop(ready_req)
         else:
             self.logger.debug("DiscoveryAppln::isready_request")
@@ -234,30 +267,56 @@ class DiscoveryAppln():
         try:
             total_pub = self.count_publishers + isready_req.count_pub
             total_sub = self.count_subscribers + isready_req.count_sub
-            origin = isready_req.origin
-            if (self.table[0] == origin):
+            src = isready_req.src
+            if (self.table[0] == src):
                 # checks if total pub and sub is equal to expected
                 status = (total_pub == self.exp_publishers and total_sub == self.exp_subscribers)
-                self.mw_obj.is_ready_reply(status)
+                self.mw_obj.is_ready_reply_dht(status, src, self.hash)
             else:
-                self.mw_obj.propagateIsReady(self.table[0], total_pub, total_sub, origin)
+                self.mw_obj.propagateIsReady(self.table[0], total_pub, total_sub, src)
             return None
         except Exception as e:
             raise e
     def handle_isready_reply_dht(self, isready_resp):
-        if (isready_resp.status == True):
-            self.state = self.State.ISREADY
-        self.mw_obj.is_ready_reply(isready_resp.status)
+        # if we are at the original source, accumulate the status
+        if (self.hash == isready_resp.src):
+            self.mw_obj.is_ready_reply(isready_resp.status)
+        else:
+            self.mw_obj.is_ready_reply_dht(isready_resp.status, isready_resp.src, self.hash)
         
         
     
-    def lookup_pub_by_topic_request(self, topiclist, broker):
+    def handle_lookup(self, lookup_req, from_broker):
+        try:
+            if self.dissemination == "Broker" and not from_broker:
+                self.lookup_pub_by_topic_request(lookup_req.topiclist, from_broker)
+            if self.lookup == "Distributed":
+                # build lookup chords
+                self.lookup_jobs[self.job_id] = 0
+                for topic in lookup_req.topiclist:
+                    node_hash = self.hash_func(topic)
+                    discovery_pb2.DiscoveryReq()
+                    lookup_req_dht = discovery_pb2.TYPE_LOOKUP_PUB_BY_TOPIC_DHT
+                    lookup_req_dht.topiclist[:] = [topic]
+                    lookup_req_dht.end = False
+                    lookup_req_dht.dest = node_hash
+                    lookup_req_dht.src = self.hash
+                    self.lookup_jobs[self.job_id] += 1
+                    self.lookup_chord(lookup_req_dht)
+
+                self.lookup_jobs_result[self.job_id] = []
+            else:
+                self.lookup_pub_by_topic_request(lookup_req, from_broker)
+        except Exception as e:
+            raise e
+    def lookup_pub_by_topic_request(self, lookup_req, from_broker):
         try:
             publist = []
             self.logger.info("DiscoveryAppln::lookup_pub_by_topic_reqest")
-            if (self.dissemination == "Broker" and not broker):
+            topiclist = lookup_req.topiclist
+            if (self.dissemination == "Broker" and  not from_broker):
                 publist.append(self.broker)
-                return self.mw_object.loopup_pub_by_topic_reply(publist)
+                return self.mw_obj.lookup_pub_by_topic_reply(publist)
             for topic in topiclist:
                 self.logger.debug("DiscoveryAppln::lookup_pub_by_topic_request - topic: {}".format(topic))
                 publishers = []
@@ -269,9 +328,47 @@ class DiscoveryAppln():
                     
                     publist.append(pub_info)
             self.logger.info("DiscoveryAppln::lookup_pub_by_topic_reqest - returning publist")
-            return self.mw_obj.lookup_pub_by_topic_reply(publist)
+            if self.lookup == "Distributed":
+                self.mw_obj.lookup_pub_by_topic_reply_dht(publist, lookup_req.src, self.hash)
+            else:
+                self.mw_obj.lookup_pub_by_topic_reply(publist)
         except Exception as e:
             raise e
+    def lookup_pub_by_topic_reply_dht(self, lookup_resp):
+         # if we are at the original source, accumulate the status
+        if (lookup_resp.src and self.hash == lookup_resp.src):
+            # decrement value by 1
+            self.lookup_jobs[lookup_resp.jobid] -= 1
+            for pub in lookup_resp.publist:
+                self.lookup_jobs_result[lookup_resp.jobid].append(pub)
+            # send reply if value is 0
+            if (self.lookup_jobs[lookup_resp.id] == 0):
+                self.mw_obj.lookup_pub_by_topic_reply(self.lookup_jobs_result[lookup_resp.id])
+        # else propagate the reply
+        else:
+            self.mw_obj.lookup_pub_by_topic_reply_dht(lookup_resp.status)
+    def lookup_chord(self, lookup_req):
+        id = lookup_req.dest
+        endHash = 0
+        status = False
+        if self.hash < id and id <= self.table[0].hash:
+            endHash = self.table[0]
+            status = True
+        else:
+            n0 = self.closest_preceding_node(id)
+            endHash =  n0
+            status = False
+        self.mw_obj.propagateLookup(endHash, lookup_req, status, id)
+        return None 
+        
+        
+    # search the local finger table to find the closest preceding node
+    def closest_preceding_node(self, id):
+        # loop from the back of finger table to front
+        for i in range(self.m-1, -1, -1):
+            if self.hash < self.table[i].hash and self.table[i].hash < id:
+                return self.table[i]
+        
     #################
     # hash value
     #################
@@ -284,7 +381,7 @@ class DiscoveryAppln():
         # figure out how many bytes to retrieve
         num_bytes = int(self.bits_hash/8)  # otherwise we get float which we cannot use below
         hash_val = int.from_bytes (hash_digest[:num_bytes], "big")  # take lower N number of bytes
-        return hash_val
+        return str(hash_val)
 
 
     def dump(self):
@@ -303,31 +400,7 @@ class DiscoveryAppln():
         except Exception as e:
             raise e
 
-    #implement the CHORD algorithm to find the successor of a hash value
-    def send_to_successor(self, id, req):
-        if self.hash < id and id <= self.table[0].hash:
-            return self.mw_obj.propagate(self.table[0], req, True)
-        else:
-            n0 = self.closest_preceding_node(id)
-            return self.mw_obj.propagate(n0, req, False)
-    
-    # search the local finger table to find the closest preceding node
-    def closest_preceding_node(self, id):
-        # loop from the back of finger table to front
-        for i in range(self.m-1, -1, -1):
-            if self.hash < self.table[i].hash and self.table[i].hash < id:
-                return self.table[i]
-            
-    # send request around in O(n) manner
-    def send_around(self, req):
-        if (req.hash == self.table[0]):
-            # send is_ready_reply
-            status = (self.exp_publishers == self.count_publishers and self.exp_subscribers == self.count_subscribers)
-            
-            self.mw_obj.is_ready_reply(self.count_publishers, self.count_subscribers)
-        else:
-            # send chord request
-            self.mw_obj.propagate(self.table[0], req, True)
+   
 
 def parseCmdLineArgs():
     parser = argparse.ArgumentParser(description="Discovery Application")
