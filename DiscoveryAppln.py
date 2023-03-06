@@ -166,6 +166,7 @@ class DiscoveryAppln():
         try:
             if (reg_req.role == discovery_pb2.ROLE_PUBLISHER):
                 if self.lookup == "Distributed":
+                    self.logger.info("DiscoveryAppln::handle_register building requests and sending them to chord")
                     self.register_jobs[reg_req.info.id] = 0
                     for topic in reg_req.topiclist:
                         node_hash = self.hash_func(topic)
@@ -178,6 +179,7 @@ class DiscoveryAppln():
                         register_req_dht.src = self.hash
                         self.register_jobs[reg_req.info.id] += 1
                         self.register_chord(register_req_dht)
+                    self.logger.info("DiscoveryAppln::handle_register sent {} requests".format(self.register_jobs[reg_req.info.id]))
                     self.register_job_status[reg_req.info.id] = True                     
                 else:
                     self.handle_register_dht(reg_req)
@@ -192,7 +194,7 @@ class DiscoveryAppln():
     def handle_register_dht(self, reg_req):
         ''' handle register request'''
         try:
-            self.logger.info("DiscoveryAppln::handle_register")
+            self.logger.info("DiscoveryAppln::handle_register endpoint")
             if (reg_req.role == discovery_pb2.ROLE_PUBLISHER):
                 req_info = reg_req.info
                 self.logger.info("DiscoveryAppln::handle_register checking if name is unique")
@@ -221,19 +223,25 @@ class DiscoveryAppln():
             raise e
     def handle_register_reply_dht(self, reg_resp):
         # if we are at the original source, accumulate the status
+        self.logger.info("DiscoveryAppln::handle_register_reply_dht received reply from node {}", reg_resp.cur)
         if (self.hash == reg_resp.src):
+            self.logger.info("DiscoveryAppln::handle_register_reply_dht reply at source")
             # decrement value by 1
             self.register_jobs[reg_resp.id] -= 1
             self.register_job_status[reg_resp.id] =  self.register_job_status[reg_resp.id] and reg_resp.status
+            self.logger.debug("DiscoveryAppln::handle_register_reply_dht {} requests left".format(self.register_jobs[reg_resp.id]))
             # send reply if value is 0
             if (self.register_jobs[reg_resp.id] == 0):
+                self.logger.info("DiscoveryAppln::handle_register_reply_dht all requests completed, sending reply to source")
                 self.mw_obj.register_reply(self.register_job_status[reg_resp.id])
         # else propagate the reply
         else:
+            self.logger.info("DiscoveryAppln::handle_register_reply_dht propagating reply to source")
             self.mw_obj.register_reply_dht(reg_resp.status, reg_resp.id, reg_resp.src, reg_resp.reason, self.hash)
         return None
     def register_chord(self, reg_req):
         id = reg_req.dest
+        self.logger.info("DiscoveryAppln::register_chord received chord request for hash {}".format(id))
         endHash = 0
         status = False
         if self.hash < id and id <= self.table[0].hash:
@@ -243,6 +251,7 @@ class DiscoveryAppln():
             n0 = self.closest_preceding_node(id)
             endHash =  n0
             status = False
+        self.logger.info("DiscoveryAppln::register_chord sending request to node {} with status {}".format(endHash, status))
         self.mw_obj.propagateRegister(endHash, reg_req, status, reg_req.dest, reg_req.src)
         return None        
         
@@ -269,8 +278,10 @@ class DiscoveryAppln():
             total_sub = self.count_subscribers + isready_req.count_sub
             src = isready_req.src
             if (self.table[0] == src):
+                self.logger.info("DiscoveryAppln::isready_loop at source")
                 # checks if total pub and sub is equal to expected
                 status = (total_pub == self.exp_publishers and total_sub == self.exp_subscribers)
+                self.logger.info("DiscoveryAppln::isready_loop replying with status: {}".format(status))
                 self.mw_obj.is_ready_reply_dht(status, src, self.hash)
             else:
                 self.mw_obj.propagateIsReady(self.table[0], total_pub, total_sub, src)
@@ -279,18 +290,21 @@ class DiscoveryAppln():
             raise e
     def handle_isready_reply_dht(self, isready_resp):
         # if we are at the original source, accumulate the status
+        self.logger.info("DiscoveryAppln::handle_isready_reply_dht received reply from node {}".format(isready_resp.cur))
         if (self.hash == isready_resp.src):
+            self.logger.info("DiscoveryAppln::handle_isready_reply_dht sending source reply of status {}".format(isready_resp.status))
             self.mw_obj.is_ready_reply(isready_resp.status)
         else:
+            self.logger.info("DiscoveryAppln::handle_isready_reply_dht propagating reply to source")
             self.mw_obj.is_ready_reply_dht(isready_resp.status, isready_resp.src, self.hash)
         
         
     
     def handle_lookup(self, lookup_req, from_broker):
         try:
-            if self.dissemination == "Broker" and not from_broker:
-                self.lookup_pub_by_topic_request(lookup_req.topiclist, from_broker)
             if self.lookup == "Distributed":
+                
+                self.logger.info("DiscoveryAppln::handle_lookup building lookup request for job id {}".format(self.job_id))
                 # build lookup chords
                 self.lookup_jobs[self.job_id] = 0
                 for topic in lookup_req.topiclist:
@@ -301,10 +315,13 @@ class DiscoveryAppln():
                     lookup_req_dht.end = False
                     lookup_req_dht.dest = node_hash
                     lookup_req_dht.src = self.hash
+                    lookup_req_dht.job_id = self.job_id
+                    lookup_req_dht.from_broker = from_broker
                     self.lookup_jobs[self.job_id] += 1
                     self.lookup_chord(lookup_req_dht)
-
+                self.logger.info("DiscoveryAppln::handle_lookup built {} lookup requests for job id {}".format(self.lookup_jobs[self.job_id], self.job_id))
                 self.lookup_jobs_result[self.job_id] = []
+                self.job_id+=1
             else:
                 self.lookup_pub_by_topic_request(lookup_req, from_broker)
         except Exception as e:
@@ -329,7 +346,7 @@ class DiscoveryAppln():
                     publist.append(pub_info)
             self.logger.info("DiscoveryAppln::lookup_pub_by_topic_reqest - returning publist")
             if self.lookup == "Distributed":
-                self.mw_obj.lookup_pub_by_topic_reply_dht(publist, lookup_req.src, self.hash)
+                self.mw_obj.lookup_pub_by_topic_reply_dht(publist, lookup_req.src, self.hash, lookup_req.jobid)
             else:
                 self.mw_obj.lookup_pub_by_topic_reply(publist)
         except Exception as e:
@@ -339,16 +356,20 @@ class DiscoveryAppln():
         if (lookup_resp.src and self.hash == lookup_resp.src):
             # decrement value by 1
             self.lookup_jobs[lookup_resp.jobid] -= 1
+            self.logger.info("DiscoveryAppln::lookup_pub_by_topic_reply_dht received reply from node {}".format(lookup_resp.cur))
             for pub in lookup_resp.publist:
                 self.lookup_jobs_result[lookup_resp.jobid].append(pub)
             # send reply if value is 0
+            self.logger.info("DiscoveryAppln::lookup_pub_by_topic_reply_dht job id {} has {} replies left".format(lookup_resp.jobid, self.lookup_jobs[lookup_resp.jobid]))
             if (self.lookup_jobs[lookup_resp.id] == 0):
+                self.logger.info("DiscoveryAppln::lookup_pub_by_topic_reply_dht sending source reply")
                 self.mw_obj.lookup_pub_by_topic_reply(self.lookup_jobs_result[lookup_resp.id])
         # else propagate the reply
         else:
             self.mw_obj.lookup_pub_by_topic_reply_dht(lookup_resp.status)
     def lookup_chord(self, lookup_req):
         id = lookup_req.dest
+        self.logger.info("DiscoveryAppln::lookup_chord - lookup request for id {}".format(id))
         endHash = 0
         status = False
         if self.hash < id and id <= self.table[0].hash:
@@ -358,6 +379,7 @@ class DiscoveryAppln():
             n0 = self.closest_preceding_node(id)
             endHash =  n0
             status = False
+        self.logger.info("DiscoveryAppln::lookup_chord - propagating lookup request to node {}".format(endHash))
         self.mw_obj.propagateLookup(endHash, lookup_req, status, id)
         return None 
         

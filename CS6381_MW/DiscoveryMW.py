@@ -185,7 +185,7 @@ class DiscoveryMW():
                 if (disc_req.lookup_req_dht.end):
                     timeout = self.upcall_obj.lookup_chord(disc_req.lookup_req_dht)
                 else:
-                    timeout = self.upcall_obj.lookup_pub_by_topic_reply_dht(disc_req.register_req_dht)
+                    timeout = self.upcall_obj.lookup_pub_by_topic_request(disc_req.lookup_req_dht, disc_req.lookup_req_dht.from_broker)
             elif (disc_req.msg_type == discovery_pb2.TYPE_LOOKUP_ALL_PUBS):
                 timeout = self.upcall_obj.handle_lookup(disc_req.lookup_req, False)
             elif (disc_req.msg_type == discovery_pb2.TYPE_REGISTER_DHT):
@@ -339,7 +339,7 @@ class DiscoveryMW():
         except Exception as e:
             raise e
         
-    def lookup_pub_by_topic_reply_dht(self, publist, src, cur):
+    def lookup_pub_by_topic_reply_dht(self, publist, src, cur, jobid):
         try: 
             self.logger.debug("DiscoveryMW::lookup_reply")
 
@@ -357,6 +357,7 @@ class DiscoveryMW():
             lookup_resp_dht.publist.extend(publist)
             lookup_resp_dht.src = src
             lookup_resp_dht.cur = cur
+            lookup_resp_dht.jobid = jobid
             disc_rep.lookup_resp_dht.CopyFrom(lookup_resp_dht)
             
             self.logger.debug("DiscoveryMW::lookup_reply: done building reply")
@@ -399,10 +400,11 @@ class DiscoveryMW():
         # check buffer before sending, if empty, send it, otherwise, queue it
         if (next not in self.send_buffer or self.send_buffer[next] == []):
             self.req[next].send(buf2send)
+            self.logger.info("DiscoveryMW::propagateRegister: done sending dht request")
         else:
             self.send_buffer[next].append(buf2send)
-        self.logger.info("DiscoveryMW::propagateRegister: done sending dht request")
-            
+            self.logger.info("DiscoveryMW::propagateLookup: socket busy, queueing dht request")
+
     
     def propagateIsReady(self, next, count_pub, count_sub, origin):
         self.logger.info("DiscoveryMW::propagateIsReady: building dht request")
@@ -418,10 +420,12 @@ class DiscoveryMW():
         self.logger.debug("Stringified serialized buffer = {}".format(buf2send))
         if (next not in self.send_buffer or self.send_buffer[next] == []):
             self.req[next].send(buf2send)
+            self.logger.info("DiscoveryMW::propagateIsReady: done sending dht request")
+
         else:
             self.send_buffer[next].append(buf2send)
-        self.logger.info("DiscoveryMW::propagateIsReady: done sending dht request")
-        
+            self.logger.info("DiscoveryMW::propagateLookup: socket busy, queueing dht request")
+
 
     def propagateLookup(self, next, reg_req_dht, end, dest, src):
         self.logger.info("DiscoveryMW::propagateLookup: building dht request")
@@ -439,6 +443,7 @@ class DiscoveryMW():
         self.logger.debug("Stringified serialized buffer = {}".format(buf2send))
         if (next not in self.send_buffer or self.send_buffer[next] == []):
             self.req[next].send(buf2send)
+            self.logger.info("DiscoveryMW::propagateLookup: done sending dht request")
         else:
             self.send_buffer[next].append(buf2send)
-        self.logger.info("DiscoveryMW::propagateLookup: done sending dht request")
+            self.logger.info("DiscoveryMW::propagateLookup: socket busy, queueing dht request")

@@ -84,7 +84,7 @@ message RegisterRespDHT{
     string id = 2; // id of the registrant
     string src = 3; // hash of the original node
     string reason = 4; // reason for failure
-    string cur = 6; // hash of the current node for buffer
+    string cur = 5; // hash of the current node for buffer
 }
 
 // define a message type that publishers might send to a discovery service
@@ -142,7 +142,9 @@ message LookupPubByTopicReqDHT{
     repeated string topiclist = 1; // an array of size 1 that has the topic for the chord topic
     boolean end = 2; // true if this is the node to process
     string dest = 3; // destination node
-    string src = 4; // hash of the first node
+    string src = 4; // hash of the first node   
+    int32 jobid = 5;
+    boolean from_broker = 6; // true if the request is from the broker
 }
 
 // TO-DO
@@ -154,7 +156,8 @@ message LookupPubByTopicResp
      // decide what fields go here. It wil be a list of publishers (with their details)
     // Maybe the RegistrantInfo message can be reused.
     repeated RegistrantInfo publist = 1;
-    optional string src = 3; // hash of the original node
+    optional string src = 2; // hash of the original node
+    int32 jobid = 3;
     
 }
 
