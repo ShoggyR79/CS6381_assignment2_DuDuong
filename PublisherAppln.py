@@ -49,6 +49,8 @@ import time   # for sleep
 import argparse # for argument parsing
 import configparser # for configuration parsing
 import logging # for logging. Use it in place of print statements.
+import json
+import random # for random discovery choice
 
 # Import our topic selector. Feel free to use alternate way to
 # get your topics of interest
@@ -128,6 +130,13 @@ class PublisherAppln ():
       # everything
       self.logger.debug ("PublisherAppln::configure - initialize the middleware object")
       self.mw_obj = PublisherMW (self.logger)
+      if (self.lookup == "Distributed"):
+        file_dht = open(args.jsonfile)
+        dht = json.load(file_dht)
+        self.dht = dht["dht"]
+        discovery_choice = random.choice(self.dht)
+        args.discovery = discovery_choice['IP'] + ':' + str(discovery_choice['port'])
+        self.logger.info("PublisherAppln::configure - discovery choice: {}".format(discovery_choice['id']))
       self.mw_obj.configure (args) # pass remainder of the args to the m/w object
       
       self.logger.info ("PublisherAppln::configure - configuration complete")
@@ -387,6 +396,8 @@ def parseCmdLineArgs ():
 
   parser.add_argument ("-l", "--loglevel", type=int, default=logging.INFO, choices=[logging.DEBUG,logging.INFO,logging.WARNING,logging.ERROR,logging.CRITICAL], help="logging level, choices 10,20,30,40,50: default 20=logging.INFO")
   
+  parser.add_argument("-j", "--jsonfile", default="dht.json", help="JSON file for configuration")
+
   return parser.parse_args()
 
 

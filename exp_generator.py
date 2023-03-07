@@ -263,8 +263,8 @@ class ExperimentGenerator ():
             "-n " + nested_dict["id"]  + " " + \
             "-j " + self.json_file + " " + \
             "-p " + str(nested_dict["port"]) + " " + \
-            "-P " + str(self.num_pub) + " " + \
-            "-S " + str(self.num_sub) + " " + \
+            "-cp " + str(self.num_pub) + " " + \
+            "-cs " + str(self.num_sub) + " " + \
             "> " + nested_dict["id"] + ".out 2>&1 &\n"
           f.write (cmdline)
 

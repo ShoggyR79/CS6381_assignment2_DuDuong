@@ -80,6 +80,7 @@ class DiscoveryAppln():
         self.lookup_jobs = None
         self.lookup_jobs_result = None
         self.job_id = 0
+        self.bits_hash = 0
 
     def configure(self, args):
         try:
@@ -96,7 +97,7 @@ class DiscoveryAppln():
             self.register_buffer = {}
             self.lookup_jobs = {}
             self.lookup_jobs_result = {}
-
+            self.bits_hash = args.bits_hash
             # get the configuration object
             self.logger.debug("DiscoveryAppln::configure - parsing {}".format(args.config))
             config = configparser.ConfigParser()
@@ -112,7 +113,7 @@ class DiscoveryAppln():
             
             # getting hash table
             self.logger.debug("DiscoveryAppln::configure - getting hash and finger table")
-            file_dht = open("dht.json")
+            file_dht = open(args.jsonfile)
             dht = json.load(file_dht)
             self.dht = dht["dht"]
             self.mw_obj.configure(args)
@@ -162,7 +163,7 @@ class DiscoveryAppln():
             raise e
 
 
-    def handle_regster(self, reg_req):
+    def handle_register(self, reg_req):
         try:
             if (reg_req.role == discovery_pb2.ROLE_PUBLISHER):
                 if self.lookup == "Distributed":
@@ -170,24 +171,43 @@ class DiscoveryAppln():
                     self.register_jobs[reg_req.info.id] = 0
                     for topic in reg_req.topiclist:
                         node_hash = self.hash_func(topic)
-                        register_req_dht = discovery_pb2.TYPE_REGISTER_DHT
-                        register_req_dht.role = reg_req.role
+                        register_req_dht = discovery_pb2.RegisterReqDHT()
+                        # self.logger.info("role")
+                        register_req_dht.role = (reg_req.role)
+                        # self.logger.info("info")
+
                         register_req_dht.info.CopyFrom(reg_req.info)
+                        # self.logger.info("topiclist")
+
                         register_req_dht.topiclist[:] = reg_req.topiclist
+                        # self.logger.info("end")
+
                         register_req_dht.end = False
+                        # self.logger.info("dest")
+
                         register_req_dht.dest = node_hash
+                        # self.logger.info("src")
                         register_req_dht.src = self.hash
+                        # self.logger.info("incrementing job")
+                        if (reg_req.info.id not in self.register_jobs):
+                            self.register_jobs[reg_req.info.id] = 0
+                        
                         self.register_jobs[reg_req.info.id] += 1
                         self.register_chord(register_req_dht)
                     self.logger.info("DiscoveryAppln::handle_register sent {} requests".format(self.register_jobs[reg_req.info.id]))
                     self.register_job_status[reg_req.info.id] = True                     
                 else:
                     self.handle_register_dht(reg_req)
+                self.logger.info("DiscoveryAppln::handle_register increment number of seen publishers")
+
+                self.count_publishers += 1
                 return None
                  
             elif (reg_req.role == discovery_pb2.ROLE_SUBSCRIBER):
                 self.logger.info("DiscoveryAppln::handle_register increment number of seen subscribers")
                 self.count_subscribers += 1
+                self.mw_obj.register_reply(discovery_pb2.STATUS_SUCCESS)
+                return None
         except Exception as e:
             raise e
     # program to handle incoming register request.
@@ -200,7 +220,13 @@ class DiscoveryAppln():
                 self.logger.info("DiscoveryAppln::handle_register checking if name is unique")
 
                 if (req_info.id in self.publisher_to_ip):
-                    raise Exception("Name should be unique")
+                    # already registered
+                    self.logger.info("DiscoveryAppln::handle_register already registered")
+                    if (self.lookup == 'Centralized'):
+                        raise Exception("Id must be unique")
+                    else:
+                        self.mw_obj.register_reply_dht( discovery_pb2.STATUS_SUCCESS, reg_req.info.id, reg_req.src, "", self.hash)
+                        return None
                 self.logger.info("DiscoveryAppln::handle_register assigning user id to info")
                 self.publisher_to_ip[req_info.id] = req_info
                 self.logger.info("DiscoveryAppln::handle_register adding topics to publishers")
@@ -208,9 +234,7 @@ class DiscoveryAppln():
                     if topic not in self.topics_to_publishers:
                         self.topics_to_publishers[topic] = []
                     self.topics_to_publishers[topic].append(req_info.id)
-                self.logger.info("DiscoveryAppln::handle_register increment number of seen publishers")
-
-                self.count_publishers += 1
+                
             elif (reg_req.role == discovery_pb2.ROLE_BOTH and self.dissemination == "Broker"):
                 self.logger.info("DiscoveryAppln::handle_register broker registered and saved")
                 self.broker = reg_req.info
@@ -223,7 +247,7 @@ class DiscoveryAppln():
             raise e
     def handle_register_reply_dht(self, reg_resp):
         # if we are at the original source, accumulate the status
-        self.logger.info("DiscoveryAppln::handle_register_reply_dht received reply from node {}", reg_resp.cur)
+        self.logger.info("DiscoveryAppln::handle_register_reply_dht received reply from node {}".format(reg_resp.cur))
         if (self.hash == reg_resp.src):
             self.logger.info("DiscoveryAppln::handle_register_reply_dht reply at source")
             # decrement value by 1
@@ -244,14 +268,15 @@ class DiscoveryAppln():
         self.logger.info("DiscoveryAppln::register_chord received chord request for hash {}".format(id))
         endHash = 0
         status = False
-        if self.hash < id and id <= self.table[0].hash:
+        if self.hash < id and id <= self.table[0]:
             endHash = self.table[0]
             status = True
         else:
             n0 = self.closest_preceding_node(id)
             endHash =  n0
             status = False
-        self.logger.info("DiscoveryAppln::register_chord sending request to node {} with status {}".format(endHash, status))
+        
+        self.logger.info("DiscoveryAppln::register_chord - propagating lookup request to node {} ".format(endHash))
         self.mw_obj.propagateRegister(endHash, reg_req, status, reg_req.dest, reg_req.src)
         return None        
         
@@ -272,14 +297,19 @@ class DiscoveryAppln():
             self.logger.info ("     Count Publishers: {}".format (self.count_publishers))
             status = (self.state == self.State.ISREADY and (self.dissemination!="Broker" or self.broker != None))
             return self.mw_obj.is_ready_reply(status)
+        return None
     def isready_loop(self, isready_req):
         try:
             total_pub = self.count_publishers + isready_req.count_pub
             total_sub = self.count_subscribers + isready_req.count_sub
             src = isready_req.src
+            self.logger.debug("DiscoveryAppln::isready_loop src = {}".format(src))
+            self.logger.debug("DiscoveryAppln::isready_loop current node = {}".format(self.hash))
             if (self.table[0] == src):
                 self.logger.info("DiscoveryAppln::isready_loop at source")
                 # checks if total pub and sub is equal to expected
+                self.logger.info("seen publishers: {}, expected publishers: {}".format(total_pub, self.exp_publishers))
+                self.logger.info("seen subscribers: {}, expected subscribers: {}".format(total_sub, self.exp_subscribers))
                 status = (total_pub == self.exp_publishers and total_sub == self.exp_subscribers)
                 self.logger.info("DiscoveryAppln::isready_loop replying with status: {}".format(status))
                 self.mw_obj.is_ready_reply_dht(status, src, self.hash)
@@ -297,6 +327,7 @@ class DiscoveryAppln():
         else:
             self.logger.info("DiscoveryAppln::handle_isready_reply_dht propagating reply to source")
             self.mw_obj.is_ready_reply_dht(isready_resp.status, isready_resp.src, self.hash)
+        return None
         
         
     
@@ -310,7 +341,7 @@ class DiscoveryAppln():
                 for topic in lookup_req.topiclist:
                     node_hash = self.hash_func(topic)
                     discovery_pb2.DiscoveryReq()
-                    lookup_req_dht = discovery_pb2.TYPE_LOOKUP_PUB_BY_TOPIC_DHT
+                    lookup_req_dht = discovery_pb2.LookupPubByTopicReqDHT()
                     lookup_req_dht.topiclist[:] = [topic]
                     lookup_req_dht.end = False
                     lookup_req_dht.dest = node_hash
@@ -324,6 +355,7 @@ class DiscoveryAppln():
                 self.job_id+=1
             else:
                 self.lookup_pub_by_topic_request(lookup_req, from_broker)
+            return None
         except Exception as e:
             raise e
     def lookup_pub_by_topic_request(self, lookup_req, from_broker):
@@ -349,6 +381,7 @@ class DiscoveryAppln():
                 self.mw_obj.lookup_pub_by_topic_reply_dht(publist, lookup_req.src, self.hash, lookup_req.jobid)
             else:
                 self.mw_obj.lookup_pub_by_topic_reply(publist)
+            return None
         except Exception as e:
             raise e
     def lookup_pub_by_topic_reply_dht(self, lookup_resp):
@@ -367,6 +400,7 @@ class DiscoveryAppln():
         # else propagate the reply
         else:
             self.mw_obj.lookup_pub_by_topic_reply_dht(lookup_resp.status)
+        return None
     def lookup_chord(self, lookup_req):
         id = lookup_req.dest
         self.logger.info("DiscoveryAppln::lookup_chord - lookup request for id {}".format(id))
@@ -379,7 +413,7 @@ class DiscoveryAppln():
             n0 = self.closest_preceding_node(id)
             endHash =  n0
             status = False
-        self.logger.info("DiscoveryAppln::lookup_chord - propagating lookup request to node {}".format(endHash))
+        self.logger.info("DiscoveryAppln::lookup_chord - propagating lookup request to node {} - which is {}".format(endHash, self.table[endHash]['id']))
         self.mw_obj.propagateLookup(endHash, lookup_req, status, id)
         return None 
         
@@ -387,10 +421,11 @@ class DiscoveryAppln():
     # search the local finger table to find the closest preceding node
     def closest_preceding_node(self, id):
         # loop from the back of finger table to front
-        for i in range(self.m-1, -1, -1):
-            if self.hash < self.table[i].hash and self.table[i].hash < id:
+        for i in range(len(self.table)-1, -1, -1):
+            if min(self.hash, id) < self.table[i] and self.table[i] < max(self.hash, id):
+                self.logger.info("DiscoveryAppln::closest_preceding_node - found closest preceding node at {}".format(self.table[i]))
                 return self.table[i]
-        
+        return self.hash
     #################
     # hash value
     #################
@@ -403,7 +438,7 @@ class DiscoveryAppln():
         # figure out how many bytes to retrieve
         num_bytes = int(self.bits_hash/8)  # otherwise we get float which we cannot use below
         hash_val = int.from_bytes (hash_digest[:num_bytes], "big")  # take lower N number of bytes
-        return str(hash_val)
+        return (hash_val)
 
 
     def dump(self):
@@ -445,8 +480,13 @@ def parseCmdLineArgs():
     parser.add_argument("-c", "--config", default="config.ini",
                         help="Configuration file, default=config.ini")
 
-    parser.add_argument("-l", "--loglevel", type=int, default=logging.INFO, choices=[
+    parser.add_argument("-l", "--loglevel", type=int, default=logging.DEBUG, choices=[
                         logging.DEBUG, logging.INFO, logging.WARNING, logging.ERROR, logging.CRITICAL], help="logging level, choices 10,20,30,40,50: default 20=logging.INFO")
+    
+    parser.add_argument("-j", "--jsonfile", default="dht.json", help="JSON file for configuration")
+
+    parser.add_argument ("-b", "--bits_hash", type=int, choices=[8,16,24,32,40,48,56,64], default=48, help="Number of bits of hash value to test for collision: allowable values between 6 and 64 in increments of 8 bytes, default 48")
+
 
     return parser.parse_args()
 

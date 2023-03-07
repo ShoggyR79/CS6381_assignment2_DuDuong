@@ -34,6 +34,8 @@ import time   # for sleep
 import argparse  # for argument parsing
 import configparser  # for configuration parsing
 import logging  # for logging. Use it in place of print statements.
+import json
+import random
 
 # Import our topic selector. Feel free to use alternate way to
 # get your topics of interest
@@ -93,6 +95,13 @@ class SubscriberAppln():
             self.topiclist = ts.interest(self.num_topics)
             
             # Now setup our underlying middleware object
+            if (self.lookup == "Distributed"):
+                file_dht = open(args.jsonfile)
+                dht = json.load(file_dht)
+                self.dht = dht["dht"]
+                discovery_choice = random.choice(self.dht)
+                args.discovery = discovery_choice['IP'] + ':' + str(discovery_choice['port'])
+                self.logger.info("SubscriberAppln::configure - discovery choice: {}".format(discovery_choice['id']))
             self.logger.debug("SubscriberAppln::configure - setup the middleware object")
             self.mw_obj = SubscriberMW(self.logger)
             self.mw_obj.configure(args)
@@ -216,6 +225,8 @@ def parseCmdLineArgs():
     parser.add_argument ("-T", "--num_topics", type=int, choices=range(1,10), default=1, help="Number of topics to publish, currently restricted to max of 9")
 
     parser.add_argument ("-l", "--loglevel", type=int, default=logging.INFO, choices=[logging.DEBUG,logging.INFO,logging.WARNING,logging.ERROR,logging.CRITICAL], help="logging level, choices 10,20,30,40,50: default 20=logging.INFO")
+
+    parser.add_argument("-j", "--jsonfile", default="dht.json", help="JSON file for configuration")
 
     return parser.parse_args()
 # main program

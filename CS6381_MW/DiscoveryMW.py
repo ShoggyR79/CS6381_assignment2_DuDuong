@@ -39,10 +39,7 @@ class DiscoveryMW():
     # constructor
     ########################################
     def __init__(self, logger):
-        self.logger = logger  # internal logger for print statements
-        self.rep = None  # a REP socket binding to receive requests
-        self.addr = None  # our advertised IP address
-        self.port = None  # port num where we are going to publish our topics
+        self.logger = logger  # internal logger for print statemeisreadyh our topics
         self.upcall_obj = None  # handle to appln obj to handle appln-specific data
         self.handle_events = True  # in general we keep going thru the event loop
         self.hash_to_ip = None # hash to ip table
@@ -74,7 +71,6 @@ class DiscoveryMW():
             self.req = {}
             self.logger.debug("DiscoveryMW::configure: register poller")
             self.poller.register(self.rep, zmq.POLLIN)
-            self.poller.register(self.req, zmq.POLLIN)
             # bind socket to the address
             self.logger.debug(
                 "DiscoveryMW::configure: bind REP socket to address")
@@ -83,6 +79,7 @@ class DiscoveryMW():
             self.logger.debug("DiscoveryMW::configure: reading hash to ip json")
             file_hash_to_ip = open("hash_to_ip.json")
             self.hash_to_ip = json.load(file_hash_to_ip) 
+
             # create buffer
             self.send_buffer = {}
             self.logger.info("DiscoveryMW::configure completed")
@@ -97,8 +94,10 @@ class DiscoveryMW():
             if hash not in self.req:
                 self.req[hash] = context.socket(zmq.REQ)
                 node = self.hash_to_ip[str(hash)]
-                connect_str = "tcp://" + node.ip + ":" + str(node.port)
+                connect_str = "tcp://" + node['IP'] + ":" + str(node['port'])
                 self.req[hash].connect(connect_str)
+                self.poller.register(self.req[hash], zmq.POLLIN)
+
         self.logger.debug("DiscoveryMW::connectTable: connected in dictionary self.req")
     #################################################################
     # run the event loop where we expect to receive a reply to a sent request
@@ -108,54 +107,66 @@ class DiscoveryMW():
             self.logger.info("DiscoveryMW::event_loop: start")
             while self.handle_events:
                 events = dict(self.poller.poll(timeout = timeout))
-                
+                fault = True
+                self.logger.debug(events)
                 if not events:
                     timeout = self.upcall_obj.invoke_operation()
+                    fault = False
+
                 elif self.rep in events:
                     timeout = self.handle_request()
-                else:
-                    # check if any of the req sockets in dictionary are in events
-                    for hash, socket in self.req.items():
-                        if socket in events:
-                            timeout = self.handle_reply()
+                    fault = False
+                # check if any of the req sockets in dictionary are in events
+                for hash, socket in self.req.items():
+                    self.logger.info(socket)
+                    if socket in events:
+                        timeout = self.handle_reply(hash)
+                        fault = False
+                if (fault):
                     raise Exception ("Unknown event after poll")
+                
+                self.logger.info("control back to event loop")
+
             self.logger.info("DiscoveryMW::event_loop out of the event loop")
         except Exception as e:
             raise e
 
 
-    def handle_reply(self):
+    def handle_reply(self, next):
         try:
             self.logger.info("DiscoveryMW::handle_reply:")
             # receive message
-            bytesRcvd = self.rep.recv()
-
+            bytesRcvd = self.req[next].recv()
+            self.logger.info("DiscoveryMW::handle_reply: received a reply from {}".format(self.hash_to_ip[str(next)]['id']))
             # parse the request
             disc_resp = discovery_pb2.DiscoveryResp()
             disc_resp.ParseFromString(bytesRcvd) 
-            
             if (disc_resp.msg_type == discovery_pb2.TYPE_REGISTER_DHT):
                 #make an upcall to the application logic
-                next = disc_resp.register_resp.cur
-                timeout = self.upcall_obj.handle_register_reply_dht(disc_resp.register_resp)
+                timeout = self.upcall_obj.handle_register_reply_dht(disc_resp.register_resp_dht)
+                self.logger.info("DiscoveryMW::handle_reply: checking buffer of next is " + str(next))
+                self.send_buffer[next].pop()
                 if (self.send_buffer[next] != []):
-                    buf2send = self.send_buffer[next].pop()
+                    self.logger.info("DiscoveryMW::handle_reply: sending next message in buffer to {}".format(self.hash_to_ip[str(next)]['id']))
+                    buf2send = self.send_buffer[next][0]
                     self.req[next].send(buf2send)
             if (disc_resp.msg_type == discovery_pb2.TYPE_ISREADY_DHT):
                 #make an upcall to the application logic
-                next = disc_resp.isready_resp.cur
-                timeout = self.upcall_obj.handle_isready_reply_dht(disc_resp.isready_resp)
+                timeout = self.upcall_obj.handle_isready_reply_dht(disc_resp.isready_resp_dht)
+                self.logger.info("DiscoveryMW::handle_reply: checking buffer of next is " + str(next))
+                self.send_buffer[next].pop()
                 if (self.send_buffer[next] != []):
-                    buf2send = self.send_buffer[next].pop()
+                    buf2send = self.send_buffer[next][0]
                     self.req[next].send(buf2send)
             if (disc_resp.msg_type == discovery_pb2.TYPE_LOOKUP_PUB_BY_TOPIC_DHT):
-                next = disc_resp.lookup_resp.cur
-                timeout = self.upcall_obj.lookup_pub_by_topic_reply_dht(disc_resp.lookup_resp)
+                timeout = self.upcall_obj.lookup_pub_by_topic_reply_dht(disc_resp.lookup_resp_dht)
+                self.logger.info("DiscoveryMW::handle_reply: checking buffer of next is " + str(next))
+                self.send_buffer[next].pop()
                 if (self.send_buffer[next] != []):
-                    buf2send = self.send_buffer[next].pop()
+                    buf2send = self.send_buffer[next][0]
                     self.req[next].send(buf2send)
-                    
-            return timeout
+            self.logger.debug("DiscoveryMW::handle_request: done handling reply with timeout {}".format(timeout))
+            return None
         except Exception as e:
             raise e
     # handle the poller request:
@@ -163,41 +174,43 @@ class DiscoveryMW():
         try:
             self.logger.info("DiscoveryMW::handle_request:")
             # receive message
-            bytesRcvd = self.rep.recv()
-
-            # parse the request
-            disc_req = discovery_pb2.DiscoveryReq()
-            disc_req.ParseFromString(bytesRcvd) 
-            
-            
-            # we have a request. Now we need to handle it. For that we need
-            # to call the application logic. So we need to upcall to the
-            # application logic. We will pass the request
-            if (disc_req.msg_type == discovery_pb2.TYPE_REGISTER):
-                #make an upcall to the application logic
-                timeout = self.upcall_obj.handle_register(disc_req.register_req)
-            elif (disc_req.msg_type == discovery_pb2.TYPE_ISREADY):
-                # the is ready message should be empty
-                timeout = self.upcall_obj.isready_request()
-            elif (disc_req.msg_type == discovery_pb2.TYPE_LOOKUP_PUB_BY_TOPIC):
-                timeout = self.upcall_obj.handle_lookup(disc_req.lookup_req, True)
-            elif (disc_req.msg_type == discovery_pb2.TYPE_LOOKUP_PUB_BY_TOPIC_DHT):
-                if (disc_req.lookup_req_dht.end):
-                    timeout = self.upcall_obj.lookup_chord(disc_req.lookup_req_dht)
-                else:
-                    timeout = self.upcall_obj.lookup_pub_by_topic_request(disc_req.lookup_req_dht, disc_req.lookup_req_dht.from_broker)
-            elif (disc_req.msg_type == discovery_pb2.TYPE_LOOKUP_ALL_PUBS):
-                timeout = self.upcall_obj.handle_lookup(disc_req.lookup_req, False)
-            elif (disc_req.msg_type == discovery_pb2.TYPE_REGISTER_DHT):
-                if (disc_req.register_req_dht.end):
-                    timeout = self.upcall_obj.register_chord(disc_req.register_req_dht)
-                else:
-                    timeout = self.upcall_obj.handle_register_dht(disc_req.register_req_dht)
-            elif (disc_req.msg_type == discovery_pb2.TYPE_ISREADY_DHT):
-                timeout = self.upcall_obj.isready_loop(disc_req.isready_req_dht)
+            rcv = self.rep.recv_multipart()
+            print(rcv)
+            for bytesRcvd in rcv:
+                # parse the request
+                disc_req = discovery_pb2.DiscoveryReq()
+                disc_req.ParseFromString(bytesRcvd) 
                 
-            else:
-                raise ValueError("DiscoveryMW::event_loop: unknown message type")
+                
+                # we have a request. Now we need to handle it. For that we need
+                # to call the application logic. So we need to upcall to the
+                # application logic. We will pass the request
+                if (disc_req.msg_type == discovery_pb2.TYPE_REGISTER):
+                    #make an upcall to the application logic
+                    timeout = self.upcall_obj.handle_register(disc_req.register_req)
+                elif (disc_req.msg_type == discovery_pb2.TYPE_ISREADY):
+                    # the is ready message should be empty
+                    timeout = self.upcall_obj.isready_request()
+                elif (disc_req.msg_type == discovery_pb2.TYPE_LOOKUP_PUB_BY_TOPIC):
+                    timeout = self.upcall_obj.handle_lookup(disc_req.lookup_req, True)
+                elif (disc_req.msg_type == discovery_pb2.TYPE_LOOKUP_PUB_BY_TOPIC_DHT):
+                    if (disc_req.lookup_req_dht.end):
+                        timeout = self.upcall_obj.lookup_chord(disc_req.lookup_req_dht)
+                    else:
+                        timeout = self.upcall_obj.lookup_pub_by_topic_request(disc_req.lookup_req_dht, disc_req.lookup_req_dht.from_broker)
+                elif (disc_req.msg_type == discovery_pb2.TYPE_LOOKUP_ALL_PUBS):
+                    timeout = self.upcall_obj.handle_lookup(disc_req.lookup_req, False)
+                elif (disc_req.msg_type == discovery_pb2.TYPE_REGISTER_DHT):
+                    if (disc_req.register_req_dht.end):
+                        timeout = self.upcall_obj.register_chord(disc_req.register_req_dht)
+                    else:
+                        timeout = self.upcall_obj.handle_register_dht(disc_req.register_req_dht)
+                elif (disc_req.msg_type == discovery_pb2.TYPE_ISREADY_DHT):
+                    timeout = self.upcall_obj.isready_loop(disc_req.isready_req_dht)
+                    
+                else:
+                    raise ValueError("DiscoveryMW::event_loop: unknown message type")
+                self.logger.debug("DiscoveryMW::handle_request: done handling request with timeout = {}".format(timeout))
             return timeout
         except Exception as e:
             raise e
@@ -230,14 +243,14 @@ class DiscoveryMW():
     # is_ready_reply_dht
     def is_ready_reply_dht(self, status, src, cur):
         try:
-            self.logger.debug("DiscoveryMW::is_ready_reply")
+            self.logger.debug("DiscoveryMW::is_ready_reply_dht")
             disc_rep = discovery_pb2.DiscoveryResp()
             disc_rep.msg_type = discovery_pb2.TYPE_ISREADY_DHT
-            isready_req_dht = discovery_pb2.IsReadyResp()
-            isready_req_dht.status = status
-            isready_req_dht.src = src
-            isready_req_dht.cur = cur
-            disc_rep.isready_req_dht.CopyFrom(isready_req_dht)
+            isready_resp_dht = discovery_pb2.IsReadyRespDHT()
+            isready_resp_dht.status = status
+            isready_resp_dht.src = src
+            isready_resp_dht.cur = cur
+            disc_rep.isready_resp_dht.CopyFrom(isready_resp_dht)
 
             self.logger.debug("DiscoveryMW::is_ready_reply: done building reply")
             
@@ -274,7 +287,7 @@ class DiscoveryMW():
             self.rep.send(buf2send)
             
             self.logger.info("DiscoveryMW::register_reply: done replying to client register request")
-            return 0
+            return None
         except Exception as e:
             raise e
         
@@ -302,7 +315,7 @@ class DiscoveryMW():
             self.rep.send(buf2send)
             
             self.logger.info("DiscoveryMW::register_reply: done replying to client register request")
-            return 0
+            return None
         except Exception as e:
             raise e
         
@@ -335,7 +348,7 @@ class DiscoveryMW():
             self.rep.send(buf2send)
             
             self.logger.info("DiscoveryMW::lookup_reply: done replying to client lookup request")
-            return 0
+            return None
         except Exception as e:
             raise e
         
@@ -370,7 +383,7 @@ class DiscoveryMW():
             self.rep.send(buf2send)
             
             self.logger.info("DiscoveryMW::lookup_reply: done replying to client lookup request")
-            return 0
+            return None
         except Exception as e:
             raise e
         
@@ -383,7 +396,7 @@ class DiscoveryMW():
         
         
     def propagateRegister(self, next, reg_req_dht, end, dest, src):
-        self.logger.info("DiscoveryMW::propagateRegister: building dht request")
+        self.logger.info("DiscoveryMW::propagateRegister: building dht request to send to {}".format(self.hash_to_ip[str(next)]['id']))
         disc_req = discovery_pb2.DiscoveryReq()
         disc_req.msg_type = discovery_pb2.TYPE_REGISTER_DHT
         register_req_dht = discovery_pb2.RegisterReqDHT()
@@ -398,33 +411,40 @@ class DiscoveryMW():
         buf2send = disc_req.SerializeToString()
         self.logger.debug("Stringified serialized buffer = {}".format(buf2send))
         # check buffer before sending, if empty, send it, otherwise, queue it
-        if (next not in self.send_buffer or self.send_buffer[next] == []):
+        if (next not in self.send_buffer):
+            self.logger.debug("DiscoveryMW::propagateRegister: next not in send_buffer, initializing empty")
+            self.send_buffer[next] = []
+        
+        if (self.send_buffer[next] == []):
             self.req[next].send(buf2send)
             self.logger.info("DiscoveryMW::propagateRegister: done sending dht request")
         else:
-            self.send_buffer[next].append(buf2send)
-            self.logger.info("DiscoveryMW::propagateLookup: socket busy, queueing dht request")
+            self.logger.info("DiscoveryMW::propagateRegister: socket busy, queueing dht request")
+        self.send_buffer[next].append(buf2send)
 
     
-    def propagateIsReady(self, next, count_pub, count_sub, origin):
-        self.logger.info("DiscoveryMW::propagateIsReady: building dht request")
+    def propagateIsReady(self, next, count_pub, count_sub, src):
+        self.logger.info("DiscoveryMW::propagateIsReady: building dht request to send to {} from src {}".format(self.hash_to_ip[str(next)]['id'], self.hash_to_ip[str(src)]['id']))
         disc_req = discovery_pb2.DiscoveryReq()
         disc_req.msg_type = discovery_pb2.TYPE_ISREADY_DHT
         isready_req_dht = discovery_pb2.IsReadyReqDHT()
         isready_req_dht.count_pub = count_pub
         isready_req_dht.count_sub = count_sub
-        isready_req_dht.origin = origin
+        isready_req_dht.src = src
         disc_req.isready_req_dht.CopyFrom(isready_req_dht)
-        self.logger.debug("DiscoveryMW::propagateIsReady: done building dht request")
+        self.logger.debug("DiscoveryMW::propagateIsReaedy: done building dht request")
         buf2send = disc_req.SerializeToString()
         self.logger.debug("Stringified serialized buffer = {}".format(buf2send))
-        if (next not in self.send_buffer or self.send_buffer[next] == []):
+        if (next not in self.send_buffer):
+            self.logger.debug("DiscoveryMW::propagateIsReady: next not in send_buffer, initializing empty")
+            self.send_buffer[next] = []
+        
+        if (self.send_buffer[next] == []):
             self.req[next].send(buf2send)
             self.logger.info("DiscoveryMW::propagateIsReady: done sending dht request")
-
         else:
-            self.send_buffer[next].append(buf2send)
-            self.logger.info("DiscoveryMW::propagateLookup: socket busy, queueing dht request")
+            self.logger.info("DiscoveryMW::propagateIsReady: socket busy, queueing dht request")
+        self.send_buffer[next].append(buf2send)
 
 
     def propagateLookup(self, next, reg_req_dht, end, dest, src):
@@ -441,9 +461,14 @@ class DiscoveryMW():
         self.logger.debug("DiscoveryMW::propagateLookup: done building dht request")
         buf2send = disc_req.SerializeToString()
         self.logger.debug("Stringified serialized buffer = {}".format(buf2send))
-        if (next not in self.send_buffer or self.send_buffer[next] == []):
+        if (next not in self.send_buffer):
+            self.logger.debug("DiscoveryMW::propagateLookup: next not in send_buffer, initializing empty")
+            self.send_buffer[next] = []
+        
+        if (self.send_buffer[next] == []):
             self.req[next].send(buf2send)
             self.logger.info("DiscoveryMW::propagateLookup: done sending dht request")
         else:
-            self.send_buffer[next].append(buf2send)
             self.logger.info("DiscoveryMW::propagateLookup: socket busy, queueing dht request")
+        self.send_buffer[next].append(buf2send)
+
