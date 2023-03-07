@@ -106,6 +106,7 @@ class DiscoveryMW():
         try:
             self.logger.info("DiscoveryMW::event_loop: start")
             while self.handle_events:
+                self.logger.debug("waiting for events...")
                 events = dict(self.poller.poll(timeout = timeout))
                 fault = True
                 self.logger.debug(events)
@@ -114,12 +115,14 @@ class DiscoveryMW():
                     fault = False
 
                 elif self.rep in events:
+                    self.logger.debug(f"Calling handle_request()")
                     timeout = self.handle_request()
                     fault = False
                 # check if any of the req sockets in dictionary are in events
                 for hash, socket in self.req.items():
                     self.logger.info(socket)
                     if socket in events:
+                        self.logger.debug(f"Calling handle_request() for hash {hash}")
                         timeout = self.handle_reply(hash)
                         fault = False
                 if (fault):
