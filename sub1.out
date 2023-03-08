@@ -1,0 +1,22 @@
+2023-03-07 11:17:49,213 - INFO - Main - acquire a child logger
+2023-03-07 11:17:49,214 - DEBUG - Main: parse command line arguments
+2023-03-07 11:17:49,232 - DEBUG - Main: resetting log level to 20
+2023-03-07 11:17:49,233 - INFO - SubscriberAppln::configure
+2023-03-07 11:17:49,233 - INFO - SubscriberAppln::configure - discovery choice: disc2
+2023-03-07 11:17:49,234 - INFO - SubscriberAppln::configure - completed
+2023-03-07 11:17:49,235 - INFO - SubscriberAppln::driver
+2023-03-07 11:17:49,235 - INFO - **********************************
+2023-03-07 11:17:49,235 - INFO - PublisherAppln::dump
+2023-03-07 11:17:49,235 - INFO - ------------------------------
+2023-03-07 11:17:49,235 - INFO -      Name: sub1
+2023-03-07 11:17:49,235 - INFO -      Lookup: Distributed
+2023-03-07 11:17:49,236 - INFO -      Dissemination: Direct
+2023-03-07 11:17:49,236 - INFO -      Num Topics: 8
+2023-03-07 11:17:49,236 - INFO -      TopicList: ['light', 'weather', 'airquality', 'location', 'sound', 'temperature', 'pressure', 'humidity']
+2023-03-07 11:17:49,236 - INFO - **********************************
+2023-03-07 11:17:49,236 - INFO - SubscriberAppln::invoke_operation
+2023-03-07 11:17:49,236 - INFO - SubscriberMW: register
+2023-03-07 11:17:49,237 - INFO - SubscriberMW::register - sent register message and now wait for reply
+2023-03-07 11:17:49,274 - INFO - SubscriberAppln::register_response
+2023-03-07 11:17:49,274 - INFO - SubscriberAppln::invoke_operation
+2023-03-07 11:17:49,274 - INFO - SubscriberMW::is_ready - sent isready message and now wait for reply

@@ -8,6 +8,8 @@ import hashlib  # for the secure hash library
 import argparse  # argument parsing
 import json  # for JSON
 import logging  # for logging. Use it in place of print statements.
+# import collection
+from collections import OrderedDict
 
 
 class TableGenerator():
@@ -41,7 +43,7 @@ class TableGenerator():
             # print(hash, start)
             if hash > start:
                 return hash
-        return list(self.int_to_node.keys())[0]
+        return list(sorted(self.int_to_node.keys()))[0]
     def generateJson(self):
         output = {}
         for node in self.dht:
@@ -50,7 +52,8 @@ class TableGenerator():
                 start_key = (node['hash'] + 2**(index)) % self.N
                 output[node['hash']].append(self.findSuccessor(start_key))
         with open("finger_table.json", "w") as outfile:
-            json.dump(output, outfile)
+            sorted_output = OrderedDict(sorted(output.items()))
+            json.dump(sorted_output, outfile)
         outfile.close()
     def generateHashToIp(self):
         output = {}

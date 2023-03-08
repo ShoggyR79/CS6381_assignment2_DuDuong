@@ -19,6 +19,4 @@ h16 python3 DiscoveryAppln.py -n disc17 -j dht.json -p 5556 -cp 1 -cs 1 > disc17
 h18 python3 DiscoveryAppln.py -n disc13 -j dht.json -p 5555 -cp 1 -cs 1 > disc13.out 2>&1 &
 h19 python3 DiscoveryAppln.py -n disc7 -j dht.json -p 5555 -cp 1 -cs 1 > disc7.out 2>&1 &
 h7 python3 PublisherAppln.py -n pub1 -j dht.json -a 10.0.0.7 -T 7 > pub1.out 2>&1 &
-
-h5 python3 SubscriberAppln.py -n sub1 -j dht.json -T 8 > sub1.out 2>&1 &
-
+h5 python3 PublisherAppln.py -n pub2 -j dht.json -a 10.0.0.5 -T 7 > pub2.out 2>&1 &

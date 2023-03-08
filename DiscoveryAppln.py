@@ -163,7 +163,7 @@ class DiscoveryAppln():
             raise e
 
 
-    def handle_register(self, reg_req):
+    def handle_register(self, reg_req, identity):
         try:
             if (reg_req.role == discovery_pb2.ROLE_PUBLISHER):
                 if self.lookup == "Distributed":
@@ -211,7 +211,7 @@ class DiscoveryAppln():
         except Exception as e:
             raise e
     # program to handle incoming register request.
-    def handle_register_dht(self, reg_req):
+    def handle_register_dht(self, reg_req, identity=None):
         ''' handle register request'''
         try:
             self.logger.info("DiscoveryAppln::handle_register endpoint")
@@ -421,10 +421,18 @@ class DiscoveryAppln():
     # search the local finger table to find the closest preceding node
     def closest_preceding_node(self, id):
         # loop from the back of finger table to front
-        for i in range(len(self.table)-1, -1, -1):
-            if min(self.hash, id) < self.table[i] and self.table[i] < max(self.hash, id):
-                self.logger.info("DiscoveryAppln::closest_preceding_node - found closest preceding node at {}".format(self.table[i]))
+        for i in range(len(self.table)-1 , -1 , -1):
+            if self.hash > id and self.table[i] < self.hash and self.table[i] > id:
+                self.logger.info("DiscoveryAppln::closest_preceding_node - found closest preceding node {}".format(self.table[i]))
                 return self.table[i]
+            elif self.hash < id and self.table[i] > self.hash and self.table[i] < id:
+                self.logger.info("DiscoveryAppln::closest_preceding_node - found closest preceding node {}".format(self.table[i]))
+                return self.table[i]
+            elif self.hash > id and (self.table[i] > self.hash or self.table[i] < id):
+                self.logger.info("DiscoveryAppln::closest_preceding_node - found closest preceding node {}".format(self.table[i]))
+                return self.table[i]
+            else:
+                continue
         return self.hash
     #################
     # hash value

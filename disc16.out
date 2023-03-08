@@ -1,0 +1,57 @@
+2023-03-07 20:31:05,162 - root INFO - Main - acquire a child logger and then log messages in the child
+2023-03-07 20:31:05,164 - DiscoveryAppln DEBUG - Main: parse command line arguments
+2023-03-07 20:31:05,175 - DiscoveryAppln DEBUG - Main: resetting log level to 10
+2023-03-07 20:31:05,192 - DiscoveryAppln DEBUG - Main: effective log level is 10
+2023-03-07 20:31:05,192 - DiscoveryAppln DEBUG - Main: obtain a discovery application object
+2023-03-07 20:31:05,192 - DiscoveryAppln DEBUG - Main: configure the discovery application object
+2023-03-07 20:31:05,192 - DiscoveryAppln INFO - DiscoveryAppln::configure
+2023-03-07 20:31:05,193 - DiscoveryAppln DEBUG - DiscoveryAppln::configure - parsing config.ini
+2023-03-07 20:31:05,195 - DiscoveryAppln DEBUG - DiscoveryAppln::configure - setup underlying middleware object
+2023-03-07 20:31:05,195 - DiscoveryAppln DEBUG - DiscoveryAppln::configure - getting hash and finger table
+2023-03-07 20:31:05,211 - DiscoveryAppln INFO - DiscoveryMW::configure
+2023-03-07 20:31:05,211 - DiscoveryAppln DEBUG - DiscoveryMW::configure: obtain ZMQ context
+2023-03-07 20:31:05,211 - DiscoveryAppln DEBUG - DiscoveryMW::configure: create ZMQ POLLER
+2023-03-07 20:31:05,211 - DiscoveryAppln DEBUG - DiscoveryMW::configure: create ZMQ REP socket
+2023-03-07 20:31:05,211 - DiscoveryAppln DEBUG - DiscoveryMW::configure: register poller
+2023-03-07 20:31:05,212 - DiscoveryAppln DEBUG - DiscoveryMW::configure: bind REP socket to address
+2023-03-07 20:31:05,212 - DiscoveryAppln DEBUG - DiscoveryMW::configure: reading hash to ip json
+2023-03-07 20:31:05,212 - DiscoveryAppln INFO - DiscoveryMW::configure completed
+2023-03-07 20:31:05,212 - DiscoveryAppln DEBUG - DiscoveryAppln::configure - generating table for node
+2023-03-07 20:31:05,212 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: connecting to all nodes in finger table
+2023-03-07 20:31:05,212 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: 55241168782835 - <zmq.Socket(zmq.REQ) at 0x7fa914f39780> connected to disc4
+2023-03-07 20:31:05,213 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: 69136966752643 - <zmq.Socket(zmq.REQ) at 0x7fa914f397e0> connected to disc7
+2023-03-07 20:31:05,213 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: 94670427364161 - <zmq.Socket(zmq.REQ) at 0x7fa914f39840> connected to disc2
+2023-03-07 20:31:05,213 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: 144745002065491 - <zmq.Socket(zmq.REQ) at 0x7fa914f398a0> connected to disc13
+2023-03-07 20:31:05,213 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: 200736216270761 - <zmq.Socket(zmq.REQ) at 0x7fa914f39900> connected to disc6
+2023-03-07 20:31:05,213 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: connected in dictionary self.req
+2023-03-07 20:31:05,213 - DiscoveryAppln INFO - DiscoveryAppln::configure completed
+2023-03-07 20:31:05,213 - DiscoveryAppln DEBUG - Main: invoke the discovery application driver
+2023-03-07 20:31:05,213 - DiscoveryAppln INFO - DiscoveryAppln::driver
+2023-03-07 20:31:05,213 - DiscoveryAppln INFO - **********************************
+2023-03-07 20:31:05,213 - DiscoveryAppln INFO - DiscoveryAppln::dump
+2023-03-07 20:31:05,213 - DiscoveryAppln INFO - ------------------------------
+2023-03-07 20:31:05,213 - DiscoveryAppln INFO -      Lookup: Distributed
+2023-03-07 20:31:05,213 - DiscoveryAppln INFO -      Dissemination: Direct
+2023-03-07 20:31:05,214 - DiscoveryAppln INFO -      Expected Subscribers: 1
+2023-03-07 20:31:05,214 - DiscoveryAppln INFO -      Expected Publishers: 1
+2023-03-07 20:31:05,214 - DiscoveryAppln INFO - **********************************
+2023-03-07 20:31:05,214 - DiscoveryAppln DEBUG - DiscoveryAppln::driver - setting upcall handle
+2023-03-07 20:31:05,214 - DiscoveryAppln INFO - DiscoveryMW::event_loop: start
+2023-03-07 20:31:05,214 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-07 20:31:05,214 - DiscoveryAppln DEBUG - {}
+2023-03-07 20:31:05,214 - DiscoveryAppln INFO - DiscoveryAppln::invoke_operation
+2023-03-07 20:31:05,214 - DiscoveryAppln INFO - control back to event loop
+2023-03-07 20:31:05,214 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-07 20:31:05,312 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.REP) at 0x7fa914f39720>: 1}
+2023-03-07 20:31:05,312 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-07 20:31:05,312 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-07 20:31:05,312 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 200736216270761
+2023-03-07 20:31:05,313 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 50952429704484
+2023-03-07 20:31:05,313 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc4 from src disc6
+2023-03-07 20:31:05,313 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
+2023-03-07 20:31:05,313 - DiscoveryAppln DEBUG - Stringified serialized buffer = b'\x08\x062\n\x10\x01\x18\xa9\x8f\xf5\xd6\x98\xd2-'
+2023-03-07 20:31:05,313 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReady: next not in send_buffer, initializing empty
+2023-03-07 20:31:05,313 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: done sending dht request
+2023-03-07 20:31:05,313 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-07 20:31:05,313 - DiscoveryAppln INFO - control back to event loop
+2023-03-07 20:31:05,313 - DiscoveryAppln DEBUG - waiting for events...
