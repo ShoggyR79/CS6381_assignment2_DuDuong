@@ -31,6 +31,7 @@ import logging # for logging. Use it in place of print statements.
 import zmq  # ZMQ sockets
 import json
 import timeit # for timing
+import csv
 # import serialization logic
 from CS6381_MW import discovery_pb2
 #from CS6381_MW import topic_pb2  # you will need this eventually
@@ -54,6 +55,7 @@ class PublisherMW ():
     self.port = None # port num where we are going to publish our topics
     self.upcall_obj = None # handle to appln obj to handle appln-specific data
     self.handle_events = True # in general we keep going thru the event loop
+    self.requests_timer = None # timer for requests
 
   ########################################
   # configure/initialize
@@ -108,6 +110,7 @@ class PublisherMW ():
       bind_string = "tcp://*:" + str(self.port)
       self.pub.bind (bind_string)
       
+      self.requests_timer = {} # initialize the requests timer
       self.logger.info ("PublisherMW::configure completed")
 
     except Exception as e:
@@ -164,14 +167,15 @@ class PublisherMW ():
       self.logger.info ("PublisherMW::handle_reply")
 
       # let us first receive all the bytes
-      bytesRcvd = self.req.recv ()
+      bytesRcvd = self.req.recv_multipart()
+      self.logger.debug ("PublisherMW::handle_reply - received {}".format (bytesRcvd))
 
       # now use protobuf to deserialize the bytes
       # The way to do this is to first allocate the space for the
       # message we expect, here DiscoveryResp and then parse
       # the incoming bytes and populate this structure (via protobuf code)
       disc_resp = discovery_pb2.DiscoveryResp ()
-      disc_resp.ParseFromString (bytesRcvd)
+      disc_resp.ParseFromString (bytesRcvd[-1])
 
       # demultiplex the message based on the message type but let the application
       # object handle the contents as it is best positioned to do so. See how we make
@@ -181,9 +185,15 @@ class PublisherMW ():
       # in the next iteration of the poll.
       if (disc_resp.msg_type == discovery_pb2.TYPE_REGISTER):
         # let the appln level object decide what to do
+        with open("./exp_outputs/register_delay.csv", "a", newline='') as f:
+          writer = csv.writer(f)
+          writer.writerow([timeit.default_timer() - self.requests_timer['register']])
         timeout = self.upcall_obj.register_response (disc_resp.register_resp)
       elif (disc_resp.msg_type == discovery_pb2.TYPE_ISREADY):
         # this is a response to is ready request
+        with open("./exp_outputs/isready_delay.csv", "a", newline='') as f:
+          writer = csv.writer(f)
+          writer.writerow([timeit.default_timer() - self.requests_timer['is_ready']])
         timeout = self.upcall_obj.isready_response (disc_resp.isready_resp)
 
       else: # anything else is unrecognizable by this object
@@ -253,6 +263,8 @@ class PublisherMW ():
       self.logger.debug ("PublisherMW::register - send stringified buffer to Discovery service")
       self.req.send (buf2send)  # we use the "send" method of ZMQ that sends the bytes
 
+
+      self.requests_timer['register'] = timeit.default_timer()  # save the time when we sent the request
       # now go to our event loop to receive a response to this request
       self.logger.info ("PublisherMW::register - sent register message and now now wait for reply")
     
@@ -302,7 +314,7 @@ class PublisherMW ():
       # now send this to our discovery service
       self.logger.debug ("PublisherMW::is_ready - send stringified buffer to Discovery service")
       self.req.send (buf2send)  # we use the "send" method of ZMQ that sends the bytes
-      
+      self.requests_timer['is_ready'] = timeit.default_timer()  # save the time when we sent the request
       # now go to our event loop to receive a response to this request
       self.logger.info ("PublisherMW::is_ready - request sent and now wait for reply")
       

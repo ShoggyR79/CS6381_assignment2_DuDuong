@@ -1,0 +1,2930 @@
+2023-03-17 15:46:10,871 - INFO - Main - acquire a child logger
+2023-03-17 15:46:10,879 - DEBUG - Main: parse command line arguments
+2023-03-17 15:46:10,905 - DEBUG - Main: resetting log level to 20
+2023-03-17 15:46:10,907 - INFO - SubscriberAppln::configure
+2023-03-17 15:46:10,908 - INFO - SubscriberAppln::configure - discovery choice: disc11
+2023-03-17 15:46:10,909 - INFO - SubscriberAppln::configure - completed
+2023-03-17 15:46:10,909 - INFO - SubscriberAppln::driver
+2023-03-17 15:46:10,909 - INFO - **********************************
+2023-03-17 15:46:10,910 - INFO - PublisherAppln::dump
+2023-03-17 15:46:10,910 - INFO - ------------------------------
+2023-03-17 15:46:10,910 - INFO -      Name: sub4
+2023-03-17 15:46:10,910 - INFO -      Lookup: Distributed
+2023-03-17 15:46:10,919 - INFO -      Dissemination: Direct
+2023-03-17 15:46:10,919 - INFO -      Num Topics: 8
+2023-03-17 15:46:10,920 - INFO -      TopicList: ['sound', 'temperature', 'pressure', 'altitude', 'humidity', 'weather', 'location', 'light']
+2023-03-17 15:46:10,920 - INFO - **********************************
+2023-03-17 15:46:10,921 - INFO - SubscriberAppln::invoke_operation
+2023-03-17 15:46:10,922 - INFO - SubscriberMW: register
+2023-03-17 15:46:10,932 - INFO - SubscriberMW::register - sent register message and now wait for reply
+2023-03-17 15:46:10,948 - INFO - SubscriberAppln::register_response
+2023-03-17 15:46:10,949 - INFO - SubscriberAppln::invoke_operation
+2023-03-17 15:46:10,949 - INFO - SubscriberMW::is_ready - sent isready message and now wait for reply
+2023-03-17 15:46:11,292 - INFO - SubscriberAppln::is_ready_response
+2023-03-17 15:46:21,294 - INFO - SubscriberAppln::invoke_operation
+2023-03-17 15:46:21,294 - INFO - SubscriberMW::is_ready - sent isready message and now wait for reply
+2023-03-17 15:46:21,365 - INFO - SubscriberAppln::is_ready_response
+2023-03-17 15:46:21,365 - INFO - SubscriberAppln::invoke_operation
+2023-03-17 15:46:21,365 - INFO - SubscriberMW::lookup
+2023-03-17 15:46:21,366 - INFO - SubscriberMW::lookup - done building lookup request to discovery service
+2023-03-17 15:46:21,366 - INFO - SubscriberMW::lookup - sent lookup message and now wait for reply
+2023-03-17 15:46:21,412 - INFO - SubscriberAppln::lookup_response
+Subscriber::recv_data, value = 52170.453125: humidity- 19.767729585631766
+Time Received: 52170.453860491 
+Latency = 0.000735490997612942
+Subscriber::recv_data, value = 52170.453125: weather- rainy
+Time Received: 52170.453927343 
+Latency = 0.0008023429982131347
+Subscriber::recv_data, value = 52170.453125: sound- 39
+Time Received: 52170.45396945 
+Latency = 0.0008444499981123954
+Subscriber::recv_data, value = 52170.453125: altitude- 36308
+Time Received: 52170.454007982 
+Latency = 0.0008829819998936728
+Subscriber::recv_data, value = 52170.453125: temperature- -51
+Time Received: 52170.454047195 
+Latency = 0.0009221950022038072
+Subscriber::recv_data, value = 52170.453125: location- Europe
+Time Received: 52170.454085164 
+Latency = 0.0009601639976608567
+Subscriber::recv_data, value = 52170.484375: altitude- 6912
+Time Received: 52170.483364139 
+Latency = -0.00101086100039538
+Subscriber::recv_data, value = 52170.484375: humidity- 58.650672206683645
+Time Received: 52170.483412315 
+Latency = -0.0009626850005588494
+Subscriber::recv_data, value = 52170.484375: location- Australia
+Time Received: 52170.483451374 
+Latency = -0.0009236260011675768
+Subscriber::recv_data, value = 52170.484375: weather- cloudy
+Time Received: 52170.483481473 
+Latency = -0.0008935270016081631
+Subscriber::recv_data, value = 52170.484375: sound- 69
+Time Received: 52170.483511058 
+Latency = -0.0008639419975224882
+Subscriber::recv_data, value = 52170.50390625: pressure- 1043
+Time Received: 52170.505190336 
+Latency = 0.0012840859999414533
+Subscriber::recv_data, value = 52170.50390625: temperature- -44
+Time Received: 52170.505242159 
+Latency = 0.0013359090007725172
+Subscriber::recv_data, value = 52170.50390625: sound- 43
+Time Received: 52170.505280844 
+Latency = 0.0013745940013905056
+Subscriber::recv_data, value = 52170.50390625: location- Asia
+Time Received: 52170.505311685 
+Latency = 0.0014054350031074136
+Subscriber::recv_data, value = 52170.50390625: humidity- 94.43502674361814
+Time Received: 52170.505355216 
+Latency = 0.001448966002499219
+Subscriber::recv_data, value = 52170.50390625: weather- icy
+Time Received: 52170.505383388 
+Latency = 0.0014771380010643043
+Subscriber::recv_data, value = 52170.50390625: light- 1100
+Time Received: 52170.505411638 
+Latency = 0.0015053879978950135
+Subscriber::recv_data, value = 52170.50390625: altitude- 23750
+Time Received: 52170.505438499 
+Latency = 0.00153224899986526
+Subscriber::recv_data, value = 52170.52734375: light- 1100
+Time Received: 52170.53054959 
+Latency = 0.003205840002920013
+Subscriber::recv_data, value = 52170.52734375: pressure- 875
+Time Received: 52170.530809106 
+Latency = 0.003465355999651365
+Subscriber::recv_data, value = 52170.52734375: altitude- 4148
+Time Received: 52170.531097256 
+Latency = 0.00375350599642843
+Subscriber::recv_data, value = 52170.52734375: location- Africa
+Time Received: 52170.53116306 
+Latency = 0.0038193099971977063
+Subscriber::recv_data, value = 52170.52734375: weather- icy
+Time Received: 52170.531315599 
+Latency = 0.0039718490006634966
+Subscriber::recv_data, value = 52170.52734375: sound- 38
+Time Received: 52170.531426017 
+Latency = 0.004082266998011619
+Subscriber::recv_data, value = 52170.52734375: humidity- 53.7982977436667
+Time Received: 52170.531482057 
+Latency = 0.004138306998356711
+Subscriber::recv_data, value = 52170.52734375: temperature- -23
+Time Received: 52170.531535935 
+Latency = 0.004192184998828452
+Subscriber::recv_data, value = 52170.56640625: altitude- 10198
+Time Received: 52170.569845201 
+Latency = 0.0034389509964967147
+Subscriber::recv_data, value = 52170.56640625: sound- 42
+Time Received: 52170.570431181 
+Latency = 0.004024930996820331
+Subscriber::recv_data, value = 52170.56640625: light- 1100
+Time Received: 52170.570551362 
+Latency = 0.004145111997786444
+Subscriber::recv_data, value = 52170.56640625: location- Europe
+Time Received: 52170.570660213 
+Latency = 0.00425396300124703
+Subscriber::recv_data, value = 52170.56640625: weather- sunny
+Time Received: 52170.570701101 
+Latency = 0.004294851001759525
+Subscriber::recv_data, value = 52170.5703125: humidity- 59.33746562878702
+Time Received: 52170.5707423 
+Latency = 0.00042979999852832407
+Subscriber::recv_data, value = 52170.5703125: pressure- 873
+Time Received: 52170.570785445 
+Latency = 0.0004729450010927394
+Subscriber::recv_data, value = 52171.453125: humidity- 39.86855103867951
+Time Received: 52171.455717263 
+Latency = 0.002592263001133688
+Subscriber::recv_data, value = 52171.453125: weather- cloudy
+Time Received: 52171.45579979 
+Latency = 0.0026747899973997846
+Subscriber::recv_data, value = 52171.453125: sound- 92
+Time Received: 52171.455828449 
+Latency = 0.00270344899763586
+Subscriber::recv_data, value = 52171.453125: altitude- 21076
+Time Received: 52171.455854691 
+Latency = 0.0027296909975120798
+Subscriber::recv_data, value = 52171.453125: temperature- -10
+Time Received: 52171.455882715 
+Latency = 0.0027577150030992925
+Subscriber::recv_data, value = 52171.45703125: location- America
+Time Received: 52171.455908607 
+Latency = -0.0011226429996895604
+Subscriber::recv_data, value = 52171.484375: altitude- 29110
+Time Received: 52171.485055719 
+Latency = 0.0006807190002291463
+Subscriber::recv_data, value = 52171.484375: humidity- 95.007641535174
+Time Received: 52171.485102328 
+Latency = 0.000727327998902183
+Subscriber::recv_data, value = 52171.484375: location- America
+Time Received: 52171.485132433 
+Latency = 0.0007574330011266284
+Subscriber::recv_data, value = 52171.484375: weather- rainy
+Time Received: 52171.485158675 
+Latency = 0.0007836750010028481
+Subscriber::recv_data, value = 52171.484375: sound- 78
+Time Received: 52171.485187739 
+Latency = 0.0008127390028676018
+Subscriber::recv_data, value = 52171.50390625: pressure- 1015
+Time Received: 52171.505300504 
+Latency = 0.00139425400266191
+Subscriber::recv_data, value = 52171.50390625: temperature- -9
+Time Received: 52171.50534898 
+Latency = 0.0014427299975068308
+Subscriber::recv_data, value = 52171.50390625: sound- 91
+Time Received: 52171.505377891 
+Latency = 0.0014716410005348735
+Subscriber::recv_data, value = 52171.50390625: location- Africa
+Time Received: 52171.505404289 
+Latency = 0.0014980389969423413
+Subscriber::recv_data, value = 52171.50390625: humidity- 15.895853708983177
+Time Received: 52171.505431771 
+Latency = 0.0015255210018949583
+Subscriber::recv_data, value = 52171.50390625: weather- sunny
+Time Received: 52171.50545817 
+Latency = 0.001551920002384577
+Subscriber::recv_data, value = 52171.50390625: light- 450
+Time Received: 52171.50548778 
+Latency = 0.0015815299993846565
+Subscriber::recv_data, value = 52171.50390625: altitude- 34933
+Time Received: 52171.505514046 
+Latency = 0.0016077960026450455
+Subscriber::recv_data, value = 52171.53125: light- 1600
+Time Received: 52171.532618362 
+Latency = 0.0013683619981748052
+Subscriber::recv_data, value = 52171.53125: pressure- 908
+Time Received: 52171.532708696 
+Latency = 0.0014586960023734719
+Subscriber::recv_data, value = 52171.53125: altitude- 8597
+Time Received: 52171.532737916 
+Latency = 0.0014879160007694736
+Subscriber::recv_data, value = 52171.53125: location- Australia
+Time Received: 52171.533088239 
+Latency = 0.0018382389971520752
+Subscriber::recv_data, value = 52171.53125: weather- cloudy
+Time Received: 52171.533119376 
+Latency = 0.0018693759993766434
+Subscriber::recv_data, value = 52171.53125: sound- 87
+Time Received: 52171.533146373 
+Latency = 0.0018963730035466142
+Subscriber::recv_data, value = 52171.53125: humidity- 29.927865347965955
+Time Received: 52171.533173889 
+Latency = 0.0019238890017732047
+Subscriber::recv_data, value = 52171.53125: temperature- 87
+Time Received: 52171.533208455 
+Latency = 0.00195845500275027
+Subscriber::recv_data, value = 52171.5703125: altitude- 35172
+Time Received: 52171.57128679 
+Latency = 0.0009742900001583621
+Subscriber::recv_data, value = 52171.5703125: sound- 55
+Time Received: 52171.571344839 
+Latency = 0.0010323390015400946
+Subscriber::recv_data, value = 52171.5703125: light- 1100
+Time Received: 52171.571373531 
+Latency = 0.0010610309982439503
+Subscriber::recv_data, value = 52171.5703125: location- America
+Time Received: 52171.571400535 
+Latency = 0.001088035001885146
+Subscriber::recv_data, value = 52171.5703125: weather- icy
+Time Received: 52171.571426753 
+Latency = 0.0011142529983771965
+Subscriber::recv_data, value = 52171.5703125: humidity- 41.1861240221526
+Time Received: 52171.571572721 
+Latency = 0.0012602209972101264
+Subscriber::recv_data, value = 52171.5703125: pressure- 1001
+Time Received: 52171.572148363 
+Latency = 0.0018358629968133755
+Subscriber::recv_data, value = 52172.45703125: humidity- 95.02406050152473
+Time Received: 52172.456845048 
+Latency = -0.00018620199989527464
+Subscriber::recv_data, value = 52172.45703125: weather- rainy
+Time Received: 52172.456883846 
+Latency = -0.00014740399637958035
+Subscriber::recv_data, value = 52172.45703125: sound- 65
+Time Received: 52172.456911629 
+Latency = -0.00011962099961237982
+Subscriber::recv_data, value = 52172.45703125: altitude- 4592
+Time Received: 52172.456937818 
+Latency = -9.343199781142175e-05
+Subscriber::recv_data, value = 52172.45703125: temperature- -58
+Time Received: 52172.45696679 
+Latency = -6.446000043069944e-05
+Subscriber::recv_data, value = 52172.45703125: location- Asia
+Time Received: 52172.456992922 
+Latency = -3.8327998481690884e-05
+Subscriber::recv_data, value = 52172.484375: altitude- 9641
+Time Received: 52172.486637312 
+Latency = 0.002262312002130784
+Subscriber::recv_data, value = 52172.48828125: humidity- 71.48549937870267
+Time Received: 52172.486677793 
+Latency = -0.0016034569998737425
+Subscriber::recv_data, value = 52172.48828125: location- Africa
+Time Received: 52172.48723477 
+Latency = -0.0010464799997862428
+Subscriber::recv_data, value = 52172.48828125: weather- rainy
+Time Received: 52172.487262362 
+Latency = -0.0010188879969064146
+Subscriber::recv_data, value = 52172.48828125: sound- 95
+Time Received: 52172.487281168 
+Latency = -0.0010000819966080599
+Subscriber::recv_data, value = 52172.5078125: pressure- 976
+Time Received: 52172.507750967 
+Latency = -6.153299909783527e-05
+Subscriber::recv_data, value = 52172.5078125: temperature- -16
+Time Received: 52172.507815874 
+Latency = 3.373999788891524e-06
+Subscriber::recv_data, value = 52172.5078125: sound- 69
+Time Received: 52172.507848608 
+Latency = 3.610800195019692e-05
+Subscriber::recv_data, value = 52172.5078125: location- Europe
+Time Received: 52172.507877563 
+Latency = 6.50630026939325e-05
+Subscriber::recv_data, value = 52172.5078125: humidity- 14.763596914453993
+Time Received: 52172.507905613 
+Latency = 9.311299800174311e-05
+Subscriber::recv_data, value = 52172.5078125: weather- rainy
+Time Received: 52172.50793221 
+Latency = 0.00011970999912591651
+Subscriber::recv_data, value = 52172.5078125: light- 1100
+Time Received: 52172.507959083 
+Latency = 0.00014658299915026873
+Subscriber::recv_data, value = 52172.5078125: altitude- 12564
+Time Received: 52172.507984932 
+Latency = 0.00017243200272787362
+Subscriber::recv_data, value = 52172.53515625: light- 1100
+Time Received: 52172.535093096 
+Latency = -6.315400241874158e-05
+Subscriber::recv_data, value = 52172.53515625: pressure- 874
+Time Received: 52172.535154824 
+Latency = -1.4260003808885813e-06
+Subscriber::recv_data, value = 52172.53515625: altitude- 24444
+Time Received: 52172.53519679 
+Latency = 4.053999873576686e-05
+Subscriber::recv_data, value = 52172.53515625: location- Asia
+Time Received: 52172.535235441 
+Latency = 7.919099880382419e-05
+Subscriber::recv_data, value = 52172.53515625: weather- sunny
+Time Received: 52172.535272797 
+Latency = 0.0001165470021078363
+Subscriber::recv_data, value = 52172.53515625: sound- 90
+Time Received: 52172.535310077 
+Latency = 0.00015382700075861067
+Subscriber::recv_data, value = 52172.53515625: humidity- 78.20111096471355
+Time Received: 52172.535347298 
+Latency = 0.0001910479986690916
+Subscriber::recv_data, value = 52172.53515625: temperature- -21
+Time Received: 52172.535385454 
+Latency = 0.00022920400078874081
+Subscriber::recv_data, value = 52172.5703125: altitude- 28277
+Time Received: 52172.572532218 
+Latency = 0.0022197180005605333
+Subscriber::recv_data, value = 52172.5703125: sound- 46
+Time Received: 52172.572809944 
+Latency = 0.0024974440020741895
+Subscriber::recv_data, value = 52172.5703125: light- 1100
+Time Received: 52172.572853366 
+Latency = 0.0025408660003449768
+Subscriber::recv_data, value = 52172.5703125: location- America
+Time Received: 52172.572887425 
+Latency = 0.0025749249980435707
+Subscriber::recv_data, value = 52172.5703125: weather- cloudy
+Time Received: 52172.572916754 
+Latency = 0.0026042539975605905
+Subscriber::recv_data, value = 52172.5703125: humidity- 14.33520760073078
+Time Received: 52172.572945383 
+Latency = 0.0026328829990234226
+Subscriber::recv_data, value = 52172.5703125: pressure- 1007
+Time Received: 52172.572977088 
+Latency = 0.002664587998879142
+Subscriber::recv_data, value = 52173.45703125: humidity- 85.92485069803386
+Time Received: 52173.458055111 
+Latency = 0.0010238609975203872
+Subscriber::recv_data, value = 52173.45703125: weather- sunny
+Time Received: 52173.458105331 
+Latency = 0.0010740810030256398
+Subscriber::recv_data, value = 52173.45703125: sound- 86
+Time Received: 52173.458135314 
+Latency = 0.0011040640019928105
+Subscriber::recv_data, value = 52173.45703125: altitude- 8681
+Time Received: 52173.458162886 
+Latency = 0.0011316360032651573
+Subscriber::recv_data, value = 52173.45703125: temperature- 69
+Time Received: 52173.458261575 
+Latency = 0.0012303249968681484
+Subscriber::recv_data, value = 52173.45703125: location- Africa
+Time Received: 52173.458292951 
+Latency = 0.0012617009997484274
+Subscriber::recv_data, value = 52173.48828125: altitude- 31263
+Time Received: 52173.489140954 
+Latency = 0.0008597039995947853
+Subscriber::recv_data, value = 52173.48828125: humidity- 37.70371478792147
+Time Received: 52173.48922515 
+Latency = 0.0009438999986741692
+Subscriber::recv_data, value = 52173.48828125: location- Asia
+Time Received: 52173.489260439 
+Latency = 0.0009791889970074408
+Subscriber::recv_data, value = 52173.48828125: weather- sunny
+Time Received: 52173.489293371 
+Latency = 0.001012120999803301
+Subscriber::recv_data, value = 52173.48828125: sound- 44
+Time Received: 52173.489326798 
+Latency = 0.0010455480005475692
+Subscriber::recv_data, value = 52173.5078125: pressure- 1002
+Time Received: 52173.509601894 
+Latency = 0.001789394002116751
+Subscriber::recv_data, value = 52173.5078125: temperature- 12
+Time Received: 52173.509652027 
+Latency = 0.0018395270017208531
+Subscriber::recv_data, value = 52173.5078125: sound- 95
+Time Received: 52173.50968486 
+Latency = 0.0018723600005614571
+Subscriber::recv_data, value = 52173.5078125: location- Australia
+Time Received: 52173.509717166 
+Latency = 0.0019046660017920658
+Subscriber::recv_data, value = 52173.5078125: humidity- 95.92294469284239
+Time Received: 52173.50976043 
+Latency = 0.001947930002643261
+Subscriber::recv_data, value = 52173.5078125: weather- sunny
+Time Received: 52173.509793934 
+Latency = 0.0019814339975710027
+Subscriber::recv_data, value = 52173.5078125: light- 1600
+Time Received: 52173.509836453 
+Latency = 0.0020239529985701665
+Subscriber::recv_data, value = 52173.5078125: altitude- 36989
+Time Received: 52173.509867781 
+Latency = 0.0020552810019580647
+Subscriber::recv_data, value = 52173.53515625: light- 450
+Time Received: 52173.537014291 
+Latency = 0.0018580410032882355
+Subscriber::recv_data, value = 52173.53515625: pressure- 899
+Time Received: 52173.537080995 
+Latency = 0.001924745003634598
+Subscriber::recv_data, value = 52173.53515625: altitude- 5113
+Time Received: 52173.537114275 
+Latency = 0.0019580250009312294
+Subscriber::recv_data, value = 52173.53515625: location- Europe
+Time Received: 52173.537144088 
+Latency = 0.0019878379971487448
+Subscriber::recv_data, value = 52173.53515625: weather- foggy
+Time Received: 52173.537172288 
+Latency = 0.002016038000874687
+Subscriber::recv_data, value = 52173.53515625: sound- 82
+Time Received: 52173.537200414 
+Latency = 0.0020441640008357354
+Subscriber::recv_data, value = 52173.53515625: humidity- 58.709364284852384
+Time Received: 52173.537314274 
+Latency = 0.0021580239990726113
+Subscriber::recv_data, value = 52173.53515625: temperature- 99
+Time Received: 52173.537356962 
+Latency = 0.00220071199873928
+Subscriber::recv_data, value = 52173.57421875: altitude- 9118
+Time Received: 52173.574098405 
+Latency = -0.00012034500105073676
+Subscriber::recv_data, value = 52173.57421875: sound- 86
+Time Received: 52173.574235889 
+Latency = 1.7138998373411596e-05
+Subscriber::recv_data, value = 52173.57421875: light- 800
+Time Received: 52173.574269065 
+Latency = 5.031500040786341e-05
+Subscriber::recv_data, value = 52173.57421875: location- America
+Time Received: 52173.574654777 
+Latency = 0.0004360270031611435
+Subscriber::recv_data, value = 52173.57421875: weather- icy
+Time Received: 52173.574687267 
+Latency = 0.00046851699880789965
+Subscriber::recv_data, value = 52173.57421875: humidity- 70.41058925672985
+Time Received: 52173.574715656 
+Latency = 0.0004969060028088279
+Subscriber::recv_data, value = 52173.57421875: pressure- 942
+Time Received: 52173.574768401 
+Latency = 0.0005496509984368458
+Subscriber::recv_data, value = 52174.4609375: humidity- 59.83404483887214
+Time Received: 52174.460409895 
+Latency = -0.00052760499966098
+Subscriber::recv_data, value = 52174.4609375: weather- sunny
+Time Received: 52174.460450744 
+Latency = -0.00048675599828129634
+Subscriber::recv_data, value = 52174.4609375: sound- 32
+Time Received: 52174.46047994 
+Latency = -0.0004575600032694638
+Subscriber::recv_data, value = 52174.4609375: altitude- 26216
+Time Received: 52174.460506648 
+Latency = -0.0004308520001359284
+Subscriber::recv_data, value = 52174.4609375: temperature- 57
+Time Received: 52174.460533905 
+Latency = -0.0004035949968965724
+Subscriber::recv_data, value = 52174.4609375: location- America
+Time Received: 52174.460902664 
+Latency = -3.483599721221253e-05
+Subscriber::recv_data, value = 52174.48828125: altitude- 38000
+Time Received: 52174.489977615 
+Latency = 0.001696364997769706
+Subscriber::recv_data, value = 52174.48828125: humidity- 97.50326251011047
+Time Received: 52174.490022613 
+Latency = 0.0017413629975635558
+Subscriber::recv_data, value = 52174.48828125: location- America
+Time Received: 52174.490052671 
+Latency = 0.0017714209971018136
+Subscriber::recv_data, value = 52174.48828125: weather- cloudy
+Time Received: 52174.490078479 
+Latency = 0.0017972290006582625
+Subscriber::recv_data, value = 52174.48828125: sound- 78
+Time Received: 52174.490105717 
+Latency = 0.0018244669990963303
+Subscriber::recv_data, value = 52174.51171875: pressure- 1063
+Time Received: 52174.511335779 
+Latency = -0.0003829709967249073
+Subscriber::recv_data, value = 52174.51171875: temperature- 90
+Time Received: 52174.511386586 
+Latency = -0.00033216400333913043
+Subscriber::recv_data, value = 52174.51171875: sound- 55
+Time Received: 52174.511418442 
+Latency = -0.00030030799825908616
+Subscriber::recv_data, value = 52174.51171875: location- Asia
+Time Received: 52174.51144531 
+Latency = -0.0002734399968176149
+Subscriber::recv_data, value = 52174.51171875: humidity- 63.565183818842016
+Time Received: 52174.51147208 
+Latency = -0.00024667000252520666
+Subscriber::recv_data, value = 52174.51171875: weather- foggy
+Time Received: 52174.511498878 
+Latency = -0.00021987200307194144
+Subscriber::recv_data, value = 52174.51171875: light- 1600
+Time Received: 52174.51152498 
+Latency = -0.00019376999989617616
+Subscriber::recv_data, value = 52174.51171875: altitude- 2910
+Time Received: 52174.51155113 
+Latency = -0.00016761999722803012
+Subscriber::recv_data, value = 52174.5390625: light- 450
+Time Received: 52174.538413664 
+Latency = -0.0006488360013463534
+Subscriber::recv_data, value = 52174.5390625: pressure- 921
+Time Received: 52174.539125635 
+Latency = 6.313499761745334e-05
+Subscriber::recv_data, value = 52174.5390625: altitude- 37573
+Time Received: 52174.539168722 
+Latency = 0.00010622200352372602
+Subscriber::recv_data, value = 52174.5390625: location- Africa
+Time Received: 52174.539196363 
+Latency = 0.00013386300270212814
+Subscriber::recv_data, value = 52174.5390625: weather- icy
+Time Received: 52174.539222142 
+Latency = 0.00015964199701556936
+Subscriber::recv_data, value = 52174.5390625: sound- 82
+Time Received: 52174.539248254 
+Latency = 0.00018575399735709652
+Subscriber::recv_data, value = 52174.5390625: humidity- 94.93137823462466
+Time Received: 52174.539273671 
+Latency = 0.00021117099822731689
+Subscriber::recv_data, value = 52174.5390625: temperature- -21
+Time Received: 52174.539300444 
+Latency = 0.00023794399749021977
+Subscriber::recv_data, value = 52174.578125: altitude- 39348
+Time Received: 52174.577231971 
+Latency = -0.0008930289986892603
+Subscriber::recv_data, value = 52174.578125: sound- 79
+Time Received: 52174.577275732 
+Latency = -0.000849267999001313
+Subscriber::recv_data, value = 52174.578125: light- 450
+Time Received: 52174.577303589 
+Latency = -0.0008214109984692186
+Subscriber::recv_data, value = 52174.578125: location- Africa
+Time Received: 52174.577330367 
+Latency = -0.0007946330006234348
+Subscriber::recv_data, value = 52174.578125: weather- cloudy
+Time Received: 52174.577357314 
+Latency = -0.0007676859968341887
+Subscriber::recv_data, value = 52174.578125: humidity- 68.58688403733485
+Time Received: 52174.577382983 
+Latency = -0.0007420170004479587
+Subscriber::recv_data, value = 52174.578125: pressure- 1003
+Time Received: 52174.577409029 
+Latency = -0.0007159710003179498
+Subscriber::recv_data, value = 52175.4609375: humidity- 56.2172681825436
+Time Received: 52175.461908645 
+Latency = 0.0009711449965834618
+Subscriber::recv_data, value = 52175.4609375: weather- rainy
+Time Received: 52175.461951168 
+Latency = 0.0010136679993593134
+Subscriber::recv_data, value = 52175.4609375: sound- 59
+Time Received: 52175.461981377 
+Latency = 0.0010438769968459383
+Subscriber::recv_data, value = 52175.4609375: altitude- 18352
+Time Received: 52175.46201194 
+Latency = 0.0010744399987743236
+Subscriber::recv_data, value = 52175.4609375: temperature- 79
+Time Received: 52175.462038463 
+Latency = 0.0011009630034095608
+Subscriber::recv_data, value = 52175.4609375: location- Europe
+Time Received: 52175.462081567 
+Latency = 0.0011440669986768626
+Subscriber::recv_data, value = 52175.4921875: altitude- 36160
+Time Received: 52175.491231362 
+Latency = -0.0009561379993101582
+Subscriber::recv_data, value = 52175.4921875: humidity- 95.63780097860318
+Time Received: 52175.491271998 
+Latency = -0.0009155020015896298
+Subscriber::recv_data, value = 52175.4921875: location- America
+Time Received: 52175.49129053 
+Latency = -0.0008969699993031099
+Subscriber::recv_data, value = 52175.4921875: weather- rainy
+Time Received: 52175.491344185 
+Latency = -0.0008433149996562861
+Subscriber::recv_data, value = 52175.4921875: sound- 91
+Time Received: 52175.491388468 
+Latency = -0.0007990320009412244
+Subscriber::recv_data, value = 52175.51171875: pressure- 889
+Time Received: 52175.513328841 
+Latency = 0.0016100909997476265
+Subscriber::recv_data, value = 52175.51171875: temperature- -61
+Time Received: 52175.51336958 
+Latency = 0.0016508300032000989
+Subscriber::recv_data, value = 52175.51171875: sound- 53
+Time Received: 52175.513397071 
+Latency = 0.001678321001236327
+Subscriber::recv_data, value = 52175.51171875: location- America
+Time Received: 52175.513423076 
+Latency = 0.00170432600134518
+Subscriber::recv_data, value = 52175.51171875: humidity- 31.02691903002032
+Time Received: 52175.513449571 
+Latency = 0.0017308210008195601
+Subscriber::recv_data, value = 52175.51171875: weather- cloudy
+Time Received: 52175.513474779 
+Latency = 0.001756028999807313
+Subscriber::recv_data, value = 52175.51171875: light- 1100
+Time Received: 52175.513499642 
+Latency = 0.001780892001988832
+Subscriber::recv_data, value = 52175.51171875: altitude- 39245
+Time Received: 52175.513526137 
+Latency = 0.001807387001463212
+Subscriber::recv_data, value = 52175.5390625: light- 1600
+Time Received: 52175.540538664 
+Latency = 0.001476163997722324
+Subscriber::recv_data, value = 52175.5390625: pressure- 914
+Time Received: 52175.540583923 
+Latency = 0.0015214230006677099
+Subscriber::recv_data, value = 52175.5390625: altitude- 6128
+Time Received: 52175.540612328 
+Latency = 0.001549827997223474
+Subscriber::recv_data, value = 52175.5390625: location- Australia
+Time Received: 52175.54066267 
+Latency = 0.0016001699987100437
+Subscriber::recv_data, value = 52175.5390625: weather- icy
+Time Received: 52175.540691259 
+Latency = 0.001628758996957913
+Subscriber::recv_data, value = 52175.5390625: sound- 63
+Time Received: 52175.540806423 
+Latency = 0.0017439229995943606
+Subscriber::recv_data, value = 52175.5390625: humidity- 14.577347014990591
+Time Received: 52175.540835639 
+Latency = 0.0017731390034896322
+Subscriber::recv_data, value = 52175.5390625: temperature- 12
+Time Received: 52175.541077319 
+Latency = 0.002014819001487922
+Subscriber::recv_data, value = 52175.578125: altitude- 39306
+Time Received: 52175.578205668 
+Latency = 8.066799637163058e-05
+Subscriber::recv_data, value = 52175.578125: sound- 94
+Time Received: 52175.5782832 
+Latency = 0.0001581999968038872
+Subscriber::recv_data, value = 52175.578125: light- 1600
+Time Received: 52175.578317026 
+Latency = 0.00019202599651180208
+Subscriber::recv_data, value = 52175.578125: location- America
+Time Received: 52175.578344282 
+Latency = 0.00021928200294496492
+Subscriber::recv_data, value = 52175.578125: weather- sunny
+Time Received: 52175.578370667 
+Latency = 0.00024566699721617624
+Subscriber::recv_data, value = 52175.578125: humidity- 27.5378200489926
+Time Received: 52175.578420526 
+Latency = 0.00029552599880844355
+Subscriber::recv_data, value = 52175.578125: pressure- 907
+Time Received: 52175.578455003 
+Latency = 0.00033000300027197227
+Subscriber::recv_data, value = 52176.46484375: humidity- 61.385959872322
+Time Received: 52176.464319188 
+Latency = -0.0005245619977358729
+Subscriber::recv_data, value = 52176.46484375: weather- icy
+Time Received: 52176.46435759 
+Latency = -0.00048616000276524574
+Subscriber::recv_data, value = 52176.46484375: sound- 91
+Time Received: 52176.464385774 
+Latency = -0.0004579759988700971
+Subscriber::recv_data, value = 52176.46484375: altitude- 9019
+Time Received: 52176.464412662 
+Latency = -0.00043108800309710205
+Subscriber::recv_data, value = 52176.46484375: temperature- -55
+Time Received: 52176.464439552 
+Latency = -0.0004041979991598055
+Subscriber::recv_data, value = 52176.46484375: location- Australia
+Time Received: 52176.464465051 
+Latency = -0.00037869899824727327
+Subscriber::recv_data, value = 52176.4921875: altitude- 32840
+Time Received: 52176.496510837 
+Latency = 0.004323337001551408
+Subscriber::recv_data, value = 52176.4921875: humidity- 95.67890055376877
+Time Received: 52176.496774568 
+Latency = 0.004587067996908445
+Subscriber::recv_data, value = 52176.4921875: location- Australia
+Time Received: 52176.496847339 
+Latency = 0.004659839003579691
+Subscriber::recv_data, value = 52176.4921875: weather- rainy
+Time Received: 52176.496897312 
+Latency = 0.0047098119975999
+Subscriber::recv_data, value = 52176.49609375: sound- 81
+Time Received: 52176.496938917 
+Latency = 0.0008451670000795275
+Subscriber::recv_data, value = 52176.515625: pressure- 1026
+Time Received: 52176.515604014 
+Latency = -2.098600089084357e-05
+Subscriber::recv_data, value = 52176.515625: temperature- 65
+Time Received: 52176.515654997 
+Latency = 2.9996997909620404e-05
+Subscriber::recv_data, value = 52176.515625: sound- 42
+Time Received: 52176.515688802 
+Latency = 6.380199920386076e-05
+Subscriber::recv_data, value = 52176.515625: location- Asia
+Time Received: 52176.515727358 
+Latency = 0.0001023579970933497
+Subscriber::recv_data, value = 52176.515625: humidity- 99.1847524302437
+Time Received: 52176.515766762 
+Latency = 0.0001417620005668141
+Subscriber::recv_data, value = 52176.515625: weather- rainy
+Time Received: 52176.515811226 
+Latency = 0.00018622600327944383
+Subscriber::recv_data, value = 52176.515625: light- 1100
+Time Received: 52176.515839834 
+Latency = 0.00021483399905264378
+Subscriber::recv_data, value = 52176.515625: altitude- 31428
+Time Received: 52176.516305536 
+Latency = 0.000680536002619192
+Subscriber::recv_data, value = 52176.54296875: light- 450
+Time Received: 52176.54277595 
+Latency = -0.00019279999833088368
+Subscriber::recv_data, value = 52176.54296875: pressure- 907
+Time Received: 52176.542846638 
+Latency = -0.00012211199646117166
+Subscriber::recv_data, value = 52176.54296875: altitude- 11995
+Time Received: 52176.542885053 
+Latency = -8.369699935428798e-05
+Subscriber::recv_data, value = 52176.54296875: location- Australia
+Time Received: 52176.542930158 
+Latency = -3.8591999327763915e-05
+Subscriber::recv_data, value = 52176.54296875: weather- cloudy
+Time Received: 52176.542964214 
+Latency = -4.535999323707074e-06
+Subscriber::recv_data, value = 52176.54296875: sound- 45
+Time Received: 52176.543000881 
+Latency = 3.213099989807233e-05
+Subscriber::recv_data, value = 52176.54296875: humidity- 96.4699476319225
+Time Received: 52176.543034686 
+Latency = 6.593600119231269e-05
+Subscriber::recv_data, value = 52176.54296875: temperature- 55
+Time Received: 52176.543071481 
+Latency = 0.00010273099906044081
+Subscriber::recv_data, value = 52176.578125: altitude- 31730
+Time Received: 52176.579083103 
+Latency = 0.0009581030026311055
+Subscriber::recv_data, value = 52176.578125: sound- 58
+Time Received: 52176.579121264 
+Latency = 0.0009962640033336356
+Subscriber::recv_data, value = 52176.578125: light- 1100
+Time Received: 52176.579141542 
+Latency = 0.0010165420026169159
+Subscriber::recv_data, value = 52176.578125: location- Europe
+Time Received: 52176.579159422 
+Latency = 0.0010344219990656711
+Subscriber::recv_data, value = 52176.578125: weather- rainy
+Time Received: 52176.579175154 
+Latency = 0.0010501540018594824
+Subscriber::recv_data, value = 52176.578125: humidity- 49.01540338227398
+Time Received: 52176.579245272 
+Latency = 0.0011202719979337417
+Subscriber::recv_data, value = 52176.578125: pressure- 1007
+Time Received: 52176.579286328 
+Latency = 0.0011613280003075488
+Subscriber::recv_data, value = 52177.46484375: humidity- 26.588000842161318
+Time Received: 52177.466648146 
+Latency = 0.0018043960008071736
+Subscriber::recv_data, value = 52177.46484375: weather- cloudy
+Time Received: 52177.466687089 
+Latency = 0.0018433389996062033
+Subscriber::recv_data, value = 52177.46484375: sound- 68
+Time Received: 52177.466715507 
+Latency = 0.001871756998298224
+Subscriber::recv_data, value = 52177.46484375: altitude- 33360
+Time Received: 52177.466742122 
+Latency = 0.001898372000141535
+Subscriber::recv_data, value = 52177.46484375: temperature- -56
+Time Received: 52177.466769093 
+Latency = 0.0019253430000389926
+Subscriber::recv_data, value = 52177.46484375: location- Australia
+Time Received: 52177.466794693 
+Latency = 0.0019509429985191673
+Subscriber::recv_data, value = 52177.5: altitude- 18952
+Time Received: 52177.500027276 
+Latency = 2.7276000764686614e-05
+Subscriber::recv_data, value = 52177.5: humidity- 21.706891916710237
+Time Received: 52177.500092871 
+Latency = 9.287099965149537e-05
+Subscriber::recv_data, value = 52177.5: location- Australia
+Time Received: 52177.500123597 
+Latency = 0.00012359699758235365
+Subscriber::recv_data, value = 52177.5: weather- rainy
+Time Received: 52177.500150197 
+Latency = 0.0001501969964010641
+Subscriber::recv_data, value = 52177.5: sound- 31
+Time Received: 52177.500176777 
+Latency = 0.00017677700088825077
+Subscriber::recv_data, value = 52177.51953125: pressure- 1049
+Time Received: 52177.519193631 
+Latency = -0.00033761899976525456
+Subscriber::recv_data, value = 52177.51953125: temperature- 64
+Time Received: 52177.519233047 
+Latency = -0.00029820299823768437
+Subscriber::recv_data, value = 52177.51953125: sound- 87
+Time Received: 52177.519260514 
+Latency = -0.00027073600358562544
+Subscriber::recv_data, value = 52177.51953125: location- Asia
+Time Received: 52177.519288451 
+Latency = -0.0002427989966236055
+Subscriber::recv_data, value = 52177.51953125: humidity- 40.128039737794516
+Time Received: 52177.519314744 
+Latency = -0.0002165059995604679
+Subscriber::recv_data, value = 52177.51953125: weather- sunny
+Time Received: 52177.519340213 
+Latency = -0.00019103699742117897
+Subscriber::recv_data, value = 52177.51953125: light- 1100
+Time Received: 52177.519365474 
+Latency = -0.0001657760003581643
+Subscriber::recv_data, value = 52177.51953125: altitude- 17593
+Time Received: 52177.519391116 
+Latency = -0.00014013399777468294
+Subscriber::recv_data, value = 52177.55078125: light- 1100
+Time Received: 52177.54968835 
+Latency = -0.0010928999981842935
+Subscriber::recv_data, value = 52177.55078125: pressure- 1066
+Time Received: 52177.549734663 
+Latency = -0.001046587000018917
+Subscriber::recv_data, value = 52177.55078125: altitude- 37699
+Time Received: 52177.549875047 
+Latency = -0.0009062030003406107
+Subscriber::recv_data, value = 52177.55078125: location- Asia
+Time Received: 52177.549927273 
+Latency = -0.0008539769987692125
+Subscriber::recv_data, value = 52177.55078125: weather- cloudy
+Time Received: 52177.549957547 
+Latency = -0.0008237029978772625
+Subscriber::recv_data, value = 52177.55078125: sound- 70
+Time Received: 52177.549985809 
+Latency = -0.0007954410029924475
+Subscriber::recv_data, value = 52177.55078125: humidity- 28.414097171177875
+Time Received: 52177.55001449 
+Latency = -0.0007667600002605468
+Subscriber::recv_data, value = 52177.55078125: temperature- -91
+Time Received: 52177.550066947 
+Latency = -0.0007143030015868135
+Subscriber::recv_data, value = 52177.58203125: altitude- 37877
+Time Received: 52177.583583521 
+Latency = 0.0015522710018558428
+Subscriber::recv_data, value = 52177.58203125: sound- 48
+Time Received: 52177.583624853 
+Latency = 0.0015936030031298287
+Subscriber::recv_data, value = 52177.58203125: light- 800
+Time Received: 52177.583653092 
+Latency = 0.0016218419987126254
+Subscriber::recv_data, value = 52177.58203125: location- Africa
+Time Received: 52177.583679159 
+Latency = 0.0016479089972563088
+Subscriber::recv_data, value = 52177.58203125: weather- sunny
+Time Received: 52177.583705295 
+Latency = 0.0016740450009820051
+Subscriber::recv_data, value = 52177.58203125: humidity- 90.43096927911938
+Time Received: 52177.583730964 
+Latency = 0.0016997139973682351
+Subscriber::recv_data, value = 52177.58203125: pressure- 991
+Time Received: 52177.583756975 
+Latency = 0.0017257250001421198
+Subscriber::recv_data, value = 52178.48046875: humidity- 41.408672139537316
+Time Received: 52178.480794223 
+Latency = 0.0003254730036132969
+Subscriber::recv_data, value = 52178.48046875: weather- rainy
+Time Received: 52178.480836081 
+Latency = 0.0003673309984151274
+Subscriber::recv_data, value = 52178.48046875: sound- 30
+Time Received: 52178.480864023 
+Latency = 0.0003952729966840707
+Subscriber::recv_data, value = 52178.48046875: altitude- 12646
+Time Received: 52178.480891581 
+Latency = 0.0004228309990139678
+Subscriber::recv_data, value = 52178.48046875: temperature- 68
+Time Received: 52178.480918618 
+Latency = 0.00044986799912294373
+Subscriber::recv_data, value = 52178.48046875: location- Australia
+Time Received: 52178.480944241 
+Latency = 0.00047549099690513685
+Subscriber::recv_data, value = 52178.5078125: altitude- 30664
+Time Received: 52178.508358931 
+Latency = 0.0005464310015668161
+Subscriber::recv_data, value = 52178.5078125: humidity- 18.14393846013592
+Time Received: 52178.508398197 
+Latency = 0.0005856970019522123
+Subscriber::recv_data, value = 52178.5078125: location- Australia
+Time Received: 52178.508446877 
+Latency = 0.0006343770000967197
+Subscriber::recv_data, value = 52178.5078125: weather- icy
+Time Received: 52178.508479812 
+Latency = 0.0006673120005871169
+Subscriber::recv_data, value = 52178.5078125: sound- 52
+Time Received: 52178.508508273 
+Latency = 0.0006957730001886375
+Subscriber::recv_data, value = 52178.51953125: pressure- 1049
+Time Received: 52178.520873933 
+Latency = 0.0013426829973468557
+Subscriber::recv_data, value = 52178.51953125: temperature- -61
+Time Received: 52178.520913714 
+Latency = 0.0013824639972881414
+Subscriber::recv_data, value = 52178.51953125: sound- 90
+Time Received: 52178.520941558 
+Latency = 0.0014103080029599369
+Subscriber::recv_data, value = 52178.51953125: location- Africa
+Time Received: 52178.520969864 
+Latency = 0.0014386140028364025
+Subscriber::recv_data, value = 52178.51953125: humidity- 28.54131202665067
+Time Received: 52178.520996131 
+Latency = 0.0014648810029029846
+Subscriber::recv_data, value = 52178.51953125: weather- foggy
+Time Received: 52178.521022253 
+Latency = 0.0014910030004102737
+Subscriber::recv_data, value = 52178.51953125: light- 800
+Time Received: 52178.521047485 
+Latency = 0.0015162350027821958
+Subscriber::recv_data, value = 52178.51953125: altitude- 38783
+Time Received: 52178.521072594 
+Latency = 0.0015413439978146926
+Subscriber::recv_data, value = 52178.55078125: light- 1600
+Time Received: 52178.551303055 
+Latency = 0.0005218049991526641
+Subscriber::recv_data, value = 52178.55078125: pressure- 1082
+Time Received: 52178.551344327 
+Latency = 0.0005630770028801635
+Subscriber::recv_data, value = 52178.55078125: altitude- 14974
+Time Received: 52178.551391809 
+Latency = 0.0006105590000515804
+Subscriber::recv_data, value = 52178.55078125: location- Africa
+Time Received: 52178.551436429 
+Latency = 0.0006551789992954582
+Subscriber::recv_data, value = 52178.55078125: weather- foggy
+Time Received: 52178.55146356 
+Latency = 0.0006823099975008518
+Subscriber::recv_data, value = 52178.55078125: sound- 58
+Time Received: 52178.551491249 
+Latency = 0.0007099990034475923
+Subscriber::recv_data, value = 52178.55078125: humidity- 83.60961954501346
+Time Received: 52178.551517138 
+Latency = 0.0007358880029642023
+Subscriber::recv_data, value = 52178.55078125: temperature- 59
+Time Received: 52178.551544961 
+Latency = 0.0007637110029463656
+Subscriber::recv_data, value = 52178.5859375: altitude- 8418
+Time Received: 52178.587030005 
+Latency = 0.0010925050009973347
+Subscriber::recv_data, value = 52178.5859375: sound- 45
+Time Received: 52178.587070507 
+Latency = 0.0011330069974064827
+Subscriber::recv_data, value = 52178.5859375: light- 450
+Time Received: 52178.587098363 
+Latency = 0.001160863001132384
+Subscriber::recv_data, value = 52178.5859375: location- America
+Time Received: 52178.587126011 
+Latency = 0.001188510999782011
+Subscriber::recv_data, value = 52178.5859375: weather- cloudy
+Time Received: 52178.587151411 
+Latency = 0.001213910996739287
+Subscriber::recv_data, value = 52178.5859375: humidity- 42.80996774689861
+Time Received: 52178.587177239 
+Latency = 0.0012397390019032173
+Subscriber::recv_data, value = 52178.5859375: pressure- 924
+Time Received: 52178.587203781 
+Latency = 0.0012662809967878275
+Subscriber::recv_data, value = 52179.48046875: humidity- 58.36159614530474
+Time Received: 52179.482692744 
+Latency = 0.002223994000814855
+Subscriber::recv_data, value = 52179.484375: weather- icy
+Time Received: 52179.482731982 
+Latency = -0.001643017996684648
+Subscriber::recv_data, value = 52179.484375: sound- 37
+Time Received: 52179.482760498 
+Latency = -0.0016145019981195219
+Subscriber::recv_data, value = 52179.484375: altitude- 14808
+Time Received: 52179.482788068 
+Latency = -0.001586931997735519
+Subscriber::recv_data, value = 52179.484375: temperature- -97
+Time Received: 52179.482837179 
+Latency = -0.0015378210009657778
+Subscriber::recv_data, value = 52179.484375: location- Africa
+Time Received: 52179.482868213 
+Latency = -0.0015067869971971959
+Subscriber::recv_data, value = 52179.5078125: altitude- 34310
+Time Received: 52179.509726931 
+Latency = 0.0019144309990224428
+Subscriber::recv_data, value = 52179.5078125: humidity- 23.138864322707665
+Time Received: 52179.509764965 
+Latency = 0.0019524649978848174
+Subscriber::recv_data, value = 52179.5078125: location- Australia
+Time Received: 52179.50979325 
+Latency = 0.0019807499993476085
+Subscriber::recv_data, value = 52179.5078125: weather- cloudy
+Time Received: 52179.509819283 
+Latency = 0.002006782997341361
+Subscriber::recv_data, value = 52179.5078125: sound- 86
+Time Received: 52179.50984536 
+Latency = 0.002032860000326764
+Subscriber::recv_data, value = 52179.5234375: pressure- 935
+Time Received: 52179.52325224 
+Latency = -0.00018526000349083915
+Subscriber::recv_data, value = 52179.5234375: temperature- 34
+Time Received: 52179.523288597 
+Latency = -0.00014890299644321203
+Subscriber::recv_data, value = 52179.5234375: sound- 80
+Time Received: 52179.523315964 
+Latency = -0.00012153600255260244
+Subscriber::recv_data, value = 52179.5234375: location- Europe
+Time Received: 52179.523341859 
+Latency = -9.564100037096068e-05
+Subscriber::recv_data, value = 52179.5234375: humidity- 32.582715825289185
+Time Received: 52179.523371523 
+Latency = -6.597700121346861e-05
+Subscriber::recv_data, value = 52179.5234375: weather- cloudy
+Time Received: 52179.523397723 
+Latency = -3.97769981645979e-05
+Subscriber::recv_data, value = 52179.5234375: light- 800
+Time Received: 52179.523485173 
+Latency = 4.767299833474681e-05
+Subscriber::recv_data, value = 52179.5234375: altitude- 39214
+Time Received: 52179.523511965 
+Latency = 7.446500239893794e-05
+Subscriber::recv_data, value = 52179.5703125: light- 450
+Time Received: 52179.56878348 
+Latency = -0.0015290200026356615
+Subscriber::recv_data, value = 52179.5703125: pressure- 1064
+Time Received: 52179.568850269 
+Latency = -0.0014622309972764924
+Subscriber::recv_data, value = 52179.5703125: altitude- 35989
+Time Received: 52179.568878706 
+Latency = -0.001433794001059141
+Subscriber::recv_data, value = 52179.5703125: location- Australia
+Time Received: 52179.568904837 
+Latency = -0.0014076630031922832
+Subscriber::recv_data, value = 52179.5703125: weather- rainy
+Time Received: 52179.568931103 
+Latency = -0.0013813969999318942
+Subscriber::recv_data, value = 52179.5703125: sound- 92
+Time Received: 52179.568956803 
+Latency = -0.0013556970006902702
+Subscriber::recv_data, value = 52179.5703125: humidity- 51.387092565644714
+Time Received: 52179.568982202 
+Latency = -0.0013302980005391873
+Subscriber::recv_data, value = 52179.5703125: temperature- 87
+Time Received: 52179.569008416 
+Latency = -0.001304083998547867
+Subscriber::recv_data, value = 52179.5859375: altitude- 28625
+Time Received: 52179.588140105 
+Latency = 0.002202604999183677
+Subscriber::recv_data, value = 52179.58984375: sound- 51
+Time Received: 52179.588180036 
+Latency = -0.0016637139997328632
+Subscriber::recv_data, value = 52179.58984375: light- 1600
+Time Received: 52179.588208448 
+Latency = -0.0016353019964299165
+Subscriber::recv_data, value = 52179.58984375: location- Australia
+Time Received: 52179.588235254 
+Latency = -0.0016084960006992333
+Subscriber::recv_data, value = 52179.58984375: weather- rainy
+Time Received: 52179.588261074 
+Latency = -0.0015826759990886785
+Subscriber::recv_data, value = 52179.58984375: humidity- 32.831383065265356
+Time Received: 52179.588287334 
+Latency = -0.0015564159984933212
+Subscriber::recv_data, value = 52179.58984375: pressure- 1023
+Time Received: 52179.588314555 
+Latency = -0.0015291949966922402
+Subscriber::recv_data, value = 52180.484375: humidity- 78.2622170523851
+Time Received: 52180.484463387 
+Latency = 8.838700159685686e-05
+Subscriber::recv_data, value = 52180.484375: weather- foggy
+Time Received: 52180.484517925 
+Latency = 0.0001429249969078228
+Subscriber::recv_data, value = 52180.484375: sound- 46
+Time Received: 52180.484550739 
+Latency = 0.00017573899822309613
+Subscriber::recv_data, value = 52180.484375: altitude- 35228
+Time Received: 52180.484579859 
+Latency = 0.00020485900313360617
+Subscriber::recv_data, value = 52180.484375: temperature- -49
+Time Received: 52180.484609327 
+Latency = 0.00023432700254488736
+Subscriber::recv_data, value = 52180.484375: location- Europe
+Time Received: 52180.484636891 
+Latency = 0.0002618910002638586
+Subscriber::recv_data, value = 52180.51171875: altitude- 7413
+Time Received: 52180.511109317 
+Latency = -0.0006094330019550398
+Subscriber::recv_data, value = 52180.51171875: humidity- 18.986817064133447
+Time Received: 52180.511151363 
+Latency = -0.0005673869964084588
+Subscriber::recv_data, value = 52180.51171875: location- America
+Time Received: 52180.511182131 
+Latency = -0.0005366190016502514
+Subscriber::recv_data, value = 52180.51171875: weather- foggy
+Time Received: 52180.511236452 
+Latency = -0.0004822979972232133
+Subscriber::recv_data, value = 52180.51171875: sound- 95
+Time Received: 52180.511269515 
+Latency = -0.0004492349980864674
+Subscriber::recv_data, value = 52180.5234375: pressure- 1009
+Time Received: 52180.525596236 
+Latency = 0.0021587360024568625
+Subscriber::recv_data, value = 52180.5234375: temperature- -29
+Time Received: 52180.525646597 
+Latency = 0.0022090970014687628
+Subscriber::recv_data, value = 52180.5234375: sound- 81
+Time Received: 52180.525678043 
+Latency = 0.00224054299906129
+Subscriber::recv_data, value = 52180.5234375: location- Africa
+Time Received: 52180.525722355 
+Latency = 0.002284854999743402
+Subscriber::recv_data, value = 52180.5234375: humidity- 29.9048513807246
+Time Received: 52180.525763704 
+Latency = 0.0023262039976543747
+Subscriber::recv_data, value = 52180.5234375: weather- rainy
+Time Received: 52180.525805152 
+Latency = 0.0023676519995206036
+Subscriber::recv_data, value = 52180.5234375: light- 800
+Time Received: 52180.525841823 
+Latency = 0.0024043230005190708
+Subscriber::recv_data, value = 52180.5234375: altitude- 32836
+Time Received: 52180.526045567 
+Latency = 0.0026080669995280914
+Subscriber::recv_data, value = 52180.5703125: light- 1600
+Time Received: 52180.571073008 
+Latency = 0.0007605080027133226
+Subscriber::recv_data, value = 52180.5703125: pressure- 894
+Time Received: 52180.571131401 
+Latency = 0.0008189009968191385
+Subscriber::recv_data, value = 52180.5703125: altitude- 2093
+Time Received: 52180.571173257 
+Latency = 0.0008607569980085827
+Subscriber::recv_data, value = 52180.5703125: location- Europe
+Time Received: 52180.571217605 
+Latency = 0.0009051050001289696
+Subscriber::recv_data, value = 52180.5703125: weather- rainy
+Time Received: 52180.571259603 
+Latency = 0.0009471029989072122
+Subscriber::recv_data, value = 52180.5703125: sound- 68
+Time Received: 52180.571313613 
+Latency = 0.0010011129998019896
+Subscriber::recv_data, value = 52180.5703125: humidity- 98.25314650481886
+Time Received: 52180.571354681 
+Latency = 0.0010421810002299026
+Subscriber::recv_data, value = 52180.5703125: temperature- -31
+Time Received: 52180.571432577 
+Latency = 0.0011200770022696815
+Subscriber::recv_data, value = 52180.58984375: altitude- 15966
+Time Received: 52180.58973054 
+Latency = -0.0001132100005634129
+Subscriber::recv_data, value = 52180.58984375: sound- 71
+Time Received: 52180.589774543 
+Latency = -6.920700252521783e-05
+Subscriber::recv_data, value = 52180.58984375: light- 800
+Time Received: 52180.589824945 
+Latency = -1.880500349216163e-05
+Subscriber::recv_data, value = 52180.58984375: location- Asia
+Time Received: 52180.589986601 
+Latency = 0.00014285100041888654
+Subscriber::recv_data, value = 52180.58984375: weather- foggy
+Time Received: 52180.590027323 
+Latency = 0.00018357299995841458
+Subscriber::recv_data, value = 52180.58984375: humidity- 63.36272030696975
+Time Received: 52180.590884407 
+Latency = 0.0010406569999759085
+Subscriber::recv_data, value = 52180.58984375: pressure- 874
+Time Received: 52180.59095425 
+Latency = 0.0011105000012321398
+Subscriber::recv_data, value = 52181.484375: humidity- 43.094635694031695
+Time Received: 52181.486388295 
+Latency = 0.002013295001233928
+Subscriber::recv_data, value = 52181.484375: weather- cloudy
+Time Received: 52181.486546224 
+Latency = 0.0021712239977205172
+Subscriber::recv_data, value = 52181.484375: sound- 73
+Time Received: 52181.486586215 
+Latency = 0.002211215003626421
+Subscriber::recv_data, value = 52181.484375: altitude- 20913
+Time Received: 52181.4866155 
+Latency = 0.0022404999981517904
+Subscriber::recv_data, value = 52181.484375: temperature- -82
+Time Received: 52181.48664432 
+Latency = 0.0022693200007779524
+Subscriber::recv_data, value = 52181.484375: location- Europe
+Time Received: 52181.486673779 
+Latency = 0.002298778999829665
+Subscriber::recv_data, value = 52181.51171875: altitude- 31155
+Time Received: 52181.51273308 
+Latency = 0.0010143300023628399
+Subscriber::recv_data, value = 52181.51171875: humidity- 95.62577715941258
+Time Received: 52181.512786788 
+Latency = 0.0010680380000849254
+Subscriber::recv_data, value = 52181.51171875: location- Australia
+Time Received: 52181.512817408 
+Latency = 0.0010986580018652603
+Subscriber::recv_data, value = 52181.51171875: weather- icy
+Time Received: 52181.512844959 
+Latency = 0.001126208997447975
+Subscriber::recv_data, value = 52181.51171875: sound- 80
+Time Received: 52181.512872315 
+Latency = 0.0011535649973666295
+Subscriber::recv_data, value = 52181.52734375: pressure- 1047
+Time Received: 52181.527834724 
+Latency = 0.0004909740018774755
+Subscriber::recv_data, value = 52181.52734375: temperature- 38
+Time Received: 52181.52791412 
+Latency = 0.0005703700007870793
+Subscriber::recv_data, value = 52181.52734375: sound- 59
+Time Received: 52181.528092266 
+Latency = 0.0007485160022042692
+Subscriber::recv_data, value = 52181.52734375: location- Asia
+Time Received: 52181.528143575 
+Latency = 0.0007998250002856366
+Subscriber::recv_data, value = 52181.52734375: humidity- 24.474846758489086
+Time Received: 52181.528232106 
+Latency = 0.0008883560003596358
+Subscriber::recv_data, value = 52181.52734375: weather- cloudy
+Time Received: 52181.528286927 
+Latency = 0.000943177001317963
+Subscriber::recv_data, value = 52181.52734375: light- 800
+Time Received: 52181.528354731 
+Latency = 0.0010109810027643107
+Subscriber::recv_data, value = 52181.52734375: altitude- 14721
+Time Received: 52181.528396473 
+Latency = 0.0010527229969738983
+Subscriber::recv_data, value = 52181.57421875: light- 450
+Time Received: 52181.573954787 
+Latency = -0.00026396299654152244
+Subscriber::recv_data, value = 52181.57421875: pressure- 1060
+Time Received: 52181.574130627 
+Latency = -8.812300075078383e-05
+Subscriber::recv_data, value = 52181.57421875: altitude- 14897
+Time Received: 52181.574196358 
+Latency = -2.239199966425076e-05
+Subscriber::recv_data, value = 52181.57421875: location- Australia
+Time Received: 52181.574231342 
+Latency = 1.2591997801791877e-05
+Subscriber::recv_data, value = 52181.57421875: weather- foggy
+Time Received: 52181.574266231 
+Latency = 4.7481000365223736e-05
+Subscriber::recv_data, value = 52181.57421875: sound- 35
+Time Received: 52181.574301228 
+Latency = 8.247799996752292e-05
+Subscriber::recv_data, value = 52181.57421875: humidity- 92.69809610391627
+Time Received: 52181.574337409 
+Latency = 0.00011865900160046294
+Subscriber::recv_data, value = 52181.57421875: temperature- -63
+Time Received: 52181.574374182 
+Latency = 0.00015543199697276577
+Subscriber::recv_data, value = 52181.58984375: altitude- 2348
+Time Received: 52181.592101508 
+Latency = 0.0022577580020879395
+Subscriber::recv_data, value = 52181.58984375: sound- 57
+Time Received: 52181.592228658 
+Latency = 0.002384908002568409
+Subscriber::recv_data, value = 52181.58984375: light- 1100
+Time Received: 52181.592302859 
+Latency = 0.002459108996845316
+Subscriber::recv_data, value = 52181.58984375: location- America
+Time Received: 52181.592354078 
+Latency = 0.0025103279986069538
+Subscriber::recv_data, value = 52181.58984375: weather- foggy
+Time Received: 52181.592405988 
+Latency = 0.0025622379980632104
+Subscriber::recv_data, value = 52181.58984375: humidity- 36.48621980036786
+Time Received: 52181.592459707 
+Latency = 0.0026159569970332086
+Subscriber::recv_data, value = 52181.58984375: pressure- 1027
+Time Received: 52181.592512902 
+Latency = 0.002669152003363706
+Subscriber::recv_data, value = 52182.484375: humidity- 69.12389785921287
+Time Received: 52182.48633128 
+Latency = 0.0019562800007406622
+Subscriber::recv_data, value = 52182.484375: weather- sunny
+Time Received: 52182.486375333 
+Latency = 0.002000332999159582
+Subscriber::recv_data, value = 52182.484375: sound- 90
+Time Received: 52182.486407039 
+Latency = 0.0020320390030974522
+Subscriber::recv_data, value = 52182.484375: altitude- 32435
+Time Received: 52182.486435636 
+Latency = 0.0020606359976227395
+Subscriber::recv_data, value = 52182.484375: temperature- -26
+Time Received: 52182.48646437 
+Latency = 0.002089369998429902
+Subscriber::recv_data, value = 52182.484375: location- Africa
+Time Received: 52182.486490065 
+Latency = 0.002115064999088645
+Subscriber::recv_data, value = 52182.515625: altitude- 30516
+Time Received: 52182.515986095 
+Latency = 0.0003610950006986968
+Subscriber::recv_data, value = 52182.515625: humidity- 71.70259609012895
+Time Received: 52182.516016542 
+Latency = 0.00039154200203483924
+Subscriber::recv_data, value = 52182.515625: location- Africa
+Time Received: 52182.516035826 
+Latency = 0.0004108259963686578
+Subscriber::recv_data, value = 52182.515625: weather- cloudy
+Time Received: 52182.516051707 
+Latency = 0.0004267070034984499
+Subscriber::recv_data, value = 52182.515625: sound- 49
+Time Received: 52182.516067612 
+Latency = 0.000442611999460496
+Subscriber::recv_data, value = 52182.53125: pressure- 964
+Time Received: 52182.53245352 
+Latency = 0.0012035199979436584
+Subscriber::recv_data, value = 52182.53125: temperature- 45
+Time Received: 52182.532490244 
+Latency = 0.0012402439970173873
+Subscriber::recv_data, value = 52182.53125: sound- 68
+Time Received: 52182.532517644 
+Latency = 0.0012676440019276924
+Subscriber::recv_data, value = 52182.53125: location- Europe
+Time Received: 52182.53254405 
+Latency = 0.001294050001888536
+Subscriber::recv_data, value = 52182.53125: humidity- 50.614169482854166
+Time Received: 52182.532569869 
+Latency = 0.00131986899941694
+Subscriber::recv_data, value = 52182.53125: weather- rainy
+Time Received: 52182.532596885 
+Latency = 0.0013468850011122413
+Subscriber::recv_data, value = 52182.53125: light- 800
+Time Received: 52182.532622246 
+Latency = 0.0013722459989367053
+Subscriber::recv_data, value = 52182.53125: altitude- 36407
+Time Received: 52182.53264757 
+Latency = 0.0013975699985167012
+Subscriber::recv_data, value = 52182.57421875: light- 450
+Time Received: 52182.574750687 
+Latency = 0.0005319370029610582
+Subscriber::recv_data, value = 52182.57421875: pressure- 979
+Time Received: 52182.574795012 
+Latency = 0.0005762619985034689
+Subscriber::recv_data, value = 52182.57421875: altitude- 12045
+Time Received: 52182.574822092 
+Latency = 0.0006033419995219447
+Subscriber::recv_data, value = 52182.57421875: location- America
+Time Received: 52182.574849168 
+Latency = 0.0006304179987637326
+Subscriber::recv_data, value = 52182.57421875: weather- foggy
+Time Received: 52182.57487441 
+Latency = 0.0006556599983014166
+Subscriber::recv_data, value = 52182.57421875: sound- 41
+Time Received: 52182.574899579 
+Latency = 0.0006808289981563576
+Subscriber::recv_data, value = 52182.57421875: humidity- 21.717974385290567
+Time Received: 52182.574924544 
+Latency = 0.0007057940019876696
+Subscriber::recv_data, value = 52182.57421875: temperature- 1
+Time Received: 52182.574950693 
+Latency = 0.0007319430005736649
+Subscriber::recv_data, value = 52182.59375: altitude- 14556
+Time Received: 52182.593813776 
+Latency = 6.377600220730528e-05
+Subscriber::recv_data, value = 52182.59375: sound- 35
+Time Received: 52182.593860879 
+Latency = 0.00011087900202255696
+Subscriber::recv_data, value = 52182.59375: light- 1600
+Time Received: 52182.593892427 
+Latency = 0.00014242700126487762
+Subscriber::recv_data, value = 52182.59375: location- Europe
+Time Received: 52182.593919654 
+Latency = 0.0001696539984550327
+Subscriber::recv_data, value = 52182.59375: weather- sunny
+Time Received: 52182.593946647 
+Latency = 0.00019664700084831566
+Subscriber::recv_data, value = 52182.59375: humidity- 50.952470520398215
+Time Received: 52182.593973878 
+Latency = 0.00022387799981515855
+Subscriber::recv_data, value = 52182.59375: pressure- 938
+Time Received: 52182.594000968 
+Latency = 0.0002509679979993962
+Subscriber::recv_data, value = 52183.48828125: humidity- 29.143372965189144
+Time Received: 52183.488154494 
+Latency = -0.00012675600009970367
+Subscriber::recv_data, value = 52183.48828125: weather- cloudy
+Time Received: 52183.4882046 
+Latency = -7.665000157430768e-05
+Subscriber::recv_data, value = 52183.48828125: sound- 82
+Time Received: 52183.488239753 
+Latency = -4.149699816480279e-05
+Subscriber::recv_data, value = 52183.48828125: altitude- 34665
+Time Received: 52183.488269114 
+Latency = -1.2135998986195773e-05
+Subscriber::recv_data, value = 52183.48828125: temperature- 42
+Time Received: 52183.488298568 
+Latency = 1.7318001482635736e-05
+Subscriber::recv_data, value = 52183.48828125: location- Europe
+Time Received: 52183.488326331 
+Latency = 4.5080996642354876e-05
+Subscriber::recv_data, value = 52183.515625: altitude- 710
+Time Received: 52183.517896705 
+Latency = 0.002271705001476221
+Subscriber::recv_data, value = 52183.515625: humidity- 84.57386950827676
+Time Received: 52183.517986294 
+Latency = 0.0023612939985468984
+Subscriber::recv_data, value = 52183.515625: location- Europe
+Time Received: 52183.51803135 
+Latency = 0.0024063500022748485
+Subscriber::recv_data, value = 52183.515625: weather- rainy
+Time Received: 52183.51806971 
+Latency = 0.0024447100004181266
+Subscriber::recv_data, value = 52183.515625: sound- 58
+Time Received: 52183.518277102 
+Latency = 0.0026521019972278737
+Subscriber::recv_data, value = 52183.53515625: pressure- 1014
+Time Received: 52183.534751312 
+Latency = -0.000404938000428956
+Subscriber::recv_data, value = 52183.53515625: temperature- 23
+Time Received: 52183.53480951 
+Latency = -0.00034674000198720023
+Subscriber::recv_data, value = 52183.53515625: sound- 38
+Time Received: 52183.534849536 
+Latency = -0.00030671399872517213
+Subscriber::recv_data, value = 52183.53515625: location- Australia
+Time Received: 52183.534886928 
+Latency = -0.00026932200125884265
+Subscriber::recv_data, value = 52183.53515625: humidity- 50.19473225095895
+Time Received: 52183.534922128 
+Latency = -0.00023412200243910775
+Subscriber::recv_data, value = 52183.53515625: weather- sunny
+Time Received: 52183.534956745 
+Latency = -0.0001995049969991669
+Subscriber::recv_data, value = 52183.53515625: light- 1100
+Time Received: 52183.534989985 
+Latency = -0.00016626500291749835
+Subscriber::recv_data, value = 52183.53515625: altitude- 32940
+Time Received: 52183.535029236 
+Latency = -0.000127013998280745
+Subscriber::recv_data, value = 52183.57421875: light- 800
+Time Received: 52183.577369929 
+Latency = 0.0031511790002696216
+Subscriber::recv_data, value = 52183.57421875: pressure- 1003
+Time Received: 52183.577414678 
+Latency = 0.003195928002241999
+Subscriber::recv_data, value = 52183.57421875: altitude- 36889
+Time Received: 52183.577444399 
+Latency = 0.0032256490012514405
+Subscriber::recv_data, value = 52183.57421875: location- Europe
+Time Received: 52183.577471551 
+Latency = 0.0032528009978705086
+Subscriber::recv_data, value = 52183.57421875: weather- foggy
+Time Received: 52183.577498325 
+Latency = 0.0032795750012155622
+Subscriber::recv_data, value = 52183.57421875: sound- 81
+Time Received: 52183.577524796 
+Latency = 0.003306045997305773
+Subscriber::recv_data, value = 52183.57421875: humidity- 66.10298100654393
+Time Received: 52183.577550999 
+Latency = 0.003332248998049181
+Subscriber::recv_data, value = 52183.57421875: temperature- -46
+Time Received: 52183.577579838 
+Latency = 0.0033610879982006736
+Subscriber::recv_data, value = 52183.59375: altitude- 28420
+Time Received: 52183.595830477 
+Latency = 0.002080477002891712
+Subscriber::recv_data, value = 52183.59375: sound- 93
+Time Received: 52183.595900746 
+Latency = 0.0021507459969143383
+Subscriber::recv_data, value = 52183.59375: light- 450
+Time Received: 52183.595932813 
+Latency = 0.0021828129974892363
+Subscriber::recv_data, value = 52183.59375: location- Australia
+Time Received: 52183.59595979 
+Latency = 0.0022097900000517257
+Subscriber::recv_data, value = 52183.59375: weather- cloudy
+Time Received: 52183.595985741 
+Latency = 0.002235740998003166
+Subscriber::recv_data, value = 52183.59375: humidity- 15.361472151978333
+Time Received: 52183.596063861 
+Latency = 0.0023138609976740554
+Subscriber::recv_data, value = 52183.59375: pressure- 1021
+Time Received: 52183.596092359 
+Latency = 0.0023423590027960017
+Subscriber::recv_data, value = 52184.48828125: humidity- 62.822637496468985
+Time Received: 52184.4902999 
+Latency = 0.0020186499968986027
+Subscriber::recv_data, value = 52184.48828125: weather- icy
+Time Received: 52184.49034887 
+Latency = 0.0020676200001616962
+Subscriber::recv_data, value = 52184.48828125: sound- 35
+Time Received: 52184.490378528 
+Latency = 0.0020972779966541566
+Subscriber::recv_data, value = 52184.48828125: altitude- 35328
+Time Received: 52184.490407104 
+Latency = 0.002125854000041727
+Subscriber::recv_data, value = 52184.48828125: temperature- -49
+Time Received: 52184.49043609 
+Latency = 0.002154839996364899
+Subscriber::recv_data, value = 52184.48828125: location- Africa
+Time Received: 52184.49046233 
+Latency = 0.0021810800026287325
+Subscriber::recv_data, value = 52184.51953125: altitude- 1949
+Time Received: 52184.519000302 
+Latency = -0.0005309479965944774
+Subscriber::recv_data, value = 52184.51953125: humidity- 61.31899602684895
+Time Received: 52184.519081295 
+Latency = -0.0004499549977481365
+Subscriber::recv_data, value = 52184.51953125: location- Australia
+Time Received: 52184.519110936 
+Latency = -0.0004203139978926629
+Subscriber::recv_data, value = 52184.51953125: weather- foggy
+Time Received: 52184.519137805 
+Latency = -0.00039344499964499846
+Subscriber::recv_data, value = 52184.51953125: sound- 74
+Time Received: 52184.519164024 
+Latency = -0.0003672259990707971
+Subscriber::recv_data, value = 52184.53515625: pressure- 902
+Time Received: 52184.535290901 
+Latency = 0.00013465100346365944
+Subscriber::recv_data, value = 52184.53515625: temperature- -55
+Time Received: 52184.535336004 
+Latency = 0.0001797540026018396
+Subscriber::recv_data, value = 52184.53515625: sound- 45
+Time Received: 52184.535366535 
+Latency = 0.00021028499759268016
+Subscriber::recv_data, value = 52184.53515625: location- Australia
+Time Received: 52184.53539288 
+Latency = 0.00023663000320084393
+Subscriber::recv_data, value = 52184.53515625: humidity- 51.76813393487135
+Time Received: 52184.535418891 
+Latency = 0.000262640998698771
+Subscriber::recv_data, value = 52184.53515625: weather- icy
+Time Received: 52184.535444413 
+Latency = 0.00028816299891332164
+Subscriber::recv_data, value = 52184.53515625: light- 1100
+Time Received: 52184.535469669 
+Latency = 0.00031341899739345536
+Subscriber::recv_data, value = 52184.53515625: altitude- 24981
+Time Received: 52184.535494895 
+Latency = 0.0003386449971003458
+Subscriber::recv_data, value = 52184.578125: light- 1100
+Time Received: 52184.578335884 
+Latency = 0.00021088399807922542
+Subscriber::recv_data, value = 52184.578125: pressure- 936
+Time Received: 52184.578382504 
+Latency = 0.00025750399800017476
+Subscriber::recv_data, value = 52184.578125: altitude- 33439
+Time Received: 52184.578415484 
+Latency = 0.0002904840002884157
+Subscriber::recv_data, value = 52184.578125: location- America
+Time Received: 52184.57844005 
+Latency = 0.00031504999788012356
+Subscriber::recv_data, value = 52184.578125: weather- sunny
+Time Received: 52184.578464668 
+Latency = 0.0003396679967409
+Subscriber::recv_data, value = 52184.578125: sound- 47
+Time Received: 52184.578493791 
+Latency = 0.00036879099934594706
+Subscriber::recv_data, value = 52184.578125: humidity- 84.35011225595554
+Time Received: 52184.578561695 
+Latency = 0.0004366950015537441
+Subscriber::recv_data, value = 52184.578125: temperature- 43
+Time Received: 52184.578596001 
+Latency = 0.00047100100346142426
+Subscriber::recv_data, value = 52184.59765625: altitude- 28061
+Time Received: 52184.599758662 
+Latency = 0.002102411999658216
+Subscriber::recv_data, value = 52184.59765625: sound- 72
+Time Received: 52184.599794711 
+Latency = 0.0021384610008681193
+Subscriber::recv_data, value = 52184.59765625: light- 1100
+Time Received: 52184.599812314 
+Latency = 0.0021560640016105026
+Subscriber::recv_data, value = 52184.59765625: location- Europe
+Time Received: 52184.599827575 
+Latency = 0.0021713250025641173
+Subscriber::recv_data, value = 52184.59765625: weather- rainy
+Time Received: 52184.599841676 
+Latency = 0.0021854259975953028
+Subscriber::recv_data, value = 52184.59765625: humidity- 33.27543184428808
+Time Received: 52184.599856131 
+Latency = 0.0021998809970682487
+Subscriber::recv_data, value = 52184.59765625: pressure- 1080
+Time Received: 52184.599871053 
+Latency = 0.0022148029966047034
+Subscriber::recv_data, value = 52185.4921875: humidity- 42.4615366651272
+Time Received: 52185.491523455 
+Latency = -0.0006640450010308996
+Subscriber::recv_data, value = 52185.4921875: weather- icy
+Time Received: 52185.491576866 
+Latency = -0.0006106340006226674
+Subscriber::recv_data, value = 52185.4921875: sound- 70
+Time Received: 52185.491610202 
+Latency = -0.0005772980002802797
+Subscriber::recv_data, value = 52185.4921875: altitude- 24949
+Time Received: 52185.491640475 
+Latency = -0.0005470250034704804
+Subscriber::recv_data, value = 52185.4921875: temperature- 36
+Time Received: 52185.491672704 
+Latency = -0.0005147959964233451
+Subscriber::recv_data, value = 52185.4921875: location- Australia
+Time Received: 52185.491801829 
+Latency = -0.0003856710027321242
+Subscriber::recv_data, value = 52185.51953125: altitude- 25373
+Time Received: 52185.521233298 
+Latency = 0.0017020480008795857
+Subscriber::recv_data, value = 52185.51953125: humidity- 21.641359578214818
+Time Received: 52185.521273903 
+Latency = 0.0017426530030206777
+Subscriber::recv_data, value = 52185.51953125: location- Asia
+Time Received: 52185.521302687 
+Latency = 0.0017714369969326071
+Subscriber::recv_data, value = 52185.51953125: weather- sunny
+Time Received: 52185.521328569 
+Latency = 0.0017973189969779924
+Subscriber::recv_data, value = 52185.51953125: sound- 92
+Time Received: 52185.521355016 
+Latency = 0.0018237659969599918
+Subscriber::recv_data, value = 52185.5390625: pressure- 890
+Time Received: 52185.537955302 
+Latency = -0.0011071979970438406
+Subscriber::recv_data, value = 52185.5390625: temperature- 20
+Time Received: 52185.538010067 
+Latency = -0.0010524329991312698
+Subscriber::recv_data, value = 52185.5390625: sound- 94
+Time Received: 52185.538068623 
+Latency = -0.0009938770017470233
+Subscriber::recv_data, value = 52185.5390625: location- Australia
+Time Received: 52185.538102153 
+Latency = -0.0009603470025467686
+Subscriber::recv_data, value = 52185.5390625: humidity- 60.99440096589689
+Time Received: 52185.53812938 
+Latency = -0.0009331199980806559
+Subscriber::recv_data, value = 52185.5390625: weather- icy
+Time Received: 52185.538156103 
+Latency = -0.0009063969991984777
+Subscriber::recv_data, value = 52185.5390625: light- 450
+Time Received: 52185.538181486 
+Latency = -0.0008810139988781884
+Subscriber::recv_data, value = 52185.5390625: altitude- 34809
+Time Received: 52185.538207853 
+Latency = -0.000854646998050157
+Subscriber::recv_data, value = 52185.578125: light- 800
+Time Received: 52185.580366003 
+Latency = 0.002241002999653574
+Subscriber::recv_data, value = 52185.578125: pressure- 1039
+Time Received: 52185.580407003 
+Latency = 0.002282002998981625
+Subscriber::recv_data, value = 52185.578125: altitude- 18612
+Time Received: 52185.580435289 
+Latency = 0.002310288997250609
+Subscriber::recv_data, value = 52185.578125: location- Australia
+Time Received: 52185.580462756 
+Latency = 0.0023377559991786256
+Subscriber::recv_data, value = 52185.578125: weather- cloudy
+Time Received: 52185.580489024 
+Latency = 0.0023640240033273585
+Subscriber::recv_data, value = 52185.578125: sound- 76
+Time Received: 52185.58051537 
+Latency = 0.002390369998465758
+Subscriber::recv_data, value = 52185.578125: humidity- 49.06301108960381
+Time Received: 52185.580541937 
+Latency = 0.002416937000816688
+Subscriber::recv_data, value = 52185.578125: temperature- -82
+Time Received: 52185.580569187 
+Latency = 0.0024441869973088615
+Subscriber::recv_data, value = 52185.6015625: altitude- 35594
+Time Received: 52185.601277216 
+Latency = -0.00028528399707283825
+Subscriber::recv_data, value = 52185.6015625: sound- 44
+Time Received: 52185.601326982 
+Latency = -0.00023551799677079543
+Subscriber::recv_data, value = 52185.6015625: light- 1100
+Time Received: 52185.601357546 
+Latency = -0.00020495399803621694
+Subscriber::recv_data, value = 52185.6015625: location- Asia
+Time Received: 52185.60138399 
+Latency = -0.0001785100030247122
+Subscriber::recv_data, value = 52185.6015625: weather- rainy
+Time Received: 52185.601409462 
+Latency = -0.00015303800319088623
+Subscriber::recv_data, value = 52185.6015625: humidity- 16.94989400443981
+Time Received: 52185.601435654 
+Latency = -0.0001268459964194335
+Subscriber::recv_data, value = 52185.6015625: pressure- 1024
+Time Received: 52185.601461679 
+Latency = -0.00010082100197905675
+Subscriber::recv_data, value = 52186.4921875: humidity- 20.599266289398624
+Time Received: 52186.495196934 
+Latency = 0.003009434003615752
+Subscriber::recv_data, value = 52186.4921875: weather- icy
+Time Received: 52186.495279973 
+Latency = 0.003092473001743201
+Subscriber::recv_data, value = 52186.4921875: sound- 73
+Time Received: 52186.495319417 
+Latency = 0.0031319170011556707
+Subscriber::recv_data, value = 52186.4921875: altitude- 31507
+Time Received: 52186.495354737 
+Latency = 0.0031672370023443364
+Subscriber::recv_data, value = 52186.4921875: temperature- 4
+Time Received: 52186.495391386 
+Latency = 0.0032038860008469783
+Subscriber::recv_data, value = 52186.4921875: location- Asia
+Time Received: 52186.495426795 
+Latency = 0.0032392950015491806
+Subscriber::recv_data, value = 52186.5234375: altitude- 34552
+Time Received: 52186.52289768 
+Latency = -0.0005398200009949505
+Subscriber::recv_data, value = 52186.5234375: humidity- 75.65178649768957
+Time Received: 52186.522966624 
+Latency = -0.0004708760025096126
+Subscriber::recv_data, value = 52186.5234375: location- Europe
+Time Received: 52186.522997856 
+Latency = -0.0004396439981064759
+Subscriber::recv_data, value = 52186.5234375: weather- icy
+Time Received: 52186.523026561 
+Latency = -0.0004109389992663637
+Subscriber::recv_data, value = 52186.5234375: sound- 52
+Time Received: 52186.523055312 
+Latency = -0.0003821880018222146
+Subscriber::recv_data, value = 52186.54296875: pressure- 1074
+Time Received: 52186.542664639 
+Latency = -0.00030411100306082517
+Subscriber::recv_data, value = 52186.54296875: temperature- -95
+Time Received: 52186.54271114 
+Latency = -0.0002576100014266558
+Subscriber::recv_data, value = 52186.54296875: sound- 58
+Time Received: 52186.542740181 
+Latency = -0.00022856899886392057
+Subscriber::recv_data, value = 52186.54296875: location- Asia
+Time Received: 52186.542767838 
+Latency = -0.00020091199985472485
+Subscriber::recv_data, value = 52186.54296875: humidity- 96.67939433778214
+Time Received: 52186.542796064 
+Latency = -0.00017268599913222715
+Subscriber::recv_data, value = 52186.54296875: weather- cloudy
+Time Received: 52186.542821886 
+Latency = -0.0001468639966333285
+Subscriber::recv_data, value = 52186.54296875: light- 1100
+Time Received: 52186.542847535 
+Latency = -0.0001212150018545799
+Subscriber::recv_data, value = 52186.54296875: altitude- 38997
+Time Received: 52186.542873881 
+Latency = -9.486899944022298e-05
+Subscriber::recv_data, value = 52186.578125: light- 1100
+Time Received: 52186.581575158 
+Latency = 0.0034501580012147315
+Subscriber::recv_data, value = 52186.578125: pressure- 934
+Time Received: 52186.581667534 
+Latency = 0.0035425340029178187
+Subscriber::recv_data, value = 52186.578125: altitude- 13048
+Time Received: 52186.58170863 
+Latency = 0.003583630001230631
+Subscriber::recv_data, value = 52186.578125: location- Africa
+Time Received: 52186.581769789 
+Latency = 0.003644789001555182
+Subscriber::recv_data, value = 52186.578125: weather- rainy
+Time Received: 52186.581809541 
+Latency = 0.0036845409995294176
+Subscriber::recv_data, value = 52186.58203125: sound- 78
+Time Received: 52186.581848982 
+Latency = -0.00018226799875264987
+Subscriber::recv_data, value = 52186.58203125: humidity- 30.165988708275602
+Time Received: 52186.581910005 
+Latency = -0.00012124500062782317
+Subscriber::recv_data, value = 52186.58203125: temperature- -100
+Time Received: 52186.581965661 
+Latency = -6.558900349773467e-05
+Subscriber::recv_data, value = 52186.6015625: altitude- 30819
+Time Received: 52186.60213458 
+Latency = 0.0005720800036215223
+Subscriber::recv_data, value = 52186.6015625: sound- 56
+Time Received: 52186.602235221 
+Latency = 0.0006727209984092042
+Subscriber::recv_data, value = 52186.6015625: light- 450
+Time Received: 52186.602280115 
+Latency = 0.0007176150029408745
+Subscriber::recv_data, value = 52186.6015625: location- America
+Time Received: 52186.602325623 
+Latency = 0.0007631229964317754
+Subscriber::recv_data, value = 52186.6015625: weather- icy
+Time Received: 52186.602351176 
+Latency = 0.0007886759995017201
+Subscriber::recv_data, value = 52186.6015625: humidity- 86.47480180416672
+Time Received: 52186.602378721 
+Latency = 0.0008162209996953607
+Subscriber::recv_data, value = 52186.6015625: pressure- 955
+Time Received: 52186.602406833 
+Latency = 0.0008443330007139593
+Subscriber::recv_data, value = 52187.49609375: humidity- 76.60624883503614
+Time Received: 52187.495784515 
+Latency = -0.00030923500162316486
+Subscriber::recv_data, value = 52187.49609375: weather- sunny
+Time Received: 52187.495833227 
+Latency = -0.00026052299654111266
+Subscriber::recv_data, value = 52187.49609375: sound- 60
+Time Received: 52187.495865014 
+Latency = -0.0002287359966430813
+Subscriber::recv_data, value = 52187.49609375: altitude- 807
+Time Received: 52187.495995064 
+Latency = -9.868600318441167e-05
+Subscriber::recv_data, value = 52187.49609375: temperature- -42
+Time Received: 52187.49602824 
+Latency = -6.551000114995986e-05
+Subscriber::recv_data, value = 52187.49609375: location- Europe
+Time Received: 52187.496085189 
+Latency = -8.561000868212432e-06
+Subscriber::recv_data, value = 52187.5234375: altitude- 10659
+Time Received: 52187.525001304 
+Latency = 0.0015638039985788055
+Subscriber::recv_data, value = 52187.5234375: humidity- 76.9481075684912
+Time Received: 52187.525046173 
+Latency = 0.0016086730029201135
+Subscriber::recv_data, value = 52187.5234375: location- Asia
+Time Received: 52187.525076015 
+Latency = 0.001638515001104679
+Subscriber::recv_data, value = 52187.5234375: weather- cloudy
+Time Received: 52187.525103137 
+Latency = 0.0016656369989505038
+Subscriber::recv_data, value = 52187.5234375: sound- 61
+Time Received: 52187.525130642 
+Latency = 0.0016931420032051392
+Subscriber::recv_data, value = 52187.54296875: pressure- 1022
+Time Received: 52187.543713382 
+Latency = 0.0007446320014423691
+Subscriber::recv_data, value = 52187.54296875: temperature- 77
+Time Received: 52187.543773797 
+Latency = 0.0008050469987210818
+Subscriber::recv_data, value = 52187.54296875: sound- 42
+Time Received: 52187.54380763 
+Latency = 0.0008388799979002215
+Subscriber::recv_data, value = 52187.54296875: location- Europe
+Time Received: 52187.543837584 
+Latency = 0.0008688340021762997
+Subscriber::recv_data, value = 52187.54296875: humidity- 15.803458983356578
+Time Received: 52187.543865875 
+Latency = 0.0008971249990281649
+Subscriber::recv_data, value = 52187.54296875: weather- foggy
+Time Received: 52187.543956882 
+Latency = 0.000988132000202313
+Subscriber::recv_data, value = 52187.54296875: light- 450
+Time Received: 52187.543986074 
+Latency = 0.0010173240007134154
+Subscriber::recv_data, value = 52187.54296875: altitude- 26783
+Time Received: 52187.544011975 
+Latency = 0.0010432249982841313
+Subscriber::recv_data, value = 52187.58203125: light- 450
+Time Received: 52187.583060705 
+Latency = 0.0010294550011167303
+Subscriber::recv_data, value = 52187.58203125: pressure- 1068
+Time Received: 52187.583152559 
+Latency = 0.0011213089965167455
+Subscriber::recv_data, value = 52187.58203125: altitude- 3137
+Time Received: 52187.583183763 
+Latency = 0.0011525130030349828
+Subscriber::recv_data, value = 52187.58203125: location- Africa
+Time Received: 52187.583215817 
+Latency = 0.0011845670014736243
+Subscriber::recv_data, value = 52187.58203125: weather- cloudy
+Time Received: 52187.583262809 
+Latency = 0.001231558999279514
+Subscriber::recv_data, value = 52187.58203125: sound- 91
+Time Received: 52187.583292609 
+Latency = 0.0012613590006367303
+Subscriber::recv_data, value = 52187.58203125: humidity- 28.2508389298283
+Time Received: 52187.583323285 
+Latency = 0.001292034998186864
+Subscriber::recv_data, value = 52187.58203125: temperature- -14
+Time Received: 52187.583352808 
+Latency = 0.0013215579965617508
+Subscriber::recv_data, value = 52187.6015625: altitude- 20657
+Time Received: 52187.603495347 
+Latency = 0.0019328470007167198
+Subscriber::recv_data, value = 52187.6015625: sound- 31
+Time Received: 52187.603564032 
+Latency = 0.0020015319969388656
+Subscriber::recv_data, value = 52187.6015625: light- 1100
+Time Received: 52187.603599966 
+Latency = 0.002037466001638677
+Subscriber::recv_data, value = 52187.6015625: location- Australia
+Time Received: 52187.603635277 
+Latency = 0.002072777002467774
+Subscriber::recv_data, value = 52187.6015625: weather- foggy
+Time Received: 52187.603668168 
+Latency = 0.0021056679979665205
+Subscriber::recv_data, value = 52187.6015625: humidity- 76.82771396025224
+Time Received: 52187.603701285 
+Latency = 0.002138784999260679
+Subscriber::recv_data, value = 52187.6015625: pressure- 894
+Time Received: 52187.603733211 
+Latency = 0.0021707109990529716
+Subscriber::recv_data, value = 52188.49609375: humidity- 88.02639263127341
+Time Received: 52188.497770535 
+Latency = 0.0016767850029282272
+Subscriber::recv_data, value = 52188.49609375: weather- foggy
+Time Received: 52188.497811903 
+Latency = 0.0017181529983645305
+Subscriber::recv_data, value = 52188.49609375: sound- 62
+Time Received: 52188.497840269 
+Latency = 0.0017465190030634403
+Subscriber::recv_data, value = 52188.49609375: altitude- 39833
+Time Received: 52188.497866797 
+Latency = 0.0017730469990056008
+Subscriber::recv_data, value = 52188.49609375: temperature- 39
+Time Received: 52188.49789767 
+Latency = 0.001803920000384096
+Subscriber::recv_data, value = 52188.49609375: location- Africa
+Time Received: 52188.497925605 
+Latency = 0.0018318549991818145
+Subscriber::recv_data, value = 52188.5234375: altitude- 27804
+Time Received: 52188.525669293 
+Latency = 0.0022317929979180917
+Subscriber::recv_data, value = 52188.5234375: humidity- 47.754393077017916
+Time Received: 52188.525718528 
+Latency = 0.0022810279988334514
+Subscriber::recv_data, value = 52188.5234375: location- Asia
+Time Received: 52188.52574991 
+Latency = 0.0023124099971028045
+Subscriber::recv_data, value = 52188.5234375: weather- sunny
+Time Received: 52188.525776519 
+Latency = 0.0023390190035570413
+Subscriber::recv_data, value = 52188.5234375: sound- 89
+Time Received: 52188.525804299 
+Latency = 0.0023667990026297048
+Subscriber::recv_data, value = 52188.546875: pressure- 918
+Time Received: 52188.546002437 
+Latency = -0.0008725630032131448
+Subscriber::recv_data, value = 52188.546875: temperature- -38
+Time Received: 52188.546074391 
+Latency = -0.0008006089992704801
+Subscriber::recv_data, value = 52188.546875: sound- 90
+Time Received: 52188.546113345 
+Latency = -0.0007616549992235377
+Subscriber::recv_data, value = 52188.546875: location- Africa
+Time Received: 52188.546141016 
+Latency = -0.0007339840012718923
+Subscriber::recv_data, value = 52188.546875: humidity- 57.96478824236897
+Time Received: 52188.546167785 
+Latency = -0.0007072149965097196
+Subscriber::recv_data, value = 52188.546875: weather- foggy
+Time Received: 52188.54619403 
+Latency = -0.0006809699989389628
+Subscriber::recv_data, value = 52188.546875: light- 800
+Time Received: 52188.546219548 
+Latency = -0.0006554520005011
+Subscriber::recv_data, value = 52188.546875: altitude- 22996
+Time Received: 52188.546245411 
+Latency = -0.0006295889979810454
+Subscriber::recv_data, value = 52188.5859375: light- 1100
+Time Received: 52188.5849536 
+Latency = -0.0009838999976636842
+Subscriber::recv_data, value = 52188.5859375: pressure- 887
+Time Received: 52188.585035207 
+Latency = -0.0009022930025821552
+Subscriber::recv_data, value = 52188.5859375: altitude- 30146
+Time Received: 52188.585067163 
+Latency = -0.0008703369967406616
+Subscriber::recv_data, value = 52188.5859375: location- Australia
+Time Received: 52188.58509367 
+Latency = -0.0008438299992121756
+Subscriber::recv_data, value = 52188.5859375: weather- icy
+Time Received: 52188.585118901 
+Latency = -0.0008185990009224042
+Subscriber::recv_data, value = 52188.5859375: sound- 40
+Time Received: 52188.585144515 
+Latency = -0.0007929850034997799
+Subscriber::recv_data, value = 52188.5859375: humidity- 38.12434307377237
+Time Received: 52188.585170731 
+Latency = -0.0007667690006201155
+Subscriber::recv_data, value = 52188.5859375: temperature- 18
+Time Received: 52188.585196988 
+Latency = -0.0007405119977192953
+Subscriber::recv_data, value = 52188.60546875: altitude- 7787
+Time Received: 52188.605222103 
+Latency = -0.0002466470032231882
+Subscriber::recv_data, value = 52188.60546875: sound- 31
+Time Received: 52188.605271675 
+Latency = -0.00019707500177901238
+Subscriber::recv_data, value = 52188.60546875: light- 800
+Time Received: 52188.605299711 
+Latency = -0.00016903899813769385
+Subscriber::recv_data, value = 52188.60546875: location- Asia
+Time Received: 52188.605326351 
+Latency = -0.00014239900337997824
+Subscriber::recv_data, value = 52188.60546875: weather- icy
+Time Received: 52188.605351738 
+Latency = -0.00011701200128300115
+Subscriber::recv_data, value = 52188.60546875: humidity- 80.55429656693744
+Time Received: 52188.605377454 
+Latency = -9.129600221058354e-05
+Subscriber::recv_data, value = 52188.60546875: pressure- 934
+Time Received: 52188.605504654 
+Latency = 3.590399865061045e-05
+Subscriber::recv_data, value = 52189.5: humidity- 54.95076903465949
+Time Received: 52189.4988486 
+Latency = -0.0011513999997987412
+Subscriber::recv_data, value = 52189.5: weather- rainy
+Time Received: 52189.498891124 
+Latency = -0.0011088760002166964
+Subscriber::recv_data, value = 52189.5: sound- 86
+Time Received: 52189.49891951 
+Latency = -0.0010804900011862628
+Subscriber::recv_data, value = 52189.5: altitude- 26573
+Time Received: 52189.498946466 
+Latency = -0.001053533997037448
+Subscriber::recv_data, value = 52189.5: temperature- 58
+Time Received: 52189.498973391 
+Latency = -0.0010266090030199848
+Subscriber::recv_data, value = 52189.5: location- Europe
+Time Received: 52189.499022503 
+Latency = -0.0009774970021680929
+Subscriber::recv_data, value = 52189.52734375: altitude- 34047
+Time Received: 52189.528579199 
+Latency = 0.0012354490027064458
+Subscriber::recv_data, value = 52189.52734375: humidity- 26.54173235459377
+Time Received: 52189.528638598 
+Latency = 0.001294847999815829
+Subscriber::recv_data, value = 52189.52734375: location- Asia
+Time Received: 52189.528679517 
+Latency = 0.0013357670031837188
+Subscriber::recv_data, value = 52189.52734375: weather- cloudy
+Time Received: 52189.528718256 
+Latency = 0.001374505998683162
+Subscriber::recv_data, value = 52189.52734375: sound- 76
+Time Received: 52189.528758302 
+Latency = 0.0014145520035526715
+Subscriber::recv_data, value = 52189.55078125: pressure- 1011
+Time Received: 52189.549653706 
+Latency = -0.001127543997426983
+Subscriber::recv_data, value = 52189.55078125: temperature- 16
+Time Received: 52189.54969302 
+Latency = -0.001088229997549206
+Subscriber::recv_data, value = 52189.55078125: sound- 53
+Time Received: 52189.549720969 
+Latency = -0.001060280999809038
+Subscriber::recv_data, value = 52189.55078125: location- Asia
+Time Received: 52189.549766999 
+Latency = -0.001014251000015065
+Subscriber::recv_data, value = 52189.55078125: humidity- 52.01059449053239
+Time Received: 52189.549799917 
+Latency = -0.0009813330034376122
+Subscriber::recv_data, value = 52189.55078125: weather- icy
+Time Received: 52189.549826212 
+Latency = -0.0009550379982101731
+Subscriber::recv_data, value = 52189.55078125: light- 450
+Time Received: 52189.549851587 
+Latency = -0.0009296630014432594
+Subscriber::recv_data, value = 52189.55078125: altitude- 32727
+Time Received: 52189.549877747 
+Latency = -0.0009035030016093515
+Subscriber::recv_data, value = 52189.5859375: light- 800
+Time Received: 52189.586922614 
+Latency = 0.0009851139984675683
+Subscriber::recv_data, value = 52189.5859375: pressure- 997
+Time Received: 52189.58696042 
+Latency = 0.0010229199979221448
+Subscriber::recv_data, value = 52189.5859375: altitude- 30134
+Time Received: 52189.586987442 
+Latency = 0.001049942002282478
+Subscriber::recv_data, value = 52189.5859375: location- America
+Time Received: 52189.587014028 
+Latency = 0.0010765280021587387
+Subscriber::recv_data, value = 52189.5859375: weather- foggy
+Time Received: 52189.587039423 
+Latency = 0.0011019230005331337
+Subscriber::recv_data, value = 52189.5859375: sound- 79
+Time Received: 52189.587065263 
+Latency = 0.0011277629964752123
+Subscriber::recv_data, value = 52189.5859375: humidity- 17.570849754616134
+Time Received: 52189.587090826 
+Latency = 0.0011533259967109188
+Subscriber::recv_data, value = 52189.5859375: temperature- -7
+Time Received: 52189.587117493 
+Latency = 0.0011799929998232983
+Subscriber::recv_data, value = 52189.60546875: altitude- 30842
+Time Received: 52189.607039551 
+Latency = 0.0015708010032540187
+Subscriber::recv_data, value = 52189.60546875: sound- 31
+Time Received: 52189.607081053 
+Latency = 0.0016123030000017025
+Subscriber::recv_data, value = 52189.60546875: light- 800
+Time Received: 52189.607108398 
+Latency = 0.0016396479986724444
+Subscriber::recv_data, value = 52189.60546875: location- Australia
+Time Received: 52189.607134422 
+Latency = 0.0016656720035825856
+Subscriber::recv_data, value = 52189.60546875: weather- rainy
+Time Received: 52189.607161542 
+Latency = 0.0016927920005400665
+Subscriber::recv_data, value = 52189.60546875: humidity- 23.752293200094407
+Time Received: 52189.607187231 
+Latency = 0.001718480998533778
+Subscriber::recv_data, value = 52189.60546875: pressure- 943
+Time Received: 52189.607213873 
+Latency = 0.001745123001455795
+Subscriber::recv_data, value = 52190.5: humidity- 63.37458496297781
+Time Received: 52190.499731984 
+Latency = -0.0002680160032468848
+Subscriber::recv_data, value = 52190.5: weather- cloudy
+Time Received: 52190.49977002 
+Latency = -0.00022998000349616632
+Subscriber::recv_data, value = 52190.5: sound- 38
+Time Received: 52190.499798903 
+Latency = -0.00020109699835302308
+Subscriber::recv_data, value = 52190.5: altitude- 2513
+Time Received: 52190.499824397 
+Latency = -0.00017560300329932943
+Subscriber::recv_data, value = 52190.5: temperature- 94
+Time Received: 52190.499849935 
+Latency = -0.0001500650032539852
+Subscriber::recv_data, value = 52190.5: location- America
+Time Received: 52190.499874446 
+Latency = -0.00012555399734992534
+Subscriber::recv_data, value = 52190.53125: altitude- 37292
+Time Received: 52190.530067255 
+Latency = -0.0011827449998236261
+Subscriber::recv_data, value = 52190.53125: humidity- 66.25151507071784
+Time Received: 52190.530106187 
+Latency = -0.001143813002272509
+Subscriber::recv_data, value = 52190.53125: location- Australia
+Time Received: 52190.530170501 
+Latency = -0.0010794990012072958
+Subscriber::recv_data, value = 52190.53125: weather- icy
+Time Received: 52190.530196125 
+Latency = -0.001053874999342952
+Subscriber::recv_data, value = 52190.53125: sound- 86
+Time Received: 52190.530221832 
+Latency = -0.001028168000630103
+Subscriber::recv_data, value = 52190.55078125: pressure- 1066
+Time Received: 52190.551414946 
+Latency = 0.0006336959995678626
+Subscriber::recv_data, value = 52190.55078125: temperature- 72
+Time Received: 52190.551456424 
+Latency = 0.0006751740002073348
+Subscriber::recv_data, value = 52190.55078125: sound- 95
+Time Received: 52190.551483713 
+Latency = 0.0007024630031082779
+Subscriber::recv_data, value = 52190.55078125: location- America
+Time Received: 52190.551509638 
+Latency = 0.0007283879967872053
+Subscriber::recv_data, value = 52190.55078125: humidity- 26.80137907531511
+Time Received: 52190.551536574 
+Latency = 0.0007553239993285388
+Subscriber::recv_data, value = 52190.55078125: weather- sunny
+Time Received: 52190.551561504 
+Latency = 0.000780253998527769
+Subscriber::recv_data, value = 52190.55078125: light- 450
+Time Received: 52190.551586303 
+Latency = 0.0008050530013861135
+Subscriber::recv_data, value = 52190.55078125: altitude- 29696
+Time Received: 52190.551611247 
+Latency = 0.0008299969995277934
+Subscriber::recv_data, value = 52190.5859375: light- 1100
+Time Received: 52190.587416191 
+Latency = 0.0014786910032853484
+Subscriber::recv_data, value = 52190.5859375: pressure- 895
+Time Received: 52190.587460429 
+Latency = 0.0015229290002025664
+Subscriber::recv_data, value = 52190.5859375: altitude- 5594
+Time Received: 52190.58749073 
+Latency = 0.0015532300021732226
+Subscriber::recv_data, value = 52190.5859375: location- America
+Time Received: 52190.587523113 
+Latency = 0.0015856129975873046
+Subscriber::recv_data, value = 52190.5859375: weather- foggy
+Time Received: 52190.587551004 
+Latency = 0.00161350399866933
+Subscriber::recv_data, value = 52190.5859375: sound- 44
+Time Received: 52190.587577232 
+Latency = 0.0016397319996031001
+Subscriber::recv_data, value = 52190.5859375: humidity- 48.879908822841614
+Time Received: 52190.587602939 
+Latency = 0.001665438998315949
+Subscriber::recv_data, value = 52190.5859375: temperature- 60
+Time Received: 52190.587630044 
+Latency = 0.001692543999524787
+Subscriber::recv_data, value = 52190.609375: altitude- 37714
+Time Received: 52190.609631962 
+Latency = 0.000256961997365579
+Subscriber::recv_data, value = 52190.609375: sound- 72
+Time Received: 52190.609705977 
+Latency = 0.00033097700361395255
+Subscriber::recv_data, value = 52190.609375: light- 1100
+Time Received: 52190.609741528 
+Latency = 0.00036652800190495327
+Subscriber::recv_data, value = 52190.609375: location- Africa
+Time Received: 52190.609862031 
+Latency = 0.000487031000375282
+Subscriber::recv_data, value = 52190.609375: weather- rainy
+Time Received: 52190.609890083 
+Latency = 0.0005150829965714365
+Subscriber::recv_data, value = 52190.609375: humidity- 94.53132106020763
+Time Received: 52190.609917185 
+Latency = 0.0005421850000857376
+Subscriber::recv_data, value = 52190.609375: pressure- 1062
+Time Received: 52190.609944022 
+Latency = 0.0005690219986718148
+Subscriber::recv_data, value = 52191.5: humidity- 82.21533170500953
+Time Received: 52191.501498799 
+Latency = 0.0014987989998189732
+Subscriber::recv_data, value = 52191.5: weather- foggy
+Time Received: 52191.501631075 
+Latency = 0.0016310749997501262
+Subscriber::recv_data, value = 52191.5: sound- 75
+Time Received: 52191.501953314 
+Latency = 0.001953314000274986
+Subscriber::recv_data, value = 52191.5: altitude- 32622
+Time Received: 52191.502036025 
+Latency = 0.002036024998233188
+Subscriber::recv_data, value = 52191.5: temperature- 27
+Time Received: 52191.502073083 
+Latency = 0.002073083000141196
+Subscriber::recv_data, value = 52191.5: location- America
+Time Received: 52191.502099488 
+Latency = 0.0020994880032958463
+Subscriber::recv_data, value = 52191.53125: altitude- 25780
+Time Received: 52191.535058389 
+Latency = 0.0038083890030975454
+Subscriber::recv_data, value = 52191.53125: humidity- 38.6880218021673
+Time Received: 52191.535159772 
+Latency = 0.003909772000042722
+Subscriber::recv_data, value = 52191.53125: location- Australia
+Time Received: 52191.535300423 
+Latency = 0.004050422998261638
+Subscriber::recv_data, value = 52191.53125: weather- sunny
+Time Received: 52191.535428035 
+Latency = 0.004178035000222735
+Subscriber::recv_data, value = 52191.53125: sound- 82
+Time Received: 52191.53550885 
+Latency = 0.004258850000042003
+Subscriber::recv_data, value = 52191.5546875: pressure- 1042
+Time Received: 52191.55390417 
+Latency = -0.0007833299969206564
+Subscriber::recv_data, value = 52191.5546875: temperature- 81
+Time Received: 52191.553945986 
+Latency = -0.000741513998946175
+Subscriber::recv_data, value = 52191.5546875: sound- 55
+Time Received: 52191.553974117 
+Latency = -0.0007133830004022457
+Subscriber::recv_data, value = 52191.5546875: location- Africa
+Time Received: 52191.554001085 
+Latency = -0.0006864149981993251
+Subscriber::recv_data, value = 52191.5546875: humidity- 20.652080890252066
+Time Received: 52191.554027545 
+Latency = -0.0006599550033570267
+Subscriber::recv_data, value = 52191.5546875: weather- rainy
+Time Received: 52191.554053284 
+Latency = -0.0006342159977066331
+Subscriber::recv_data, value = 52191.5546875: light- 800
+Time Received: 52191.554078377 
+Latency = -0.0006091230025049299
+Subscriber::recv_data, value = 52191.5546875: altitude- 17455
+Time Received: 52191.554103694 
+Latency = -0.0005838060023961589
+Subscriber::recv_data, value = 52191.58984375: light- 1100
+Time Received: 52191.588511399 
+Latency = -0.0013323509992915206
+Subscriber::recv_data, value = 52191.58984375: pressure- 1033
+Time Received: 52191.588552784 
+Latency = -0.001290965999942273
+Subscriber::recv_data, value = 52191.58984375: altitude- 17150
+Time Received: 52191.58858117 
+Latency = -0.0012625800009118393
+Subscriber::recv_data, value = 52191.58984375: location- Asia
+Time Received: 52191.588607608 
+Latency = -0.0012361420012894087
+Subscriber::recv_data, value = 52191.58984375: weather- icy
+Time Received: 52191.588634503 
+Latency = -0.0012092469987692311
+Subscriber::recv_data, value = 52191.58984375: sound- 55
+Time Received: 52191.588660833 
+Latency = -0.0011829170034616254
+Subscriber::recv_data, value = 52191.58984375: humidity- 60.63092134678446
+Time Received: 52191.588686956 
+Latency = -0.0011567940018721856
+Subscriber::recv_data, value = 52191.58984375: temperature- 38
+Time Received: 52191.588714301 
+Latency = -0.0011294490032014437
+Subscriber::recv_data, value = 52191.609375: altitude- 7477
+Time Received: 52191.611271845 
+Latency = 0.001896845002193004
+Subscriber::recv_data, value = 52191.609375: sound- 69
+Time Received: 52191.611331095 
+Latency = 0.001956095002242364
+Subscriber::recv_data, value = 52191.609375: light- 1100
+Time Received: 52191.611359902 
+Latency = 0.0019849020027322695
+Subscriber::recv_data, value = 52191.609375: location- Europe
+Time Received: 52191.61138729 
+Latency = 0.002012290002312511
+Subscriber::recv_data, value = 52191.609375: weather- rainy
+Time Received: 52191.611412928 
+Latency = 0.0020379280031193048
+Subscriber::recv_data, value = 52191.609375: humidity- 89.84195791101986
+Time Received: 52191.611486764 
+Latency = 0.0021117639989824966
+Subscriber::recv_data, value = 52191.609375: pressure- 941
+Time Received: 52191.611536617 
+Latency = 0.002161616997909732
+Subscriber::recv_data, value = 52192.50390625: humidity- 21.473236794501787
+Time Received: 52192.503561374 
+Latency = -0.00034487600350985304
+Subscriber::recv_data, value = 52192.50390625: weather- foggy
+Time Received: 52192.503651127 
+Latency = -0.00025512299907859415
+Subscriber::recv_data, value = 52192.50390625: sound- 61
+Time Received: 52192.503682486 
+Latency = -0.00022376400011125952
+Subscriber::recv_data, value = 52192.50390625: altitude- 2331
+Time Received: 52192.503712185 
+Latency = -0.00019406500359764323
+Subscriber::recv_data, value = 52192.50390625: temperature- -79
+Time Received: 52192.503743041 
+Latency = -0.0001632089988561347
+Subscriber::recv_data, value = 52192.50390625: location- Europe
+Time Received: 52192.503774281 
+Latency = -0.00013196899817558005
+Subscriber::recv_data, value = 52192.53515625: altitude- 35406
+Time Received: 52192.534574106 
+Latency = -0.0005821439990540966
+Subscriber::recv_data, value = 52192.53515625: humidity- 60.12560977132323
+Time Received: 52192.534666637 
+Latency = -0.0004896129976259544
+Subscriber::recv_data, value = 52192.53515625: location- Australia
+Time Received: 52192.534703382 
+Latency = -0.000452868000138551
+Subscriber::recv_data, value = 52192.53515625: weather- foggy
+Time Received: 52192.534730952 
+Latency = -0.00042529799975454807
+Subscriber::recv_data, value = 52192.53515625: sound- 34
+Time Received: 52192.534759992 
+Latency = -0.0003962580012739636
+Subscriber::recv_data, value = 52192.5546875: pressure- 879
+Time Received: 52192.55599313 
+Latency = 0.0013056300012976862
+Subscriber::recv_data, value = 52192.5546875: temperature- 89
+Time Received: 52192.556065231 
+Latency = 0.0013777310014120303
+Subscriber::recv_data, value = 52192.5546875: sound- 37
+Time Received: 52192.556160619 
+Latency = 0.0014731190021848306
+Subscriber::recv_data, value = 52192.5546875: location- Europe
+Time Received: 52192.556199379 
+Latency = 0.001511879003373906
+Subscriber::recv_data, value = 52192.5546875: humidity- 55.21808512289322
+Time Received: 52192.556236406 
+Latency = 0.00154890600242652
+Subscriber::recv_data, value = 52192.5546875: weather- sunny
+Time Received: 52192.556329359 
+Latency = 0.0016418590021203272
+Subscriber::recv_data, value = 52192.5546875: light- 450
+Time Received: 52192.556371183 
+Latency = 0.0016836829963722266
+Subscriber::recv_data, value = 52192.5546875: altitude- 25019
+Time Received: 52192.556405844 
+Latency = 0.0017183439995278604
+Subscriber::recv_data, value = 52192.58984375: light- 1100
+Time Received: 52192.590442975 
+Latency = 0.0005992250007693656
+Subscriber::recv_data, value = 52192.58984375: pressure- 1058
+Time Received: 52192.590754055 
+Latency = 0.000910305003344547
+Subscriber::recv_data, value = 52192.58984375: altitude- 10472
+Time Received: 52192.590787535 
+Latency = 0.000943785002164077
+Subscriber::recv_data, value = 52192.58984375: location- Australia
+Time Received: 52192.590816759 
+Latency = 0.0009730090023367666
+Subscriber::recv_data, value = 52192.58984375: weather- icy
+Time Received: 52192.590845901 
+Latency = 0.0010021510024671443
+Subscriber::recv_data, value = 52192.58984375: sound- 76
+Time Received: 52192.590875251 
+Latency = 0.0010315010003978387
+Subscriber::recv_data, value = 52192.58984375: humidity- 24.870755827459714
+Time Received: 52192.590903984 
+Latency = 0.0010602339971228503
+Subscriber::recv_data, value = 52192.58984375: temperature- 43
+Time Received: 52192.590933412 
+Latency = 0.0010896620005951263
+Subscriber::recv_data, value = 52192.61328125: altitude- 8087
+Time Received: 52192.613082095 
+Latency = -0.00019915500161005184
+Subscriber::recv_data, value = 52192.61328125: sound- 82
+Time Received: 52192.613133242 
+Latency = -0.00014800800272496417
+Subscriber::recv_data, value = 52192.61328125: light- 1100
+Time Received: 52192.613161606 
+Latency = -0.00011964399891439825
+Subscriber::recv_data, value = 52192.61328125: location- America
+Time Received: 52192.613187802 
+Latency = -9.344799764221534e-05
+Subscriber::recv_data, value = 52192.61328125: weather- foggy
+Time Received: 52192.613218043 
+Latency = -6.32070004940033e-05
+Subscriber::recv_data, value = 52192.61328125: humidity- 41.08397968418796
+Time Received: 52192.613244471 
+Latency = -3.677899803733453e-05
+Subscriber::recv_data, value = 52192.61328125: pressure- 924
+Time Received: 52192.613271732 
+Latency = -9.518000297248363e-06
+Subscriber::recv_data, value = 52193.50390625: humidity- 15.78774374623604
+Time Received: 52193.505014949 
+Latency = 0.0011086989979958162
+Subscriber::recv_data, value = 52193.50390625: weather- sunny
+Time Received: 52193.505062343 
+Latency = 0.0011560929997358471
+Subscriber::recv_data, value = 52193.50390625: sound- 65
+Time Received: 52193.505093568 
+Latency = 0.0011873179973918013
+Subscriber::recv_data, value = 52193.50390625: altitude- 33176
+Time Received: 52193.505122884 
+Latency = 0.0012166340020485222
+Subscriber::recv_data, value = 52193.50390625: temperature- 25
+Time Received: 52193.505152786 
+Latency = 0.0012465359977795742
+Subscriber::recv_data, value = 52193.50390625: location- Australia
+Time Received: 52193.505180801 
+Latency = 0.0012745510030072182
+Subscriber::recv_data, value = 52193.53515625: altitude- 7264
+Time Received: 52193.536016101 
+Latency = 0.0008598510030424222
+Subscriber::recv_data, value = 52193.53515625: humidity- 41.366905573944024
+Time Received: 52193.536054776 
+Latency = 0.0008985259992186911
+Subscriber::recv_data, value = 52193.53515625: location- Africa
+Time Received: 52193.53608357 
+Latency = 0.0009273199975723401
+Subscriber::recv_data, value = 52193.53515625: weather- cloudy
+Time Received: 52193.536110175 
+Latency = 0.0009539250022498891
+Subscriber::recv_data, value = 52193.53515625: sound- 48
+Time Received: 52193.536136022 
+Latency = 0.0009797719976631925
+Subscriber::recv_data, value = 52193.55859375: pressure- 930
+Time Received: 52193.557412392 
+Latency = -0.0011813579985755496
+Subscriber::recv_data, value = 52193.55859375: temperature- -58
+Time Received: 52193.557490846 
+Latency = -0.0011029040033463389
+Subscriber::recv_data, value = 52193.55859375: sound- 81
+Time Received: 52193.557533035 
+Latency = -0.0010607150034047663
+Subscriber::recv_data, value = 52193.55859375: location- Africa
+Time Received: 52193.557592936 
+Latency = -0.0010008140015997924
+Subscriber::recv_data, value = 52193.55859375: humidity- 21.90567560149885
+Time Received: 52193.557623589 
+Latency = -0.0009701610033516772
+Subscriber::recv_data, value = 52193.55859375: weather- foggy
+Time Received: 52193.557668794 
+Latency = -0.0009249560025637038
+Subscriber::recv_data, value = 52193.55859375: light- 450
+Time Received: 52193.557704312 
+Latency = -0.0008894380007404834
+Subscriber::recv_data, value = 52193.55859375: altitude- 24245
+Time Received: 52193.557731153 
+Latency = -0.0008625970003777184
+Subscriber::recv_data, value = 52193.58984375: light- 450
+Time Received: 52193.591537047 
+Latency = 0.0016932970029301941
+Subscriber::recv_data, value = 52193.58984375: pressure- 953
+Time Received: 52193.591578286 
+Latency = 0.0017345360029139556
+Subscriber::recv_data, value = 52193.58984375: altitude- 32344
+Time Received: 52193.591596244 
+Latency = 0.001752493997628335
+Subscriber::recv_data, value = 52193.58984375: location- Asia
+Time Received: 52193.591612088 
+Latency = 0.0017683379992377013
+Subscriber::recv_data, value = 52193.58984375: weather- rainy
+Time Received: 52193.59162683 
+Latency = 0.0017830799988587387
+Subscriber::recv_data, value = 52193.58984375: sound- 58
+Time Received: 52193.59164206 
+Latency = 0.0017983099969569594
+Subscriber::recv_data, value = 52193.58984375: humidity- 35.60226204524376
+Time Received: 52193.59165729 
+Latency = 0.0018135400023311377
+Subscriber::recv_data, value = 52193.58984375: temperature- 67
+Time Received: 52193.591674414 
+Latency = 0.0018306639976799488
+Subscriber::recv_data, value = 52193.61328125: altitude- 18552
+Time Received: 52193.618739822 
+Latency = 0.005458571999042761
+Subscriber::recv_data, value = 52193.61328125: sound- 73
+Time Received: 52193.618790242 
+Latency = 0.005508991998794954
+Subscriber::recv_data, value = 52193.61328125: light- 1600
+Time Received: 52193.618817526 
+Latency = 0.0055362760031130165
+Subscriber::recv_data, value = 52193.62890625: location- America
+Time Received: 52193.628250808 
+Latency = -0.0006554420033353381
+Subscriber::recv_data, value = 52193.62890625: weather- sunny
+Time Received: 52193.628341285 
+Latency = -0.0005649649974657223
+Subscriber::recv_data, value = 52193.62890625: humidity- 13.948474201054918
+Time Received: 52193.628388479 
+Latency = -0.00051777099724859
+Subscriber::recv_data, value = 52193.62890625: pressure- 1022
+Time Received: 52193.628431142 
+Latency = -0.00047510799777228385
+Subscriber::recv_data, value = 52194.5078125: humidity- 95.15534205246468
+Time Received: 52194.507072877 
+Latency = -0.0007396229993901215
+Subscriber::recv_data, value = 52194.5078125: weather- foggy
+Time Received: 52194.507234133 
+Latency = -0.0005783669985248707
+Subscriber::recv_data, value = 52194.5078125: sound- 57
+Time Received: 52194.50738338 
+Latency = -0.0004291200020816177
+Subscriber::recv_data, value = 52194.5078125: altitude- 11081
+Time Received: 52194.507532565 
+Latency = -0.00027993499679723755
+Subscriber::recv_data, value = 52194.5078125: temperature- 55
+Time Received: 52194.507683421 
+Latency = -0.00012907900236314163
+Subscriber::recv_data, value = 52194.5078125: location- America
+Time Received: 52194.507795409 
+Latency = -1.7090998881030828e-05
+Subscriber::recv_data, value = 52194.5390625: altitude- 39812
+Time Received: 52194.538279346 
+Latency = -0.0007831539987819269
+Subscriber::recv_data, value = 52194.5390625: humidity- 55.013383020347646
+Time Received: 52194.538317025 
+Latency = -0.000745475001167506
+Subscriber::recv_data, value = 52194.5390625: location- Africa
+Time Received: 52194.538349503 
+Latency = -0.0007129970035748556
+Subscriber::recv_data, value = 52194.5390625: weather- foggy
+Time Received: 52194.538393559 
+Latency = -0.0006689410001854412
+Subscriber::recv_data, value = 52194.5390625: sound- 78
+Time Received: 52194.538451797 
+Latency = -0.0006107029985287227
+Subscriber::recv_data, value = 52194.55859375: pressure- 999
+Time Received: 52194.55965325 
+Latency = 0.0010594999985187314
+Subscriber::recv_data, value = 52194.55859375: temperature- 90
+Time Received: 52194.559691788 
+Latency = 0.0010980380029650405
+Subscriber::recv_data, value = 52194.55859375: sound- 83
+Time Received: 52194.559719546 
+Latency = 0.0011257959995418787
+Subscriber::recv_data, value = 52194.55859375: location- Europe
+Time Received: 52194.559745809 
+Latency = 0.001152058997831773
+Subscriber::recv_data, value = 52194.55859375: humidity- 51.168907794718734
+Time Received: 52194.559772285 
+Latency = 0.0011785349997808225
+Subscriber::recv_data, value = 52194.55859375: weather- foggy
+Time Received: 52194.559797796 
+Latency = 0.0012040459987474605
+Subscriber::recv_data, value = 52194.55859375: light- 1600
+Time Received: 52194.559824262 
+Latency = 0.0012305120035307482
+Subscriber::recv_data, value = 52194.55859375: altitude- 4708
+Time Received: 52194.559867838 
+Latency = 0.0012740879974444397
+Subscriber::recv_data, value = 52194.59375: light- 1100
+Time Received: 52194.595718129 
+Latency = 0.0019681289995787665
+Subscriber::recv_data, value = 52194.59375: pressure- 872
+Time Received: 52194.595772209 
+Latency = 0.00202220900246175
+Subscriber::recv_data, value = 52194.59375: altitude- 8738
+Time Received: 52194.595803304 
+Latency = 0.0020533040005830117
+Subscriber::recv_data, value = 52194.59375: location- America
+Time Received: 52194.595835319 
+Latency = 0.002085318999888841
+Subscriber::recv_data, value = 52194.59375: weather- sunny
+Time Received: 52194.595940302 
+Latency = 0.0021903020024183206
+Subscriber::recv_data, value = 52194.59375: sound- 83
+Time Received: 52194.595981493 
+Latency = 0.0022314930029097013
+Subscriber::recv_data, value = 52194.59375: humidity- 42.40122420741598
+Time Received: 52194.596018963 
+Latency = 0.002268962998641655
+Subscriber::recv_data, value = 52194.59375: temperature- 5
+Time Received: 52194.596047505 
+Latency = 0.002297505001479294
+Subscriber::recv_data, value = 52194.62890625: altitude- 122
+Time Received: 52194.629266423 
+Latency = 0.0003601729986257851
+Subscriber::recv_data, value = 52194.62890625: sound- 44
+Time Received: 52194.629308982 
+Latency = 0.00040273200283991173
+Subscriber::recv_data, value = 52194.62890625: light- 1600
+Time Received: 52194.629337687 
+Latency = 0.00043143700168002397
+Subscriber::recv_data, value = 52194.62890625: location- Australia
+Time Received: 52194.629470787 
+Latency = 0.0005645369965350255
+Subscriber::recv_data, value = 52194.62890625: weather- cloudy
+Time Received: 52194.629500347 
+Latency = 0.0005940970004303381
+Subscriber::recv_data, value = 52194.62890625: humidity- 15.903742377541773
+Time Received: 52194.629526052 
+Latency = 0.0006198019982548431
+Subscriber::recv_data, value = 52194.62890625: pressure- 1036
+Time Received: 52194.629552858 
+Latency = 0.0006466080012614839
+Subscriber::recv_data, value = 52195.5078125: humidity- 87.88032948658756
+Time Received: 52195.508154224 
+Latency = 0.00034172400046372786
+Subscriber::recv_data, value = 52195.5078125: weather- foggy
+Time Received: 52195.50819221 
+Latency = 0.00037970999983372167
+Subscriber::recv_data, value = 52195.5078125: sound- 64
+Time Received: 52195.508221424 
+Latency = 0.00040892400284064934
+Subscriber::recv_data, value = 52195.5078125: altitude- 23289
+Time Received: 52195.508247728 
+Latency = 0.00043522800115169957
+Subscriber::recv_data, value = 52195.5078125: temperature- -75
+Time Received: 52195.508274299 
+Latency = 0.0004617989980033599
+Subscriber::recv_data, value = 52195.5078125: location- Australia
+Time Received: 52195.508453771 
+Latency = 0.000641270999039989
+Subscriber::recv_data, value = 52195.54296875: altitude- 15281
+Time Received: 52195.542510924 
+Latency = -0.0004578259977279231
+Subscriber::recv_data, value = 52195.54296875: humidity- 19.57953263883965
+Time Received: 52195.542562849 
+Latency = -0.00040590100252302364
+Subscriber::recv_data, value = 52195.54296875: location- Australia
+Time Received: 52195.542620259 
+Latency = -0.00034849099756684154
+Subscriber::recv_data, value = 52195.54296875: weather- icy
+Time Received: 52195.542676264 
+Latency = -0.0002924860018538311
+Subscriber::recv_data, value = 52195.54296875: sound- 53
+Time Received: 52195.542708123 
+Latency = -0.0002606269990792498
+Subscriber::recv_data, value = 52195.5625: pressure- 1079
+Time Received: 52195.565104399 
+Latency = 0.0026043990001198836
+Subscriber::recv_data, value = 52195.5625: temperature- 1
+Time Received: 52195.565157173 
+Latency = 0.0026571729977149516
+Subscriber::recv_data, value = 52195.5625: sound- 45
+Time Received: 52195.565185929 
+Latency = 0.0026859290010179393
+Subscriber::recv_data, value = 52195.56640625: location- Africa
+Time Received: 52195.56521275 
+Latency = -0.001193500000226777
+Subscriber::recv_data, value = 52195.56640625: humidity- 63.17759665509515
+Time Received: 52195.565239532 
+Latency = -0.0011667180006043054
+Subscriber::recv_data, value = 52195.56640625: weather- cloudy
+Time Received: 52195.565266804 
+Latency = -0.0011394460016163066
+Subscriber::recv_data, value = 52195.56640625: light- 1100
+Time Received: 52195.565292473 
+Latency = -0.001113776997954119
+Subscriber::recv_data, value = 52195.56640625: altitude- 26309
+Time Received: 52195.565319155 
+Latency = -0.0010870949990930967
+Subscriber::recv_data, value = 52195.59765625: light- 1600
+Time Received: 52195.596211099 
+Latency = -0.0014451509996433742
+Subscriber::recv_data, value = 52195.59765625: pressure- 965
+Time Received: 52195.596285418 
+Latency = -0.0013708319966099225
+Subscriber::recv_data, value = 52195.59765625: altitude- 17210
+Time Received: 52195.596325508 
+Latency = -0.0013307420013006777
+Subscriber::recv_data, value = 52195.59765625: location- Europe
+Time Received: 52195.596362743 
+Latency = -0.0012935069971717894
+Subscriber::recv_data, value = 52195.59765625: weather- foggy
+Time Received: 52195.596389624 
+Latency = -0.0012666260008700192
+Subscriber::recv_data, value = 52195.59765625: sound- 52
+Time Received: 52195.596416786 
+Latency = -0.0012394639998092316
+Subscriber::recv_data, value = 52195.59765625: humidity- 26.612909973530243
+Time Received: 52195.59644404 
+Latency = -0.0012122100015403703
+Subscriber::recv_data, value = 52195.59765625: temperature- -13
+Time Received: 52195.596472583 
+Latency = -0.0011836670018965378
+Subscriber::recv_data, value = 52195.62890625: altitude- 17430
+Time Received: 52195.630254615 
+Latency = 0.0013483649963745847
+Subscriber::recv_data, value = 52195.62890625: sound- 93
+Time Received: 52195.630299132 
+Latency = 0.0013928819971624762
+Subscriber::recv_data, value = 52195.62890625: light- 1100
+Time Received: 52195.630535718 
+Latency = 0.0016294680026476271
+Subscriber::recv_data, value = 52195.62890625: location- Europe
+Time Received: 52195.630571067 
+Latency = 0.0016648169985273853
+Subscriber::recv_data, value = 52195.62890625: weather- cloudy
+Time Received: 52195.63062985 
+Latency = 0.0017235999985132366
+Subscriber::recv_data, value = 52195.62890625: humidity- 72.20516790489847
+Time Received: 52195.630665741 
+Latency = 0.0017594910023035482
+Subscriber::recv_data, value = 52195.62890625: pressure- 1073
+Time Received: 52195.630758784 
+Latency = 0.0018525339983170852
+Subscriber::recv_data, value = 52196.51953125: humidity- 40.72264579589826
+Time Received: 52196.519979898 
+Latency = 0.0004486480029299855
+Subscriber::recv_data, value = 52196.51953125: weather- cloudy
+Time Received: 52196.520017925 
+Latency = 0.00048667500232113525
+Subscriber::recv_data, value = 52196.51953125: sound- 41
+Time Received: 52196.520046064 
+Latency = 0.0005148139971424825
+Subscriber::recv_data, value = 52196.51953125: altitude- 27504
+Time Received: 52196.520073164 
+Latency = 0.0005419139997684397
+Subscriber::recv_data, value = 52196.51953125: temperature- -18
+Time Received: 52196.520099349 
+Latency = 0.00056809899979271
+Subscriber::recv_data, value = 52196.51953125: location- Europe
+Time Received: 52196.520126022 
+Latency = 0.0005947719982941635
+Subscriber::recv_data, value = 52196.55078125: altitude- 33496
+Time Received: 52196.549433047 
+Latency = -0.001348202997178305
+Subscriber::recv_data, value = 52196.55078125: humidity- 94.2753554862525
+Time Received: 52196.549464004 
+Latency = -0.0013172460021451116
+Subscriber::recv_data, value = 52196.55078125: location- Europe
+Time Received: 52196.549482953 
+Latency = -0.0012982970001758076
+Subscriber::recv_data, value = 52196.55078125: weather- foggy
+Time Received: 52196.549498367 
+Latency = -0.0012828830003854819
+Subscriber::recv_data, value = 52196.55078125: sound- 42
+Time Received: 52196.549513459 
+Latency = -0.0012677909980993718
+Subscriber::recv_data, value = 52196.56640625: pressure- 907
+Time Received: 52196.56703597 
+Latency = 0.0006297200015978888
+Subscriber::recv_data, value = 52196.56640625: temperature- 60
+Time Received: 52196.567068787 
+Latency = 0.0006625370006076992
+Subscriber::recv_data, value = 52196.56640625: sound- 61
+Time Received: 52196.567088546 
+Latency = 0.0006822959985584021
+Subscriber::recv_data, value = 52196.56640625: location- Asia
+Time Received: 52196.567104831 
+Latency = 0.0006985810032347217
+Subscriber::recv_data, value = 52196.56640625: humidity- 11.722047868389303
+Time Received: 52196.567120976 
+Latency = 0.0007147259966586716
+Subscriber::recv_data, value = 52196.56640625: weather- rainy
+Time Received: 52196.56713607 
+Latency = 0.0007298199998331256
+Subscriber::recv_data, value = 52196.56640625: light- 1600
+Time Received: 52196.5671504 
+Latency = 0.0007441499983542599
+Subscriber::recv_data, value = 52196.56640625: altitude- 12939
+Time Received: 52196.567164815 
+Latency = 0.0007585650018882006
+Subscriber::recv_data, value = 52196.59765625: light- 1100
+Time Received: 52196.598202754 
+Latency = 0.0005465040012495592
+Subscriber::recv_data, value = 52196.59765625: pressure- 1062
+Time Received: 52196.598260264 
+Latency = 0.000604013999691233
+Subscriber::recv_data, value = 52196.59765625: altitude- 9019
+Time Received: 52196.598294949 
+Latency = 0.0006386989989550784
+Subscriber::recv_data, value = 52196.59765625: location- America
+Time Received: 52196.598321161 
+Latency = 0.0006649110000580549
+Subscriber::recv_data, value = 52196.59765625: weather- icy
+Time Received: 52196.598346386 
+Latency = 0.0006901360029587522
+Subscriber::recv_data, value = 52196.59765625: sound- 92
+Time Received: 52196.598371731 
+Latency = 0.0007154810009524226
+Subscriber::recv_data, value = 52196.59765625: humidity- 87.83079399719084
+Time Received: 52196.598418124 
+Latency = 0.000761873998271767
+Subscriber::recv_data, value = 52196.59765625: temperature- -47
+Time Received: 52196.598472296 
+Latency = 0.0008160459983628243
+Subscriber::recv_data, value = 52196.6328125: altitude- 4883
+Time Received: 52196.632311603 
+Latency = -0.0005008969965274446
+Subscriber::recv_data, value = 52196.6328125: sound- 53
+Time Received: 52196.632352743 
+Latency = -0.0004597570004989393
+Subscriber::recv_data, value = 52196.6328125: light- 800
+Time Received: 52196.632380376 
+Latency = -0.00043212399759795517
+Subscriber::recv_data, value = 52196.6328125: location- Africa
+Time Received: 52196.632406554 
+Latency = -0.00040594599704490975
+Subscriber::recv_data, value = 52196.6328125: weather- rainy
+Time Received: 52196.632432162 
+Latency = -0.00038033800228731707
+Subscriber::recv_data, value = 52196.6328125: humidity- 65.8963127783768
+Time Received: 52196.632457831 
+Latency = -0.00035466899862512946
+Subscriber::recv_data, value = 52196.6328125: pressure- 924
+Time Received: 52196.63248331 
+Latency = -0.00032918999932007864
+Subscriber::recv_data, value = 52197.5234375: humidity- 60.39013013407662
+Time Received: 52197.522621259 
+Latency = -0.000816241001302842
+Subscriber::recv_data, value = 52197.5234375: weather- cloudy
+Time Received: 52197.522663512 
+Latency = -0.0007739880020380951
+Subscriber::recv_data, value = 52197.5234375: sound- 32
+Time Received: 52197.522691419 
+Latency = -0.0007460810011252761
+Subscriber::recv_data, value = 52197.5234375: altitude- 15866
+Time Received: 52197.522717278 
+Latency = -0.0007202220003819093
+Subscriber::recv_data, value = 52197.5234375: temperature- -40
+Time Received: 52197.522744088 
+Latency = -0.0006934120028745383
+Subscriber::recv_data, value = 52197.5234375: location- Asia
+Time Received: 52197.522769309 
+Latency = -0.0006681910017505288
+Subscriber::recv_data, value = 52197.55078125: altitude- 16770
+Time Received: 52197.552208974 
+Latency = 0.0014277239970397204
+Subscriber::recv_data, value = 52197.55078125: humidity- 93.16686416250381
+Time Received: 52197.552255463 
+Latency = 0.001474213000619784
+Subscriber::recv_data, value = 52197.55078125: location- Europe
+Time Received: 52197.552286483 
+Latency = 0.0015052329981699586
+Subscriber::recv_data, value = 52197.55078125: weather- rainy
+Time Received: 52197.552312709 
+Latency = 0.0015314589982153848
+Subscriber::recv_data, value = 52197.55078125: sound- 81
+Time Received: 52197.552338611 
+Latency = 0.0015573609998682514
+Subscriber::recv_data, value = 52197.5703125: pressure- 989
+Time Received: 52197.569431438 
+Latency = -0.0008810619983705692
+Subscriber::recv_data, value = 52197.5703125: temperature- -83
+Time Received: 52197.569469387 
+Latency = -0.0008431129972450435
+Subscriber::recv_data, value = 52197.5703125: sound- 71
+Time Received: 52197.569496697 
+Latency = -0.0008158030032063834
+Subscriber::recv_data, value = 52197.5703125: location- Asia
+Time Received: 52197.569522402 
+Latency = -0.0007900979981059209
+Subscriber::recv_data, value = 52197.5703125: humidity- 28.374324991466565
+Time Received: 52197.569547775 
+Latency = -0.0007647250022273511
+Subscriber::recv_data, value = 52197.5703125: weather- rainy
+Time Received: 52197.569572853 
+Latency = -0.0007396470027742907
+Subscriber::recv_data, value = 52197.5703125: light- 1100
+Time Received: 52197.56959788 
+Latency = -0.0007146200005081482
+Subscriber::recv_data, value = 52197.5703125: altitude- 33454
+Time Received: 52197.569622595 
+Latency = -0.0006899049985804595
+Subscriber::recv_data, value = 52197.609375: light- 800
+Time Received: 52197.609786932 
+Latency = 0.0004119320001336746
+Subscriber::recv_data, value = 52197.609375: pressure- 954
+Time Received: 52197.609825875 
+Latency = 0.00045087499893270433
+Subscriber::recv_data, value = 52197.609375: altitude- 23476
+Time Received: 52197.609853521 
+Latency = 0.0004785209966939874
+Subscriber::recv_data, value = 52197.609375: location- Africa
+Time Received: 52197.609879973 
+Latency = 0.0005049730025348254
+Subscriber::recv_data, value = 52197.609375: weather- sunny
+Time Received: 52197.609904992 
+Latency = 0.0005299920012475923
+Subscriber::recv_data, value = 52197.609375: sound- 38
+Time Received: 52197.609930342 
+Latency = 0.0005553419978241436
+Subscriber::recv_data, value = 52197.609375: humidity- 16.188607408806575
+Time Received: 52197.609955717 
+Latency = 0.0005807170018670149
+Subscriber::recv_data, value = 52197.609375: temperature- 51
+Time Received: 52197.609997522 
+Latency = 0.0006225219985935837
+Subscriber::recv_data, value = 52197.63671875: altitude- 31274
+Time Received: 52197.635941024 
+Latency = -0.000777726003434509
+Subscriber::recv_data, value = 52197.63671875: sound- 85
+Time Received: 52197.63598162 
+Latency = -0.0007371300016529858
+Subscriber::recv_data, value = 52197.63671875: light- 800
+Time Received: 52197.636008738 
+Latency = -0.0007100119983078912
+Subscriber::recv_data, value = 52197.63671875: location- Europe
+Time Received: 52197.636034818 
+Latency = -0.0006839319976279512
+Subscriber::recv_data, value = 52197.63671875: weather- sunny
+Time Received: 52197.636061348 
+Latency = -0.0006574020007974468
+Subscriber::recv_data, value = 52197.63671875: humidity- 55.997102687565565
+Time Received: 52197.6360865 
+Latency = -0.0006322499975794926
+Subscriber::recv_data, value = 52197.63671875: pressure- 955
+Time Received: 52197.636111609 
+Latency = -0.0006071410025469959
+Subscriber::recv_data, value = 52198.5234375: humidity- 34.01776166059239
+Time Received: 52198.523806649 
+Latency = 0.0003691489982884377
+Subscriber::recv_data, value = 52198.5234375: weather- sunny
+Time Received: 52198.523878188 
+Latency = 0.00044068800343666226
+Subscriber::recv_data, value = 52198.5234375: sound- 71
+Time Received: 52198.523922951 
+Latency = 0.00048545099707553163
+Subscriber::recv_data, value = 52198.5234375: altitude- 994
+Time Received: 52198.523950629 
+Latency = 0.0005131290017743595
+Subscriber::recv_data, value = 52198.5234375: temperature- 47
+Time Received: 52198.523977354 
+Latency = 0.0005398540015448816
+Subscriber::recv_data, value = 52198.5234375: location- Europe
+Time Received: 52198.524002968 
+Latency = 0.000565467998967506
+Subscriber::recv_data, value = 52198.5546875: altitude- 20060
+Time Received: 52198.553865963 
+Latency = -0.000821537003503181
+Subscriber::recv_data, value = 52198.5546875: humidity- 46.22174809066733
+Time Received: 52198.553895604 
+Latency = -0.0007918959963717498
+Subscriber::recv_data, value = 52198.5546875: location- Europe
+Time Received: 52198.553913737 
+Latency = -0.0007737630003248341
+Subscriber::recv_data, value = 52198.5546875: weather- sunny
+Time Received: 52198.553930516 
+Latency = -0.0007569840017822571
+Subscriber::recv_data, value = 52198.5546875: sound- 53
+Time Received: 52198.553946084 
+Latency = -0.0007414159990730695
+Subscriber::recv_data, value = 52198.5703125: pressure- 1027
+Time Received: 52198.573124421 
+Latency = 0.0028119209964643233
+Subscriber::recv_data, value = 52198.5703125: temperature- 75
+Time Received: 52198.573172485 
+Latency = 0.0028599849974852987
+Subscriber::recv_data, value = 52198.5703125: sound- 89
+Time Received: 52198.573203298 
+Latency = 0.0028907980013173074
+Subscriber::recv_data, value = 52198.5703125: location- Australia

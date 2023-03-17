@@ -126,15 +126,16 @@ class SubscriberMW():
         try:
             self.logger.debug("SubscriberMW: handle_reply")
 
-            # receive the reply
-            bytesRcvd = self.req.recv()
+            # let us first receive all the bytes
+            bytesRcvd = self.req.recv_multipart()
+            self.logger.debug ("SubscriberMW::handle_reply - received {}".format (bytesRcvd))
 
-            # use protobuf to deserialize the bytes
-            disc_resp = discovery_pb2.DiscoveryResp()
-            disc_resp.ParseFromString(bytesRcvd)
-            # depending on the message type, the remaining
-            # contents of the msg will differ
-
+            # now use protobuf to deserialize the bytes
+            # The way to do this is to first allocate the space for the
+            # message we expect, here DiscoveryResp and then parse
+            # the incoming bytes and populate this structure (via protobuf code)
+            disc_resp = discovery_pb2.DiscoveryResp ()
+            disc_resp.ParseFromString (bytesRcvd[-1])
             if (disc_resp.msg_type == discovery_pb2.TYPE_REGISTER):
                 # let the appln level object decide what to do
                 timeout = self.upcall_obj.register_response(
@@ -276,7 +277,7 @@ class SubscriberMW():
             recv_time = timeit.default_timer()
             latency = recv_time - message.timestamp
             data_point = ((recv_time - self.start_time), latency)
-            self.write_csv(self.filename, data_point)
+            # self.write_csv(self.filename, data_point)
             print("Subscriber::recv_data, value = {}: {}- {}".format(timestamp, topic, data))
             print("Time Received: {} \nLatency = {}".format(recv_time, latency))
         except Exception as e:

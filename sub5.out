@@ -1,0 +1,413 @@
+2023-03-17 15:46:11,260 - INFO - Main - acquire a child logger
+2023-03-17 15:46:11,260 - DEBUG - Main: parse command line arguments
+2023-03-17 15:46:11,291 - DEBUG - Main: resetting log level to 20
+2023-03-17 15:46:11,292 - INFO - SubscriberAppln::configure
+2023-03-17 15:46:11,293 - INFO - SubscriberAppln::configure - discovery choice: disc7
+2023-03-17 15:46:11,302 - INFO - SubscriberAppln::configure - completed
+2023-03-17 15:46:11,303 - INFO - SubscriberAppln::driver
+2023-03-17 15:46:11,303 - INFO - **********************************
+2023-03-17 15:46:11,304 - INFO - PublisherAppln::dump
+2023-03-17 15:46:11,304 - INFO - ------------------------------
+2023-03-17 15:46:11,304 - INFO -      Name: sub5
+2023-03-17 15:46:11,304 - INFO -      Lookup: Distributed
+2023-03-17 15:46:11,304 - INFO -      Dissemination: Direct
+2023-03-17 15:46:11,304 - INFO -      Num Topics: 6
+2023-03-17 15:46:11,304 - INFO -      TopicList: ['temperature', 'pressure', 'location', 'humidity', 'light', 'airquality']
+2023-03-17 15:46:11,304 - INFO - **********************************
+2023-03-17 15:46:11,304 - INFO - SubscriberAppln::invoke_operation
+2023-03-17 15:46:11,304 - INFO - SubscriberMW: register
+2023-03-17 15:46:11,304 - INFO - SubscriberMW::register - sent register message and now wait for reply
+2023-03-17 15:46:11,344 - INFO - SubscriberAppln::register_response
+2023-03-17 15:46:11,344 - INFO - SubscriberAppln::invoke_operation
+2023-03-17 15:46:11,344 - INFO - SubscriberMW::is_ready - sent isready message and now wait for reply
+2023-03-17 15:46:11,458 - INFO - SubscriberAppln::is_ready_response
+2023-03-17 15:46:21,468 - INFO - SubscriberAppln::invoke_operation
+2023-03-17 15:46:21,468 - INFO - SubscriberMW::is_ready - sent isready message and now wait for reply
+2023-03-17 15:46:21,615 - INFO - SubscriberAppln::is_ready_response
+2023-03-17 15:46:21,615 - INFO - SubscriberAppln::invoke_operation
+2023-03-17 15:46:21,615 - INFO - SubscriberMW::lookup
+2023-03-17 15:46:21,615 - INFO - SubscriberMW::lookup - done building lookup request to discovery service
+2023-03-17 15:46:21,615 - INFO - SubscriberMW::lookup - sent lookup message and now wait for reply
+2023-03-17 15:46:21,633 - INFO - SubscriberAppln::lookup_response
+Subscriber::recv_data, value = 52171.53125: airquality- smog
+Time Received: 52171.532233101 
+Latency = 0.0009831010029301979
+Subscriber::recv_data, value = 52171.53125: light- 1600
+Time Received: 52171.532354242 
+Latency = 0.001104242001019884
+Subscriber::recv_data, value = 52171.53125: pressure- 908
+Time Received: 52171.532395 
+Latency = 0.001145000001997687
+Subscriber::recv_data, value = 52171.53125: location- Australia
+Time Received: 52171.533005561 
+Latency = 0.0017555610029376112
+Subscriber::recv_data, value = 52171.53125: humidity- 29.927865347965955
+Time Received: 52171.533048891 
+Latency = 0.0017988909967243671
+Subscriber::recv_data, value = 52171.53125: temperature- 87
+Time Received: 52171.533090572 
+Latency = 0.001840571996581275
+Subscriber::recv_data, value = 52172.53515625: airquality- smog
+Time Received: 52172.535060391 
+Latency = -9.585900261299685e-05
+Subscriber::recv_data, value = 52172.53515625: light- 1100
+Time Received: 52172.535137809 
+Latency = -1.8441001884639263e-05
+Subscriber::recv_data, value = 52172.53515625: pressure- 874
+Time Received: 52172.535178574 
+Latency = 2.2323998564388603e-05
+Subscriber::recv_data, value = 52172.53515625: location- Asia
+Time Received: 52172.535217582 
+Latency = 6.133200076874346e-05
+Subscriber::recv_data, value = 52172.53515625: humidity- 78.20111096471355
+Time Received: 52172.535505982 
+Latency = 0.0003497319994494319
+Subscriber::recv_data, value = 52172.53515625: temperature- -21
+Time Received: 52172.535551323 
+Latency = 0.0003950730024371296
+Subscriber::recv_data, value = 52173.53515625: airquality- good
+Time Received: 52173.536931508 
+Latency = 0.0017752580024534836
+Subscriber::recv_data, value = 52173.53515625: light- 450
+Time Received: 52173.537025598 
+Latency = 0.001869348001491744
+Subscriber::recv_data, value = 52173.53515625: pressure- 899
+Time Received: 52173.537066567 
+Latency = 0.0019103169979644008
+Subscriber::recv_data, value = 52173.53515625: location- Europe
+Time Received: 52173.537100159 
+Latency = 0.0019439090028754435
+Subscriber::recv_data, value = 52173.53515625: humidity- 58.709364284852384
+Time Received: 52173.537348829 
+Latency = 0.002192578998801764
+Subscriber::recv_data, value = 52173.53515625: temperature- 99
+Time Received: 52173.537414166 
+Latency = 0.0022579159995075315
+Subscriber::recv_data, value = 52174.5390625: airquality- good
+Time Received: 52174.538761277 
+Latency = -0.000301223000860773
+Subscriber::recv_data, value = 52174.5390625: light- 450
+Time Received: 52174.538801883 
+Latency = -0.0002606170019134879
+Subscriber::recv_data, value = 52174.5390625: pressure- 921
+Time Received: 52174.539166946 
+Latency = 0.00010444600047776476
+Subscriber::recv_data, value = 52174.5390625: location- Africa
+Time Received: 52174.539197456 
+Latency = 0.00013495599705493078
+Subscriber::recv_data, value = 52174.5390625: humidity- 94.93137823462466
+Time Received: 52174.53943624 
+Latency = 0.0003737399965757504
+Subscriber::recv_data, value = 52174.5390625: temperature- -21
+Time Received: 52174.539471685 
+Latency = 0.0004091849987162277
+Subscriber::recv_data, value = 52175.5390625: airquality- good
+Time Received: 52175.540536538 
+Latency = 0.0014740379992872477
+Subscriber::recv_data, value = 52175.5390625: light- 1600
+Time Received: 52175.540577126 
+Latency = 0.0015146259975153953
+Subscriber::recv_data, value = 52175.5390625: pressure- 914
+Time Received: 52175.5406046 
+Latency = 0.0015420999989146367
+Subscriber::recv_data, value = 52175.5390625: location- Australia
+Time Received: 52175.541096777 
+Latency = 0.0020342770003480837
+Subscriber::recv_data, value = 52175.5390625: humidity- 14.577347014990591
+Time Received: 52175.541132008 
+Latency = 0.0020695080020232126
+Subscriber::recv_data, value = 52175.5390625: temperature- 12
+Time Received: 52175.541227439 
+Latency = 0.002164938996429555
+Subscriber::recv_data, value = 52176.54296875: airquality- good
+Time Received: 52176.542349989 
+Latency = -0.0006187609978951514
+Subscriber::recv_data, value = 52176.54296875: light- 450
+Time Received: 52176.542452693 
+Latency = -0.0005160569999134168
+Subscriber::recv_data, value = 52176.54296875: pressure- 907
+Time Received: 52176.542493925 
+Latency = -0.0004748249994008802
+Subscriber::recv_data, value = 52176.54296875: location- Australia
+Time Received: 52176.542529137 
+Latency = -0.0004396130025270395
+Subscriber::recv_data, value = 52176.54296875: humidity- 96.4699476319225
+Time Received: 52176.542696057 
+Latency = -0.00027269300335319713
+Subscriber::recv_data, value = 52176.54296875: temperature- 55
+Time Received: 52176.542734847 
+Latency = -0.00023390300339087844
+Subscriber::recv_data, value = 52177.55078125: airquality- smog
+Time Received: 52177.549691978 
+Latency = -0.0010892720019910485
+Subscriber::recv_data, value = 52177.55078125: light- 1100
+Time Received: 52177.549736414 
+Latency = -0.001044835997163318
+Subscriber::recv_data, value = 52177.55078125: pressure- 1066
+Time Received: 52177.549779345 
+Latency = -0.0010019050023402087
+Subscriber::recv_data, value = 52177.55078125: location- Asia
+Time Received: 52177.549881417 
+Latency = -0.0008998330013127998
+Subscriber::recv_data, value = 52177.55078125: humidity- 28.414097171177875
+Time Received: 52177.549967571 
+Latency = -0.0008136789983836934
+Subscriber::recv_data, value = 52177.55078125: temperature- -91
+Time Received: 52177.550004951 
+Latency = -0.0007762989989714697
+Subscriber::recv_data, value = 52178.55078125: airquality- smog
+Time Received: 52178.551318769 
+Latency = 0.0005375190012273379
+Subscriber::recv_data, value = 52178.55078125: light- 1600
+Time Received: 52178.551537202 
+Latency = 0.0007559520017821342
+Subscriber::recv_data, value = 52178.55078125: pressure- 1082
+Time Received: 52178.551616279 
+Latency = 0.0008350290008820593
+Subscriber::recv_data, value = 52178.55078125: location- Africa
+Time Received: 52178.551694413 
+Latency = 0.0009131629994953983
+Subscriber::recv_data, value = 52178.55078125: humidity- 83.60961954501346
+Time Received: 52178.551770214 
+Latency = 0.0009889639986795373
+Subscriber::recv_data, value = 52178.55078125: temperature- 59
+Time Received: 52178.551850708 
+Latency = 0.0010694579978007823
+Subscriber::recv_data, value = 52179.5703125: airquality- smog
+Time Received: 52179.568846122 
+Latency = -0.0014663780020782724
+Subscriber::recv_data, value = 52179.5703125: light- 450
+Time Received: 52179.568888422 
+Latency = -0.0014240780001273379
+Subscriber::recv_data, value = 52179.5703125: pressure- 1064
+Time Received: 52179.568915559 
+Latency = -0.0013969409992569126
+Subscriber::recv_data, value = 52179.5703125: location- Australia
+Time Received: 52179.56894203 
+Latency = -0.0013704700031667016
+Subscriber::recv_data, value = 52179.5703125: humidity- 51.387092565644714
+Time Received: 52179.568967282 
+Latency = -0.0013452179991872981
+Subscriber::recv_data, value = 52179.5703125: temperature- 87
+Time Received: 52179.568994122 
+Latency = -0.0013183780029066838
+Subscriber::recv_data, value = 52180.5703125: airquality- poor
+Time Received: 52180.571128082 
+Latency = 0.0008155820032698102
+Subscriber::recv_data, value = 52180.5703125: light- 1600
+Time Received: 52180.571204448 
+Latency = 0.0008919480023905635
+Subscriber::recv_data, value = 52180.5703125: pressure- 894
+Time Received: 52180.571246097 
+Latency = 0.0009335970025858842
+Subscriber::recv_data, value = 52180.5703125: location- Europe
+Time Received: 52180.571282188 
+Latency = 0.0009696880006231368
+Subscriber::recv_data, value = 52180.5703125: humidity- 98.25314650481886
+Time Received: 52180.571320491 
+Latency = 0.0010079909989144653
+Subscriber::recv_data, value = 52180.5703125: temperature- -31
+Time Received: 52180.571359288 
+Latency = 0.0010467879983480088
+Subscriber::recv_data, value = 52181.5703125: airquality- good
+Time Received: 52181.573247563 
+Latency = 0.0029350629993132316
+Subscriber::recv_data, value = 52181.57421875: light- 450
+Time Received: 52181.573319837 
+Latency = -0.0008989130001282319
+Subscriber::recv_data, value = 52181.57421875: pressure- 1060
+Time Received: 52181.573351463 
+Latency = -0.0008672870026202872
+Subscriber::recv_data, value = 52181.57421875: location- Australia
+Time Received: 52181.573378343 
+Latency = -0.0008404070031247102
+Subscriber::recv_data, value = 52181.57421875: humidity- 92.69809610391627
+Time Received: 52181.573627911 
+Latency = -0.0005908390012336895
+Subscriber::recv_data, value = 52181.57421875: temperature- -63
+Time Received: 52181.573706447 
+Latency = -0.0005123029986862093
+Subscriber::recv_data, value = 52182.57421875: airquality- good
+Time Received: 52182.574684765 
+Latency = 0.00046601500071119517
+Subscriber::recv_data, value = 52182.57421875: light- 450
+Time Received: 52182.574744427 
+Latency = 0.0005256770018604584
+Subscriber::recv_data, value = 52182.57421875: pressure- 979
+Time Received: 52182.574776258 
+Latency = 0.0005575079994741827
+Subscriber::recv_data, value = 52182.57421875: location- America
+Time Received: 52182.574802115 
+Latency = 0.0005833649993292056
+Subscriber::recv_data, value = 52182.57421875: humidity- 21.717974385290567
+Time Received: 52182.574827616 
+Latency = 0.0006088660011300817
+Subscriber::recv_data, value = 52182.57421875: temperature- 1
+Time Received: 52182.574854308 
+Latency = 0.0006355579971568659
+Subscriber::recv_data, value = 52183.57421875: airquality- smog
+Time Received: 52183.577125396 
+Latency = 0.002906645997427404
+Subscriber::recv_data, value = 52183.57421875: light- 800
+Time Received: 52183.577184624 
+Latency = 0.0029658740022568963
+Subscriber::recv_data, value = 52183.57421875: pressure- 1003
+Time Received: 52183.57721538 
+Latency = 0.002996629998960998
+Subscriber::recv_data, value = 52183.57421875: location- Europe
+Time Received: 52183.577243288 
+Latency = 0.00302453799668001
+Subscriber::recv_data, value = 52183.57421875: humidity- 66.10298100654393
+Time Received: 52183.577270655 
+Latency = 0.0030519049978465773
+Subscriber::recv_data, value = 52183.57421875: temperature- -46
+Time Received: 52183.577400631 
+Latency = 0.0031818810020922683
+Subscriber::recv_data, value = 52184.578125: airquality- smog
+Time Received: 52184.57849101 
+Latency = 0.0003660099973785691
+Subscriber::recv_data, value = 52184.578125: light- 1100
+Time Received: 52184.57857054 
+Latency = 0.0004455399975995533
+Subscriber::recv_data, value = 52184.578125: pressure- 936
+Time Received: 52184.578601714 
+Latency = 0.0004767139980685897
+Subscriber::recv_data, value = 52184.578125: location- America
+Time Received: 52184.578629165 
+Latency = 0.0005041650001658127
+Subscriber::recv_data, value = 52184.578125: humidity- 84.35011225595554
+Time Received: 52184.578656116 
+Latency = 0.0005311159984557889
+Subscriber::recv_data, value = 52184.578125: temperature- 43
+Time Received: 52184.578686678 
+Latency = 0.0005616780035779811
+Subscriber::recv_data, value = 52185.578125: airquality- good
+Time Received: 52185.58010486 
+Latency = 0.001979859996936284
+Subscriber::recv_data, value = 52185.578125: light- 800
+Time Received: 52185.58014651 
+Latency = 0.0020215100012137555
+Subscriber::recv_data, value = 52185.578125: pressure- 1039
+Time Received: 52185.580174367 
+Latency = 0.00204936700174585
+Subscriber::recv_data, value = 52185.578125: location- Australia
+Time Received: 52185.580200707 
+Latency = 0.002075707001495175
+Subscriber::recv_data, value = 52185.578125: humidity- 49.06301108960381
+Time Received: 52185.580228009 
+Latency = 0.002103008999256417
+Subscriber::recv_data, value = 52185.578125: temperature- -82
+Time Received: 52185.580270003 
+Latency = 0.0021450030035339296
+Subscriber::recv_data, value = 52186.578125: airquality- good
+Time Received: 52186.581116838 
+Latency = 0.0029918380023445934
+Subscriber::recv_data, value = 52186.578125: light- 1100
+Time Received: 52186.581176594 
+Latency = 0.0030515940015902743
+Subscriber::recv_data, value = 52186.578125: pressure- 934
+Time Received: 52186.581219385 
+Latency = 0.003094384999712929
+Subscriber::recv_data, value = 52186.578125: location- Africa
+Time Received: 52186.581280117 
+Latency = 0.003155117003188934
+Subscriber::recv_data, value = 52186.58203125: humidity- 30.165988708275602
+Time Received: 52186.58132453 
+Latency = -0.0007067199985613115
+Subscriber::recv_data, value = 52186.58203125: temperature- -100
+Time Received: 52186.581365678 
+Latency = -0.0006655719989794306
+Subscriber::recv_data, value = 52187.58203125: airquality- good
+Time Received: 52187.58242247 
+Latency = 0.00039121999725466594
+Subscriber::recv_data, value = 52187.58203125: light- 450
+Time Received: 52187.582466185 
+Latency = 0.0004349349983385764
+Subscriber::recv_data, value = 52187.58203125: pressure- 1068
+Time Received: 52187.582621245 
+Latency = 0.0005899949974264018
+Subscriber::recv_data, value = 52187.58203125: location- Africa
+Time Received: 52187.582690613 
+Latency = 0.0006593630023417063
+Subscriber::recv_data, value = 52187.58203125: humidity- 28.2508389298283
+Time Received: 52187.582742316 
+Latency = 0.0007110660008038394
+Subscriber::recv_data, value = 52187.58203125: temperature- -14
+Time Received: 52187.582801641 
+Latency = 0.0007703910014242865
+Subscriber::recv_data, value = 52188.5859375: airquality- good
+Time Received: 52188.584564104 
+Latency = -0.001373396000417415
+Subscriber::recv_data, value = 52188.5859375: light- 1100
+Time Received: 52188.584598847 
+Latency = -0.0013386529972194694
+Subscriber::recv_data, value = 52188.5859375: pressure- 887
+Time Received: 52188.584617803 
+Latency = -0.0013196970030548982
+Subscriber::recv_data, value = 52188.5859375: location- Australia
+Time Received: 52188.584633769 
+Latency = -0.0013037309981882572
+Subscriber::recv_data, value = 52188.5859375: humidity- 38.12434307377237
+Time Received: 52188.584649129 
+Latency = -0.001288371000555344
+Subscriber::recv_data, value = 52188.5859375: temperature- 18
+Time Received: 52188.584667141 
+Latency = -0.0012703589964075945
+Subscriber::recv_data, value = 52189.5859375: airquality- good
+Time Received: 52189.586524519 
+Latency = 0.0005870189997949637
+Subscriber::recv_data, value = 52189.5859375: light- 800
+Time Received: 52189.586565362 
+Latency = 0.0006278619985096157
+Subscriber::recv_data, value = 52189.5859375: pressure- 997
+Time Received: 52189.586592801 
+Latency = 0.0006553010025527328
+Subscriber::recv_data, value = 52189.5859375: location- America
+Time Received: 52189.5866188 
+Latency = 0.0006812999999965541
+Subscriber::recv_data, value = 52189.5859375: humidity- 17.570849754616134
+Time Received: 52189.586644156 
+Latency = 0.0007066559992381372
+Subscriber::recv_data, value = 52189.5859375: temperature- -7
+Time Received: 52189.586671048 
+Latency = 0.00073354799678782
+Subscriber::recv_data, value = 52190.5859375: airquality- good
+Time Received: 52190.587138823 
+Latency = 0.0012013230007141829
+Subscriber::recv_data, value = 52190.5859375: light- 1100
+Time Received: 52190.58717708 
+Latency = 0.0012395800004014745
+Subscriber::recv_data, value = 52190.5859375: pressure- 895
+Time Received: 52190.587194238 
+Latency = 0.0012567380035761744
+Subscriber::recv_data, value = 52190.5859375: location- America
+Time Received: 52190.58720983 
+Latency = 0.0012723300023935735
+Subscriber::recv_data, value = 52190.5859375: humidity- 48.879908822841614
+Time Received: 52190.587224615 
+Latency = 0.0012871150029241107
+Subscriber::recv_data, value = 52190.5859375: temperature- 60
+Time Received: 52190.587240905 
+Latency = 0.0013034049989073537
+Subscriber::recv_data, value = 52191.58984375: airquality- poor
+Time Received: 52191.58851726 
+Latency = -0.0013264899971545674
+Subscriber::recv_data, value = 52191.58984375: light- 1100
+Time Received: 52191.588560978 
+Latency = -0.0012827719983761199
+Subscriber::recv_data, value = 52191.58984375: pressure- 1033
+Time Received: 52191.588589499 
+Latency = -0.0012542510012281127
+Subscriber::recv_data, value = 52191.58984375: location- Asia
+Time Received: 52191.588614909 
+Latency = -0.0012288409998291172
+Subscriber::recv_data, value = 52191.58984375: humidity- 60.63092134678446
+Time Received: 52191.588640021 
+Latency = -0.0012037289998261258
+Subscriber::recv_data, value = 52191.58984375: temperature- 38
+Time Received: 52191.58866662 
+Latency = -0.0011771299978136085
+Subscriber::recv_data, value = 52192.58984375: airquality- good
+Time Received: 52192.590303824 
+Latency = 0.00046007399942027405
+Subscriber::recv_data, value = 52192.58984375: light- 1100

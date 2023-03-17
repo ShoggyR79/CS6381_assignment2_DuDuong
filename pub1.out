@@ -1,25 +1,41 @@
-2023-03-07 20:31:05,235 - root - INFO - Main - acquire a child logger and then log messages in the child
-2023-03-07 20:31:05,235 - PublisherAppln - DEBUG - Main: parse command line arguments
-2023-03-07 20:31:05,246 - PublisherAppln - DEBUG - Main: resetting log level to 20
-2023-03-07 20:31:05,246 - PublisherAppln - INFO - PublisherAppln::configure
-2023-03-07 20:31:05,247 - PublisherAppln - INFO - PublisherAppln::configure - discovery choice: disc14
-2023-03-07 20:31:05,250 - PublisherAppln - INFO - PublisherMW::configure
-2023-03-07 20:31:05,251 - PublisherAppln - INFO - PublisherMW::configure completed
-2023-03-07 20:31:05,251 - PublisherAppln - INFO - PublisherAppln::configure - configuration complete
-2023-03-07 20:31:05,251 - PublisherAppln - INFO - PublisherAppln::driver
-2023-03-07 20:31:05,251 - PublisherAppln - INFO - **********************************
-2023-03-07 20:31:05,252 - PublisherAppln - INFO - PublisherAppln::dump
-2023-03-07 20:31:05,252 - PublisherAppln - INFO - ------------------------------
-2023-03-07 20:31:05,252 - PublisherAppln - INFO -      Name: pub1
-2023-03-07 20:31:05,253 - PublisherAppln - INFO -      Lookup: Distributed
-2023-03-07 20:31:05,253 - PublisherAppln - INFO -      Dissemination: Direct
-2023-03-07 20:31:05,253 - PublisherAppln - INFO -      Num Topics: 7
-2023-03-07 20:31:05,253 - PublisherAppln - INFO -      TopicList: ['weather', 'temperature', 'light', 'airquality', 'location', 'humidity', 'sound']
-2023-03-07 20:31:05,253 - PublisherAppln - INFO -      Iterations: 1000
-2023-03-07 20:31:05,253 - PublisherAppln - INFO -      Frequency: 1
-2023-03-07 20:31:05,253 - PublisherAppln - INFO - **********************************
-2023-03-07 20:31:05,253 - PublisherAppln - INFO - PublisherMW::event_loop - run the event loop
-2023-03-07 20:31:05,253 - PublisherAppln - INFO - PublisherAppln::invoke_operation
-2023-03-07 20:31:05,253 - PublisherAppln - INFO - PublisherAppln::invoke_operation - state = State.REGISTER
-2023-03-07 20:31:05,253 - PublisherAppln - INFO - PublisherMW::register
-2023-03-07 20:31:05,254 - PublisherAppln - INFO - PublisherMW::register - sent register message and now now wait for reply
+2023-03-17 15:46:11,085 - root - INFO - Main - acquire a child logger and then log messages in the child
+2023-03-17 15:46:11,091 - PublisherAppln - DEBUG - Main: parse command line arguments
+2023-03-17 15:46:11,118 - PublisherAppln - DEBUG - Main: resetting log level to 20
+2023-03-17 15:46:11,119 - PublisherAppln - INFO - PublisherAppln::configure
+2023-03-17 15:46:11,119 - PublisherAppln - INFO - PublisherAppln::configure - discovery choice: disc18
+2023-03-17 15:46:11,119 - PublisherAppln - INFO - PublisherMW::configure
+2023-03-17 15:46:11,120 - PublisherAppln - INFO - PublisherMW::configure completed
+2023-03-17 15:46:11,120 - PublisherAppln - INFO - PublisherAppln::configure - configuration complete
+2023-03-17 15:46:11,120 - PublisherAppln - INFO - PublisherAppln::driver
+2023-03-17 15:46:11,120 - PublisherAppln - INFO - **********************************
+2023-03-17 15:46:11,120 - PublisherAppln - INFO - PublisherAppln::dump
+2023-03-17 15:46:11,120 - PublisherAppln - INFO - ------------------------------
+2023-03-17 15:46:11,120 - PublisherAppln - INFO -      Name: pub1
+2023-03-17 15:46:11,120 - PublisherAppln - INFO -      Lookup: Distributed
+2023-03-17 15:46:11,120 - PublisherAppln - INFO -      Dissemination: Direct
+2023-03-17 15:46:11,120 - PublisherAppln - INFO -      Num Topics: 7
+2023-03-17 15:46:11,121 - PublisherAppln - INFO -      TopicList: ['airquality', 'humidity', 'weather', 'sound', 'altitude', 'temperature', 'location']
+2023-03-17 15:46:11,121 - PublisherAppln - INFO -      Iterations: 1000
+2023-03-17 15:46:11,121 - PublisherAppln - INFO -      Frequency: 1
+2023-03-17 15:46:11,121 - PublisherAppln - INFO - **********************************
+2023-03-17 15:46:11,121 - PublisherAppln - INFO - PublisherMW::event_loop - run the event loop
+2023-03-17 15:46:11,121 - PublisherAppln - INFO - PublisherAppln::invoke_operation
+2023-03-17 15:46:11,121 - PublisherAppln - INFO - PublisherAppln::invoke_operation - state = State.REGISTER
+2023-03-17 15:46:11,121 - PublisherAppln - INFO - PublisherMW::register
+2023-03-17 15:46:11,121 - PublisherAppln - INFO - PublisherMW::register - sent register message and now now wait for reply
+2023-03-17 15:46:11,212 - PublisherAppln - INFO - PublisherMW::handle_reply
+2023-03-17 15:46:11,212 - PublisherAppln - INFO - PublisherAppln::register_response
+2023-03-17 15:46:11,213 - PublisherAppln - INFO - PublisherAppln::invoke_operation
+2023-03-17 15:46:11,213 - PublisherAppln - INFO - PublisherAppln::invoke_operation - state = State.ISREADY
+2023-03-17 15:46:11,213 - PublisherAppln - INFO - PublisherMW::is_ready
+2023-03-17 15:46:11,213 - PublisherAppln - INFO - PublisherMW::is_ready - request sent and now wait for reply
+2023-03-17 15:46:11,382 - PublisherAppln - INFO - PublisherMW::handle_reply
+2023-03-17 15:46:11,383 - PublisherAppln - INFO - PublisherAppln::isready_response
+2023-03-17 15:46:21,390 - PublisherAppln - INFO - PublisherAppln::invoke_operation
+2023-03-17 15:46:21,390 - PublisherAppln - INFO - PublisherAppln::invoke_operation - state = State.ISREADY
+2023-03-17 15:46:21,390 - PublisherAppln - INFO - PublisherMW::is_ready
+2023-03-17 15:46:21,391 - PublisherAppln - INFO - PublisherMW::is_ready - request sent and now wait for reply
+2023-03-17 15:46:21,543 - PublisherAppln - INFO - PublisherMW::handle_reply
+2023-03-17 15:46:21,544 - PublisherAppln - INFO - PublisherAppln::isready_response
+2023-03-17 15:46:21,545 - PublisherAppln - INFO - PublisherAppln::invoke_operation
+2023-03-17 15:46:21,545 - PublisherAppln - INFO - PublisherAppln::invoke_operation - state = State.DISSEMINATE

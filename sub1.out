@@ -1,22 +1,608 @@
-2023-03-07 11:17:49,213 - INFO - Main - acquire a child logger
-2023-03-07 11:17:49,214 - DEBUG - Main: parse command line arguments
-2023-03-07 11:17:49,232 - DEBUG - Main: resetting log level to 20
-2023-03-07 11:17:49,233 - INFO - SubscriberAppln::configure
-2023-03-07 11:17:49,233 - INFO - SubscriberAppln::configure - discovery choice: disc2
-2023-03-07 11:17:49,234 - INFO - SubscriberAppln::configure - completed
-2023-03-07 11:17:49,235 - INFO - SubscriberAppln::driver
-2023-03-07 11:17:49,235 - INFO - **********************************
-2023-03-07 11:17:49,235 - INFO - PublisherAppln::dump
-2023-03-07 11:17:49,235 - INFO - ------------------------------
-2023-03-07 11:17:49,235 - INFO -      Name: sub1
-2023-03-07 11:17:49,235 - INFO -      Lookup: Distributed
-2023-03-07 11:17:49,236 - INFO -      Dissemination: Direct
-2023-03-07 11:17:49,236 - INFO -      Num Topics: 8
-2023-03-07 11:17:49,236 - INFO -      TopicList: ['light', 'weather', 'airquality', 'location', 'sound', 'temperature', 'pressure', 'humidity']
-2023-03-07 11:17:49,236 - INFO - **********************************
-2023-03-07 11:17:49,236 - INFO - SubscriberAppln::invoke_operation
-2023-03-07 11:17:49,236 - INFO - SubscriberMW: register
-2023-03-07 11:17:49,237 - INFO - SubscriberMW::register - sent register message and now wait for reply
-2023-03-07 11:17:49,274 - INFO - SubscriberAppln::register_response
-2023-03-07 11:17:49,274 - INFO - SubscriberAppln::invoke_operation
-2023-03-07 11:17:49,274 - INFO - SubscriberMW::is_ready - sent isready message and now wait for reply
+2023-03-17 15:46:10,949 - INFO - Main - acquire a child logger
+2023-03-17 15:46:10,950 - DEBUG - Main: parse command line arguments
+2023-03-17 15:46:10,963 - DEBUG - Main: resetting log level to 20
+2023-03-17 15:46:10,963 - INFO - SubscriberAppln::configure
+2023-03-17 15:46:10,963 - INFO - SubscriberAppln::configure - discovery choice: disc18
+2023-03-17 15:46:10,964 - INFO - SubscriberAppln::configure - completed
+2023-03-17 15:46:10,964 - INFO - SubscriberAppln::driver
+2023-03-17 15:46:10,965 - INFO - **********************************
+2023-03-17 15:46:10,965 - INFO - PublisherAppln::dump
+2023-03-17 15:46:10,965 - INFO - ------------------------------
+2023-03-17 15:46:10,965 - INFO -      Name: sub1
+2023-03-17 15:46:10,966 - INFO -      Lookup: Distributed
+2023-03-17 15:46:10,966 - INFO -      Dissemination: Direct
+2023-03-17 15:46:10,966 - INFO -      Num Topics: 6
+2023-03-17 15:46:10,966 - INFO -      TopicList: ['airquality', 'temperature', 'humidity', 'altitude', 'light', 'sound']
+2023-03-17 15:46:10,967 - INFO - **********************************
+2023-03-17 15:46:10,967 - INFO - SubscriberAppln::invoke_operation
+2023-03-17 15:46:10,967 - INFO - SubscriberMW: register
+2023-03-17 15:46:10,968 - INFO - SubscriberMW::register - sent register message and now wait for reply
+2023-03-17 15:46:10,981 - INFO - SubscriberAppln::register_response
+2023-03-17 15:46:10,981 - INFO - SubscriberAppln::invoke_operation
+2023-03-17 15:46:10,981 - INFO - SubscriberMW::is_ready - sent isready message and now wait for reply
+2023-03-17 15:46:11,352 - INFO - SubscriberAppln::is_ready_response
+2023-03-17 15:46:21,358 - INFO - SubscriberAppln::invoke_operation
+2023-03-17 15:46:21,359 - INFO - SubscriberMW::is_ready - sent isready message and now wait for reply
+2023-03-17 15:46:21,541 - INFO - SubscriberAppln::is_ready_response
+2023-03-17 15:46:21,542 - INFO - SubscriberAppln::invoke_operation
+2023-03-17 15:46:21,542 - INFO - SubscriberMW::lookup
+2023-03-17 15:46:21,542 - INFO - SubscriberMW::lookup - done building lookup request to discovery service
+2023-03-17 15:46:21,542 - INFO - SubscriberMW::lookup - sent lookup message and now wait for reply
+2023-03-17 15:46:21,599 - INFO - SubscriberAppln::lookup_response
+Subscriber::recv_data, value = 52171.453125: airquality- smog
+Time Received: 52171.455369765 
+Latency = 0.0022447649971581995
+Subscriber::recv_data, value = 52171.453125: humidity- 39.86855103867951
+Time Received: 52171.455484151 
+Latency = 0.0023591510034748353
+Subscriber::recv_data, value = 52171.453125: sound- 92
+Time Received: 52171.455525519 
+Latency = 0.0024005189989111386
+Subscriber::recv_data, value = 52171.453125: altitude- 21076
+Time Received: 52171.455570373 
+Latency = 0.002445373000227846
+Subscriber::recv_data, value = 52171.453125: temperature- -10
+Time Received: 52171.455621056 
+Latency = 0.002496055996743962
+Subscriber::recv_data, value = 52171.484375: airquality- good
+Time Received: 52171.484832044 
+Latency = 0.0004570439996314235
+Subscriber::recv_data, value = 52171.484375: altitude- 29110
+Time Received: 52171.484877943 
+Latency = 0.0005029430030845106
+Subscriber::recv_data, value = 52171.484375: humidity- 95.007641535174
+Time Received: 52171.484918407 
+Latency = 0.0005434069971670397
+Subscriber::recv_data, value = 52171.484375: sound- 78
+Time Received: 52171.48494576 
+Latency = 0.0005707599993911572
+Subscriber::recv_data, value = 52172.45703125: airquality- good
+Time Received: 52172.456809041 
+Latency = -0.00022220899700187147
+Subscriber::recv_data, value = 52172.45703125: humidity- 95.02406050152473
+Time Received: 52172.456851855 
+Latency = -0.00017939499957719818
+Subscriber::recv_data, value = 52172.45703125: sound- 65
+Time Received: 52172.456879638 
+Latency = -0.00015161200280999765
+Subscriber::recv_data, value = 52172.45703125: altitude- 4592
+Time Received: 52172.456905428 
+Latency = -0.00012582199997268617
+Subscriber::recv_data, value = 52172.45703125: temperature- -58
+Time Received: 52172.456937308 
+Latency = -9.394199878443033e-05
+Subscriber::recv_data, value = 52172.484375: airquality- poor
+Time Received: 52172.486682744 
+Latency = 0.002307743998244405
+Subscriber::recv_data, value = 52172.484375: altitude- 9641
+Time Received: 52172.486722467 
+Latency = 0.002347467001527548
+Subscriber::recv_data, value = 52172.48828125: humidity- 71.48549937870267
+Time Received: 52172.486750828 
+Latency = -0.001530421999632381
+Subscriber::recv_data, value = 52172.48828125: sound- 95
+Time Received: 52172.487236748 
+Latency = -0.0010445020016049966
+Subscriber::recv_data, value = 52173.45703125: airquality- smog
+Time Received: 52173.458028933 
+Latency = 0.0009976829969673418
+Subscriber::recv_data, value = 52173.45703125: humidity- 85.92485069803386
+Time Received: 52173.458076868 
+Latency = 0.0010456180025357753
+Subscriber::recv_data, value = 52173.45703125: sound- 86
+Time Received: 52173.458107616 
+Latency = 0.0010763660029624589
+Subscriber::recv_data, value = 52173.45703125: altitude- 8681
+Time Received: 52173.458134659 
+Latency = 0.0011034089984605089
+Subscriber::recv_data, value = 52173.45703125: temperature- 69
+Time Received: 52173.458272044 
+Latency = 0.0012407940012053587
+Subscriber::recv_data, value = 52173.48828125: airquality- smog
+Time Received: 52173.489474167 
+Latency = 0.0011929169995710254
+Subscriber::recv_data, value = 52173.48828125: altitude- 31263
+Time Received: 52173.489525632 
+Latency = 0.0012443820014595985
+Subscriber::recv_data, value = 52173.48828125: humidity- 37.70371478792147
+Time Received: 52173.489554684 
+Latency = 0.0012734339979942888
+Subscriber::recv_data, value = 52173.48828125: sound- 44
+Time Received: 52173.489582598 
+Latency = 0.0013013479983783327
+Subscriber::recv_data, value = 52174.4609375: airquality- good
+Time Received: 52174.460508461 
+Latency = -0.000429038998845499
+Subscriber::recv_data, value = 52174.4609375: humidity- 59.83404483887214
+Time Received: 52174.46055692 
+Latency = -0.0003805800006375648
+Subscriber::recv_data, value = 52174.4609375: sound- 32
+Time Received: 52174.460591458 
+Latency = -0.00034604199754539877
+Subscriber::recv_data, value = 52174.4609375: altitude- 26216
+Time Received: 52174.460619133 
+Latency = -0.00031836699781706557
+Subscriber::recv_data, value = 52174.4609375: temperature- 57
+Time Received: 52174.46064666 
+Latency = -0.00029083999834256247
+Subscriber::recv_data, value = 52174.48828125: airquality- smog
+Time Received: 52174.490269107 
+Latency = 0.001987857001950033
+Subscriber::recv_data, value = 52174.48828125: altitude- 38000
+Time Received: 52174.4903096 
+Latency = 0.0020283499979996122
+Subscriber::recv_data, value = 52174.48828125: humidity- 97.50326251011047
+Time Received: 52174.490336602 
+Latency = 0.002055352000752464
+Subscriber::recv_data, value = 52174.48828125: sound- 78
+Time Received: 52174.490362233 
+Latency = 0.0020809830020880327
+Subscriber::recv_data, value = 52175.4609375: airquality- good
+Time Received: 52175.46185659 
+Latency = 0.0009190900018438697
+Subscriber::recv_data, value = 52175.4609375: humidity- 56.2172681825436
+Time Received: 52175.461898829 
+Latency = 0.0009613290021661669
+Subscriber::recv_data, value = 52175.4609375: sound- 59
+Time Received: 52175.461928604 
+Latency = 0.000991104003333021
+Subscriber::recv_data, value = 52175.4609375: altitude- 18352
+Time Received: 52175.461955631 
+Latency = 0.0010181309990002774
+Subscriber::recv_data, value = 52175.4609375: temperature- 79
+Time Received: 52175.461982046 
+Latency = 0.0010445459993206896
+Subscriber::recv_data, value = 52175.4921875: airquality- smog
+Time Received: 52175.491606793 
+Latency = -0.0005807069974252954
+Subscriber::recv_data, value = 52175.4921875: altitude- 36160
+Time Received: 52175.491738174 
+Latency = -0.000449325998488348
+Subscriber::recv_data, value = 52175.4921875: humidity- 95.63780097860318
+Time Received: 52175.491777725 
+Latency = -0.00040977499884320423
+Subscriber::recv_data, value = 52175.4921875: sound- 91
+Time Received: 52175.491806878 
+Latency = -0.0003806219974649139
+Subscriber::recv_data, value = 52176.46484375: airquality- good
+Time Received: 52176.464082993 
+Latency = -0.0007607570005347952
+Subscriber::recv_data, value = 52176.46484375: humidity- 61.385959872322
+Time Received: 52176.464128038 
+Latency = -0.0007157119980547577
+Subscriber::recv_data, value = 52176.46484375: sound- 91
+Time Received: 52176.464154901 
+Latency = -0.000688849002472125
+Subscriber::recv_data, value = 52176.46484375: altitude- 9019
+Time Received: 52176.464180094 
+Latency = -0.0006636559992330149
+Subscriber::recv_data, value = 52176.46484375: temperature- -55
+Time Received: 52176.464229032 
+Latency = -0.0006147180029074661
+Subscriber::recv_data, value = 52176.4921875: airquality- smog
+Time Received: 52176.499090662 
+Latency = 0.006903162000526208
+Subscriber::recv_data, value = 52176.4921875: altitude- 32840
+Time Received: 52176.499142058 
+Latency = 0.006954557997232769
+Subscriber::recv_data, value = 52176.4921875: humidity- 95.67890055376877
+Time Received: 52176.499180681 
+Latency = 0.006993180999415927
+Subscriber::recv_data, value = 52176.49609375: sound- 81
+Time Received: 52176.499213729 
+Latency = 0.0031199790028040297
+Subscriber::recv_data, value = 52177.46484375: airquality- good
+Time Received: 52177.466450405 
+Latency = 0.0016066550015239045
+Subscriber::recv_data, value = 52177.46484375: humidity- 26.588000842161318
+Time Received: 52177.466489586 
+Latency = 0.0016458359968964942
+Subscriber::recv_data, value = 52177.46484375: sound- 68
+Time Received: 52177.46651709 
+Latency = 0.0016733399970689788
+Subscriber::recv_data, value = 52177.46484375: altitude- 33360
+Time Received: 52177.466542335 
+Latency = 0.0016985850015771575
+Subscriber::recv_data, value = 52177.46484375: temperature- -56
+Time Received: 52177.466567662 
+Latency = 0.0017239119988516904
+Subscriber::recv_data, value = 52177.5: airquality- good
+Time Received: 52177.499834991 
+Latency = -0.00016500899801030755
+Subscriber::recv_data, value = 52177.5: altitude- 18952
+Time Received: 52177.499871956 
+Latency = -0.00012804399739252403
+Subscriber::recv_data, value = 52177.5: humidity- 21.706891916710237
+Time Received: 52177.4999117 
+Latency = -8.830000297166407e-05
+Subscriber::recv_data, value = 52177.5: sound- 31
+Time Received: 52177.499940965 
+Latency = -5.903500277781859e-05
+Subscriber::recv_data, value = 52178.48046875: airquality- smog
+Time Received: 52178.480435442 
+Latency = -3.330800245748833e-05
+Subscriber::recv_data, value = 52178.48046875: humidity- 41.408672139537316
+Time Received: 52178.480477768 
+Latency = 9.017996490001678e-06
+Subscriber::recv_data, value = 52178.48046875: sound- 30
+Time Received: 52178.480599228 
+Latency = 0.00013047800166532397
+Subscriber::recv_data, value = 52178.48046875: altitude- 12646
+Time Received: 52178.48062611 
+Latency = 0.00015736000204924494
+Subscriber::recv_data, value = 52178.48046875: temperature- 68
+Time Received: 52178.480651494 
+Latency = 0.00018274399917572737
+Subscriber::recv_data, value = 52178.5078125: airquality- smog
+Time Received: 52178.508184486 
+Latency = 0.00037198600330157205
+Subscriber::recv_data, value = 52178.5078125: altitude- 30664
+Time Received: 52178.508224747 
+Latency = 0.00041224699816666543
+Subscriber::recv_data, value = 52178.5078125: humidity- 18.14393846013592
+Time Received: 52178.508251964 
+Latency = 0.00043946399819105864
+Subscriber::recv_data, value = 52178.5078125: sound- 52
+Time Received: 52178.508277803 
+Latency = 0.000465302997326944
+Subscriber::recv_data, value = 52179.48046875: airquality- good
+Time Received: 52179.482692513 
+Latency = 0.0022237629964365624
+Subscriber::recv_data, value = 52179.48046875: humidity- 58.36159614530474
+Time Received: 52179.482724816 
+Latency = 0.002256065999972634
+Subscriber::recv_data, value = 52179.484375: sound- 37
+Time Received: 52179.482741751 
+Latency = -0.0016332489976775832
+Subscriber::recv_data, value = 52179.484375: altitude- 14808
+Time Received: 52179.482757748 
+Latency = -0.0016172519972315058
+Subscriber::recv_data, value = 52179.484375: temperature- -97
+Time Received: 52179.482772556 
+Latency = -0.0016024439973989502
+Subscriber::recv_data, value = 52179.5078125: airquality- smog
+Time Received: 52179.509707139 
+Latency = 0.001894638997328002
+Subscriber::recv_data, value = 52179.5078125: altitude- 34310
+Time Received: 52179.509746451 
+Latency = 0.0019339510035933927
+Subscriber::recv_data, value = 52179.5078125: humidity- 23.138864322707665
+Time Received: 52179.509773627 
+Latency = 0.00196112700359663
+Subscriber::recv_data, value = 52179.5078125: sound- 86
+Time Received: 52179.509799228 
+Latency = 0.0019867279988829978
+Subscriber::recv_data, value = 52180.484375: airquality- smog
+Time Received: 52180.484437226 
+Latency = 6.222599768079817e-05
+Subscriber::recv_data, value = 52180.484375: humidity- 78.2622170523851
+Time Received: 52180.484497761 
+Latency = 0.0001227609973284416
+Subscriber::recv_data, value = 52180.484375: sound- 46
+Time Received: 52180.484527669 
+Latency = 0.00015266900300048292
+Subscriber::recv_data, value = 52180.484375: altitude- 35228
+Time Received: 52180.484557077 
+Latency = 0.00018207699758931994
+Subscriber::recv_data, value = 52180.484375: temperature- -49
+Time Received: 52180.48458522 
+Latency = 0.00021022000146331266
+Subscriber::recv_data, value = 52180.51171875: airquality- good
+Time Received: 52180.511404352 
+Latency = -0.0003143979993183166
+Subscriber::recv_data, value = 52180.51171875: altitude- 7413
+Time Received: 52180.511449153 
+Latency = -0.0002695970033528283
+Subscriber::recv_data, value = 52180.51171875: humidity- 18.986817064133447
+Time Received: 52180.511480047 
+Latency = -0.00023870300356065854
+Subscriber::recv_data, value = 52180.51171875: sound- 95
+Time Received: 52180.511507345 
+Latency = -0.00021140500030014664
+Subscriber::recv_data, value = 52181.484375: airquality- good
+Time Received: 52181.48599351 
+Latency = 0.0016185100030270405
+Subscriber::recv_data, value = 52181.484375: humidity- 43.094635694031695
+Time Received: 52181.486083218 
+Latency = 0.001708217998384498
+Subscriber::recv_data, value = 52181.484375: sound- 73
+Time Received: 52181.486123517 
+Latency = 0.001748517002852168
+Subscriber::recv_data, value = 52181.484375: altitude- 20913
+Time Received: 52181.486152115 
+Latency = 0.001777115001459606
+Subscriber::recv_data, value = 52181.484375: temperature- -82
+Time Received: 52181.486179047 
+Latency = 0.0018040470022242516
+Subscriber::recv_data, value = 52181.51171875: airquality- poor
+Time Received: 52181.512404729 
+Latency = 0.0006859790009912103
+Subscriber::recv_data, value = 52181.51171875: altitude- 31155
+Time Received: 52181.512446648 
+Latency = 0.0007278979974216782
+Subscriber::recv_data, value = 52181.51171875: humidity- 95.62577715941258
+Time Received: 52181.512475465 
+Latency = 0.0007567150023533031
+Subscriber::recv_data, value = 52181.51171875: sound- 80
+Time Received: 52181.512501297 
+Latency = 0.0007825470020179637
+Subscriber::recv_data, value = 52182.484375: airquality- good
+Time Received: 52182.486339123 
+Latency = 0.0019641230028355494
+Subscriber::recv_data, value = 52182.484375: humidity- 69.12389785921287
+Time Received: 52182.486377167 
+Latency = 0.002002166998863686
+Subscriber::recv_data, value = 52182.484375: sound- 90
+Time Received: 52182.486403558 
+Latency = 0.0020285580030758865
+Subscriber::recv_data, value = 52182.484375: altitude- 32435
+Time Received: 52182.486429929 
+Latency = 0.002054928998404648
+Subscriber::recv_data, value = 52182.484375: temperature- -26
+Time Received: 52182.486455586 
+Latency = 0.0020805859967367724
+Subscriber::recv_data, value = 52182.515625: airquality- smog
+Time Received: 52182.515852371 
+Latency = 0.00022737099789083004
+Subscriber::recv_data, value = 52182.515625: altitude- 30516
+Time Received: 52182.515888428 
+Latency = 0.00026342800265410915
+Subscriber::recv_data, value = 52182.515625: humidity- 71.70259609012895
+Time Received: 52182.515915136 
+Latency = 0.0002901359985116869
+Subscriber::recv_data, value = 52182.515625: sound- 49
+Time Received: 52182.515940188 
+Latency = 0.00031518800096819177
+Subscriber::recv_data, value = 52183.48828125: airquality- good
+Time Received: 52183.488262039 
+Latency = -1.9211001927033067e-05
+Subscriber::recv_data, value = 52183.48828125: humidity- 29.143372965189144
+Time Received: 52183.488311054 
+Latency = 2.980400313390419e-05
+Subscriber::recv_data, value = 52183.48828125: sound- 82
+Time Received: 52183.488339915 
+Latency = 5.866499850526452e-05
+Subscriber::recv_data, value = 52183.48828125: altitude- 34665
+Time Received: 52183.488366937 
+Latency = 8.56870028655976e-05
+Subscriber::recv_data, value = 52183.48828125: temperature- 42
+Time Received: 52183.488393858 
+Latency = 0.0001126080023823306
+Subscriber::recv_data, value = 52183.515625: airquality- poor
+Time Received: 52183.517509664 
+Latency = 0.0018846640014089644
+Subscriber::recv_data, value = 52183.515625: altitude- 710
+Time Received: 52183.517558846 
+Latency = 0.0019338459969731048
+Subscriber::recv_data, value = 52183.515625: humidity- 84.57386950827676
+Time Received: 52183.517588721 
+Latency = 0.001963720998901408
+Subscriber::recv_data, value = 52183.515625: sound- 58
+Time Received: 52183.517614966 
+Latency = 0.001989965996472165
+Subscriber::recv_data, value = 52184.48828125: airquality- poor
+Time Received: 52184.490045229 
+Latency = 0.0017639790021348745
+Subscriber::recv_data, value = 52184.48828125: humidity- 62.822637496468985
+Time Received: 52184.490098259 
+Latency = 0.00181700899702264
+Subscriber::recv_data, value = 52184.48828125: sound- 35
+Time Received: 52184.490127225 
+Latency = 0.0018459749990142882
+Subscriber::recv_data, value = 52184.48828125: altitude- 35328
+Time Received: 52184.490153178 
+Latency = 0.0018719279978540726
+Subscriber::recv_data, value = 52184.48828125: temperature- -49
+Time Received: 52184.490179381 
+Latency = 0.0018981309985974804
+Subscriber::recv_data, value = 52184.51953125: airquality- poor
+Time Received: 52184.518815416 
+Latency = -0.0007158340013120323
+Subscriber::recv_data, value = 52184.51953125: altitude- 1949
+Time Received: 52184.51885678 
+Latency = -0.0006744700003764592
+Subscriber::recv_data, value = 52184.51953125: humidity- 61.31899602684895
+Time Received: 52184.518885268 
+Latency = -0.0006459819996962324
+Subscriber::recv_data, value = 52184.51953125: sound- 74
+Time Received: 52184.518912484 
+Latency = -0.0006187659964780323
+Subscriber::recv_data, value = 52185.4921875: airquality- smog
+Time Received: 52185.491493242 
+Latency = -0.0006942580002942123
+Subscriber::recv_data, value = 52185.4921875: humidity- 42.4615366651272
+Time Received: 52185.491555166 
+Latency = -0.0006323339985101484
+Subscriber::recv_data, value = 52185.4921875: sound- 70
+Time Received: 52185.491586077 
+Latency = -0.0006014230020809919
+Subscriber::recv_data, value = 52185.4921875: altitude- 24949
+Time Received: 52185.491718081 
+Latency = -0.00046941899927333
+Subscriber::recv_data, value = 52185.4921875: temperature- 36
+Time Received: 52185.491747898 
+Latency = -0.00043960200127912685
+Subscriber::recv_data, value = 52185.51953125: airquality- good
+Time Received: 52185.52104399 
+Latency = 0.0015127399965422228
+Subscriber::recv_data, value = 52185.51953125: altitude- 25373
+Time Received: 52185.521084026 
+Latency = 0.0015527759969700128
+Subscriber::recv_data, value = 52185.51953125: humidity- 21.641359578214818
+Time Received: 52185.521112346 
+Latency = 0.0015810960030648857
+Subscriber::recv_data, value = 52185.51953125: sound- 92
+Time Received: 52185.521137876 
+Latency = 0.0016066259995568544
+Subscriber::recv_data, value = 52186.4921875: airquality- smog
+Time Received: 52186.494442145 
+Latency = 0.0022546449981746264
+Subscriber::recv_data, value = 52186.4921875: humidity- 20.599266289398624
+Time Received: 52186.494549201 
+Latency = 0.0023617010010639206
+Subscriber::recv_data, value = 52186.4921875: sound- 73
+Time Received: 52186.494599782 
+Latency = 0.002412282003206201
+Subscriber::recv_data, value = 52186.4921875: altitude- 31507
+Time Received: 52186.494629737 
+Latency = 0.0024422369970125146
+Subscriber::recv_data, value = 52186.4921875: temperature- 4
+Time Received: 52186.494659191 
+Latency = 0.002471690997481346
+Subscriber::recv_data, value = 52186.5234375: airquality- poor
+Time Received: 52186.52248123 
+Latency = -0.0009562699997331947
+Subscriber::recv_data, value = 52186.5234375: altitude- 34552
+Time Received: 52186.522526379 
+Latency = -0.0009111210019909777
+Subscriber::recv_data, value = 52186.5234375: humidity- 75.65178649768957
+Time Received: 52186.522550385 
+Latency = -0.0008871149984770454
+Subscriber::recv_data, value = 52186.5234375: sound- 52
+Time Received: 52186.522568775 
+Latency = -0.0008687250010552816
+Subscriber::recv_data, value = 52187.49609375: airquality- smog
+Time Received: 52187.495764722 
+Latency = -0.00032902800012379885
+Subscriber::recv_data, value = 52187.49609375: humidity- 76.60624883503614
+Time Received: 52187.495814875 
+Latency = -0.00027887499891221523
+Subscriber::recv_data, value = 52187.49609375: sound- 60
+Time Received: 52187.495842202 
+Latency = -0.0002515480009606108
+Subscriber::recv_data, value = 52187.49609375: altitude- 807
+Time Received: 52187.495867615 
+Latency = -0.00022613500186707824
+Subscriber::recv_data, value = 52187.49609375: temperature- -42
+Time Received: 52187.495896534 
+Latency = -0.00019721600256161764
+Subscriber::recv_data, value = 52187.5234375: airquality- poor
+Time Received: 52187.524761873 
+Latency = 0.0013243729990790598
+Subscriber::recv_data, value = 52187.5234375: altitude- 10659
+Time Received: 52187.524814422 
+Latency = 0.0013769220022368245
+Subscriber::recv_data, value = 52187.5234375: humidity- 76.9481075684912
+Time Received: 52187.524845136 
+Latency = 0.001407636002113577
+Subscriber::recv_data, value = 52187.5234375: sound- 61
+Time Received: 52187.52487353 
+Latency = 0.0014360299974214286
+Subscriber::recv_data, value = 52188.49609375: airquality- smog
+Time Received: 52188.497568448 
+Latency = 0.0014746980014024302
+Subscriber::recv_data, value = 52188.49609375: humidity- 88.02639263127341
+Time Received: 52188.497608892 
+Latency = 0.0015151420011534356
+Subscriber::recv_data, value = 52188.49609375: sound- 62
+Time Received: 52188.497636549 
+Latency = 0.0015427990001626313
+Subscriber::recv_data, value = 52188.49609375: altitude- 39833
+Time Received: 52188.497663187 
+Latency = 0.0015694370013079606
+Subscriber::recv_data, value = 52188.49609375: temperature- 39
+Time Received: 52188.497688553 
+Latency = 0.0015948029977153055
+Subscriber::recv_data, value = 52188.5234375: airquality- good
+Time Received: 52188.525462357 
+Latency = 0.0020248569999239407
+Subscriber::recv_data, value = 52188.5234375: altitude- 27804
+Time Received: 52188.525499703 
+Latency = 0.0020622029987862334
+Subscriber::recv_data, value = 52188.5234375: humidity- 47.754393077017916
+Time Received: 52188.5255272 
+Latency = 0.002089699999487493
+Subscriber::recv_data, value = 52188.5234375: sound- 89
+Time Received: 52188.525553969 
+Latency = 0.0021164689969737083
+Subscriber::recv_data, value = 52189.5: airquality- good
+Time Received: 52189.498797113 
+Latency = -0.001202886996907182
+Subscriber::recv_data, value = 52189.5: humidity- 54.95076903465949
+Time Received: 52189.498857202 
+Latency = -0.0011427979989093728
+Subscriber::recv_data, value = 52189.5: sound- 86
+Time Received: 52189.49888807 
+Latency = -0.0011119300033897161
+Subscriber::recv_data, value = 52189.5: altitude- 26573
+Time Received: 52189.498915296 
+Latency = -0.0010847040030057542
+Subscriber::recv_data, value = 52189.5: temperature- 58
+Time Received: 52189.498942338 
+Latency = -0.0010576619970379397
+Subscriber::recv_data, value = 52189.52734375: airquality- good
+Time Received: 52189.528578973 
+Latency = 0.001235222996911034
+Subscriber::recv_data, value = 52189.52734375: altitude- 34047
+Time Received: 52189.528637392 
+Latency = 0.0012936420025653206
+Subscriber::recv_data, value = 52189.52734375: humidity- 26.54173235459377
+Time Received: 52189.528679605 
+Latency = 0.0013358549986151047
+Subscriber::recv_data, value = 52189.52734375: sound- 76
+Time Received: 52189.528718279 
+Latency = 0.0013745289979851805
+Subscriber::recv_data, value = 52190.5: airquality- poor
+Time Received: 52190.499665697 
+Latency = -0.0003343029966345057
+Subscriber::recv_data, value = 52190.5: humidity- 63.37458496297781
+Time Received: 52190.499698729 
+Latency = -0.0003012710003531538
+Subscriber::recv_data, value = 52190.5: sound- 38
+Time Received: 52190.499716057 
+Latency = -0.00028394300170475617
+Subscriber::recv_data, value = 52190.5: altitude- 2513
+Time Received: 52190.499731296 
+Latency = -0.00026870400324696675
+Subscriber::recv_data, value = 52190.5: temperature- 94
+Time Received: 52190.499745703 
+Latency = -0.0002542970032664016
+Subscriber::recv_data, value = 52190.53125: airquality- smog
+Time Received: 52190.530096422 
+Latency = -0.001153577999502886
+Subscriber::recv_data, value = 52190.53125: altitude- 37292
+Time Received: 52190.530160843 
+Latency = -0.0010891569982049987
+Subscriber::recv_data, value = 52190.53125: humidity- 66.25151507071784
+Time Received: 52190.530179021 
+Latency = -0.0010709790003602393
+Subscriber::recv_data, value = 52190.53125: sound- 86
+Time Received: 52190.530194978 
+Latency = -0.0010550220031291246
+Subscriber::recv_data, value = 52191.5: airquality- poor
+Time Received: 52191.501362517 
+Latency = 0.0013625170031446032
+Subscriber::recv_data, value = 52191.5: humidity- 82.21533170500953
+Time Received: 52191.501410241 
+Latency = 0.0014102409986662678
+Subscriber::recv_data, value = 52191.5: sound- 75
+Time Received: 52191.501438795 
+Latency = 0.001438794999558013
+Subscriber::recv_data, value = 52191.5: altitude- 32622
+Time Received: 52191.501464899 
+Latency = 0.0014648990036221221
+Subscriber::recv_data, value = 52191.5: temperature- 27
+Time Received: 52191.50149036 
+Latency = 0.0014903600022080354
+Subscriber::recv_data, value = 52191.53125: airquality- smog
+Time Received: 52191.534229065 
+Latency = 0.0029790650005452335
+Subscriber::recv_data, value = 52191.53125: altitude- 25780
+Time Received: 52191.534608878 
+Latency = 0.0033588779988349415
+Subscriber::recv_data, value = 52191.53125: humidity- 38.6880218021673
+Time Received: 52191.534659195 
+Latency = 0.003409195000131149
+Subscriber::recv_data, value = 52191.53125: sound- 82
+Time Received: 52191.534687854 
+Latency = 0.003437854000367224
+Subscriber::recv_data, value = 52192.50390625: airquality- poor
+Time Received: 52192.503797546 
+Latency = -0.00010870400001294911
+Subscriber::recv_data, value = 52192.50390625: humidity- 21.473236794501787
+Time Received: 52192.503851954 
+Latency = -5.4295996960718185e-05
+Subscriber::recv_data, value = 52192.50390625: sound- 61
+Time Received: 52192.503884607 
+Latency = -2.164299803553149e-05
+Subscriber::recv_data, value = 52192.50390625: altitude- 2331

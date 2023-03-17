@@ -1,100 +1,863 @@
-2023-03-07 20:31:05,047 - root INFO - Main - acquire a child logger and then log messages in the child
-2023-03-07 20:31:05,048 - DiscoveryAppln DEBUG - Main: parse command line arguments
-2023-03-07 20:31:05,053 - DiscoveryAppln DEBUG - Main: resetting log level to 10
-2023-03-07 20:31:05,053 - DiscoveryAppln DEBUG - Main: effective log level is 10
-2023-03-07 20:31:05,053 - DiscoveryAppln DEBUG - Main: obtain a discovery application object
-2023-03-07 20:31:05,054 - DiscoveryAppln DEBUG - Main: configure the discovery application object
-2023-03-07 20:31:05,054 - DiscoveryAppln INFO - DiscoveryAppln::configure
-2023-03-07 20:31:05,054 - DiscoveryAppln DEBUG - DiscoveryAppln::configure - parsing config.ini
-2023-03-07 20:31:05,056 - DiscoveryAppln DEBUG - DiscoveryAppln::configure - setup underlying middleware object
-2023-03-07 20:31:05,056 - DiscoveryAppln DEBUG - DiscoveryAppln::configure - getting hash and finger table
-2023-03-07 20:31:05,056 - DiscoveryAppln INFO - DiscoveryMW::configure
-2023-03-07 20:31:05,056 - DiscoveryAppln DEBUG - DiscoveryMW::configure: obtain ZMQ context
-2023-03-07 20:31:05,057 - DiscoveryAppln DEBUG - DiscoveryMW::configure: create ZMQ POLLER
-2023-03-07 20:31:05,057 - DiscoveryAppln DEBUG - DiscoveryMW::configure: create ZMQ REP socket
-2023-03-07 20:31:05,057 - DiscoveryAppln DEBUG - DiscoveryMW::configure: register poller
-2023-03-07 20:31:05,057 - DiscoveryAppln DEBUG - DiscoveryMW::configure: bind REP socket to address
-2023-03-07 20:31:05,057 - DiscoveryAppln DEBUG - DiscoveryMW::configure: reading hash to ip json
-2023-03-07 20:31:05,057 - DiscoveryAppln INFO - DiscoveryMW::configure completed
-2023-03-07 20:31:05,058 - DiscoveryAppln DEBUG - DiscoveryAppln::configure - generating table for node
-2023-03-07 20:31:05,058 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: connecting to all nodes in finger table
-2023-03-07 20:31:05,059 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: 83531280445706 - <zmq.Socket(zmq.REQ) at 0x7ff7a5545720> connected to disc17
-2023-03-07 20:31:05,060 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: 94670427364161 - <zmq.Socket(zmq.REQ) at 0x7ff7a5545780> connected to disc2
-2023-03-07 20:31:05,060 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: 118585073127976 - <zmq.Socket(zmq.REQ) at 0x7ff7a55457e0> connected to disc20
-2023-03-07 20:31:05,060 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: 144745002065491 - <zmq.Socket(zmq.REQ) at 0x7ff7a5545840> connected to disc13
-2023-03-07 20:31:05,060 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: 221923006406920 - <zmq.Socket(zmq.REQ) at 0x7ff7a55458a0> connected to disc3
-2023-03-07 20:31:05,060 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: connected in dictionary self.req
-2023-03-07 20:31:05,060 - DiscoveryAppln INFO - DiscoveryAppln::configure completed
-2023-03-07 20:31:05,060 - DiscoveryAppln DEBUG - Main: invoke the discovery application driver
-2023-03-07 20:31:05,060 - DiscoveryAppln INFO - DiscoveryAppln::driver
-2023-03-07 20:31:05,060 - DiscoveryAppln INFO - **********************************
-2023-03-07 20:31:05,060 - DiscoveryAppln INFO - DiscoveryAppln::dump
-2023-03-07 20:31:05,060 - DiscoveryAppln INFO - ------------------------------
-2023-03-07 20:31:05,060 - DiscoveryAppln INFO -      Lookup: Distributed
-2023-03-07 20:31:05,060 - DiscoveryAppln INFO -      Dissemination: Direct
-2023-03-07 20:31:05,060 - DiscoveryAppln INFO -      Expected Subscribers: 1
-2023-03-07 20:31:05,061 - DiscoveryAppln INFO -      Expected Publishers: 1
-2023-03-07 20:31:05,061 - DiscoveryAppln INFO - **********************************
-2023-03-07 20:31:05,061 - DiscoveryAppln DEBUG - DiscoveryAppln::driver - setting upcall handle
-2023-03-07 20:31:05,061 - DiscoveryAppln INFO - DiscoveryMW::event_loop: start
-2023-03-07 20:31:05,061 - DiscoveryAppln DEBUG - waiting for events...
-2023-03-07 20:31:05,061 - DiscoveryAppln DEBUG - {}
-2023-03-07 20:31:05,061 - DiscoveryAppln INFO - DiscoveryAppln::invoke_operation
-2023-03-07 20:31:05,061 - DiscoveryAppln INFO - control back to event loop
-2023-03-07 20:31:05,061 - DiscoveryAppln DEBUG - waiting for events...
-2023-03-07 20:31:05,080 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.REP) at 0x7ff7a55456c0>: 1}
-2023-03-07 20:31:05,080 - DiscoveryAppln DEBUG - Calling handle_request()
-2023-03-07 20:31:05,080 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
-2023-03-07 20:31:05,081 - DiscoveryAppln INFO - DiscoveryAppln::handle_register endpoint
-2023-03-07 20:31:05,081 - DiscoveryAppln INFO - DiscoveryAppln::handle_register checking if name is unique
-2023-03-07 20:31:05,081 - DiscoveryAppln INFO - DiscoveryAppln::handle_register assigning user id to info
-2023-03-07 20:31:05,081 - DiscoveryAppln INFO - DiscoveryAppln::handle_register adding topics to publishers
-2023-03-07 20:31:05,081 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply
-2023-03-07 20:31:05,081 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: done building reply
-2023-03-07 20:31:05,081 - DiscoveryAppln DEBUG - Stringified serialized buffer = b'\x08\x05*\x18\x08\x01\x12\x04pub2\x18\xa9\x8f\xf5\xd6\x98\xd2-(\x83\xb3\xe0\xa2\x93\xdc\x0f'
-2023-03-07 20:31:05,081 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
-2023-03-07 20:31:05,081 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
-2023-03-07 20:31:05,081 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
-2023-03-07 20:31:05,081 - DiscoveryAppln INFO - control back to event loop
-2023-03-07 20:31:05,081 - DiscoveryAppln DEBUG - waiting for events...
-2023-03-07 20:31:05,083 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.REP) at 0x7ff7a55456c0>: 1}
-2023-03-07 20:31:05,083 - DiscoveryAppln DEBUG - Calling handle_request()
-2023-03-07 20:31:05,083 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
-2023-03-07 20:31:05,083 - DiscoveryAppln INFO - DiscoveryAppln::handle_register endpoint
-2023-03-07 20:31:05,083 - DiscoveryAppln INFO - DiscoveryAppln::handle_register checking if name is unique
-2023-03-07 20:31:05,084 - DiscoveryAppln INFO - DiscoveryAppln::handle_register already registered
-2023-03-07 20:31:05,084 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply
-2023-03-07 20:31:05,084 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: done building reply
-2023-03-07 20:31:05,084 - DiscoveryAppln DEBUG - Stringified serialized buffer = b'\x08\x05*\x18\x08\x01\x12\x04pub2\x18\xa9\x8f\xf5\xd6\x98\xd2-(\x83\xb3\xe0\xa2\x93\xdc\x0f'
-2023-03-07 20:31:05,084 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
-2023-03-07 20:31:05,084 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
-2023-03-07 20:31:05,084 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
-2023-03-07 20:31:05,084 - DiscoveryAppln INFO - control back to event loop
-2023-03-07 20:31:05,084 - DiscoveryAppln DEBUG - waiting for events...
-2023-03-07 20:31:05,096 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.REP) at 0x7ff7a55456c0>: 1}
-2023-03-07 20:31:05,097 - DiscoveryAppln DEBUG - Calling handle_request()
-2023-03-07 20:31:05,097 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
-2023-03-07 20:31:05,098 - DiscoveryAppln INFO - DiscoveryAppln::handle_register endpoint
-2023-03-07 20:31:05,098 - DiscoveryAppln INFO - DiscoveryAppln::handle_register checking if name is unique
-2023-03-07 20:31:05,098 - DiscoveryAppln INFO - DiscoveryAppln::handle_register already registered
-2023-03-07 20:31:05,098 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply
-2023-03-07 20:31:05,098 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: done building reply
-2023-03-07 20:31:05,098 - DiscoveryAppln DEBUG - Stringified serialized buffer = b'\x08\x05*\x18\x08\x01\x12\x04pub2\x18\xa9\x8f\xf5\xd6\x98\xd2-(\x83\xb3\xe0\xa2\x93\xdc\x0f'
-2023-03-07 20:31:05,098 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
-2023-03-07 20:31:05,098 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
-2023-03-07 20:31:05,098 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
-2023-03-07 20:31:05,098 - DiscoveryAppln INFO - control back to event loop
-2023-03-07 20:31:05,098 - DiscoveryAppln DEBUG - waiting for events...
-2023-03-07 20:31:05,314 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.REP) at 0x7ff7a55456c0>: 1}
-2023-03-07 20:31:05,314 - DiscoveryAppln DEBUG - Calling handle_request()
-2023-03-07 20:31:05,314 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
-2023-03-07 20:31:05,314 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 200736216270761
-2023-03-07 20:31:05,315 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 69136966752643
-2023-03-07 20:31:05,315 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc17 from src disc6
-2023-03-07 20:31:05,315 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
-2023-03-07 20:31:05,315 - DiscoveryAppln DEBUG - Stringified serialized buffer = b'\x08\x062\n\x10\x01\x18\xa9\x8f\xf5\xd6\x98\xd2-'
-2023-03-07 20:31:05,315 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReady: next not in send_buffer, initializing empty
-2023-03-07 20:31:05,315 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: done sending dht request
-2023-03-07 20:31:05,315 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
-2023-03-07 20:31:05,315 - DiscoveryAppln INFO - control back to event loop
-2023-03-07 20:31:05,317 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:10,368 - root INFO - Main - acquire a child logger and then log messages in the child
+2023-03-17 15:46:10,368 - DiscoveryAppln DEBUG - Main: parse command line arguments
+2023-03-17 15:46:10,397 - DiscoveryAppln DEBUG - Main: resetting log level to 10
+2023-03-17 15:46:10,397 - DiscoveryAppln DEBUG - Main: effective log level is 10
+2023-03-17 15:46:10,397 - DiscoveryAppln DEBUG - Main: obtain a discovery application object
+2023-03-17 15:46:10,397 - DiscoveryAppln DEBUG - Main: configure the discovery application object
+2023-03-17 15:46:10,397 - DiscoveryAppln INFO - DiscoveryAppln::configure
+2023-03-17 15:46:10,397 - DiscoveryAppln DEBUG - DiscoveryAppln::configure - parsing config.ini
+2023-03-17 15:46:10,398 - DiscoveryAppln DEBUG - DiscoveryAppln::configure - setup underlying middleware object
+2023-03-17 15:46:10,398 - DiscoveryAppln DEBUG - DiscoveryAppln::configure - getting hash and finger table
+2023-03-17 15:46:10,398 - DiscoveryAppln INFO - DiscoveryMW::configure
+2023-03-17 15:46:10,398 - DiscoveryAppln DEBUG - DiscoveryMW::configure: obtain ZMQ context
+2023-03-17 15:46:10,425 - DiscoveryAppln DEBUG - DiscoveryMW::configure: create ZMQ POLLER
+2023-03-17 15:46:10,425 - DiscoveryAppln DEBUG - DiscoveryMW::configure: create ZMQ REP socket
+2023-03-17 15:46:10,426 - DiscoveryAppln DEBUG - DiscoveryMW::configure: register poller
+2023-03-17 15:46:10,426 - DiscoveryAppln DEBUG - DiscoveryMW::configure: bind REP socket to address
+2023-03-17 15:46:10,426 - DiscoveryAppln DEBUG - DiscoveryMW::configure: reading hash to ip json
+2023-03-17 15:46:10,426 - DiscoveryAppln INFO - DiscoveryMW::configure completed
+2023-03-17 15:46:10,427 - DiscoveryAppln DEBUG - DiscoveryAppln::configure - generating table for node
+2023-03-17 15:46:10,427 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: connecting to all nodes in finger table
+2023-03-17 15:46:10,427 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: 43131617558264 - <zmq.Socket(zmq.DEALER) at 0x7f307a3354e0> connected to disc1
+2023-03-17 15:46:10,427 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: 53174729515853 - <zmq.Socket(zmq.DEALER) at 0x7f307a335540> connected to disc3
+2023-03-17 15:46:10,427 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: 92788796846446 - <zmq.Socket(zmq.DEALER) at 0x7f307a3355a0> connected to disc10
+2023-03-17 15:46:10,428 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: 166891747590864 - <zmq.Socket(zmq.DEALER) at 0x7f307a335600> connected to disc11
+2023-03-17 15:46:10,428 - DiscoveryAppln DEBUG - DiscoveryMW::connectTable: connected in dictionary self.req
+2023-03-17 15:46:10,428 - DiscoveryAppln INFO - DiscoveryAppln::configure completed
+2023-03-17 15:46:10,428 - DiscoveryAppln DEBUG - Main: invoke the discovery application driver
+2023-03-17 15:46:10,428 - DiscoveryAppln INFO - DiscoveryAppln::driver
+2023-03-17 15:46:10,428 - DiscoveryAppln INFO - **********************************
+2023-03-17 15:46:10,428 - DiscoveryAppln INFO - DiscoveryAppln::dump
+2023-03-17 15:46:10,428 - DiscoveryAppln INFO - ------------------------------
+2023-03-17 15:46:10,428 - DiscoveryAppln INFO -      Lookup: Distributed
+2023-03-17 15:46:10,428 - DiscoveryAppln INFO -      Dissemination: Direct
+2023-03-17 15:46:10,428 - DiscoveryAppln INFO -      Expected Subscribers: 5
+2023-03-17 15:46:10,428 - DiscoveryAppln INFO -      Expected Publishers: 5
+2023-03-17 15:46:10,428 - DiscoveryAppln INFO - **********************************
+2023-03-17 15:46:10,428 - DiscoveryAppln DEBUG - DiscoveryAppln::driver - setting upcall handle
+2023-03-17 15:46:10,429 - DiscoveryAppln INFO - DiscoveryMW::event_loop: start
+2023-03-17 15:46:10,429 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:10,429 - DiscoveryAppln DEBUG - {}
+2023-03-17 15:46:10,429 - DiscoveryAppln INFO - DiscoveryAppln::invoke_operation
+2023-03-17 15:46:10,429 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:10,429 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:10,999 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:10,999 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:10,999 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:10,999 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEg', b'', b'\x08\x062\n\x08\x01\x18\x9f\xa3\xe1\x8d\x90\xa71']
+2023-03-17 15:46:10,999 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEg']
+2023-03-17 15:46:10,999 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 1
+  src: 216848632664479
+}
+
+2023-03-17 15:46:11,000 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 216848632664479
+2023-03-17 15:46:11,000 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:11,000 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc1 from src disc18
+2023-03-17 15:46:11,000 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
+2023-03-17 15:46:11,000 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEg', b'', b'\x08\x062\n\x08\x01\x18\x9f\xa3\xe1\x8d\x90\xa71']
+2023-03-17 15:46:11,000 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:11,000 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,000 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,116 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:11,117 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:11,117 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:11,117 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'\x00k\x8bEg', b'', b'\x08\x062\n\x08\x02\x18\xd0\x85\xd3\x9a\x98\xf9%']
+2023-03-17 15:46:11,117 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'\x00k\x8bEg']
+2023-03-17 15:46:11,117 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 2
+  src: 166891747590864
+}
+
+2023-03-17 15:46:11,117 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 166891747590864
+2023-03-17 15:46:11,117 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:11,117 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc1 from src disc11
+2023-03-17 15:46:11,117 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
+2023-03-17 15:46:11,117 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'\x00k\x8bEg', b'', b'\x08\x062\n\x08\x02\x18\xd0\x85\xd3\x9a\x98\xf9%']
+2023-03-17 15:46:11,117 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:11,117 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,117 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,190 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:11,190 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:11,190 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:11,190 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x03\x10\x02\x18\xd8\xc7\xdd\xc8\xd5\x90\x11']
+2023-03-17 15:46:11,190 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'\x00k\x8bEg']
+2023-03-17 15:46:11,190 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 3
+  count_pub: 2
+  src: 75339516044248
+}
+
+2023-03-17 15:46:11,190 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 75339516044248
+2023-03-17 15:46:11,190 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:11,190 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc1 from src disc20
+2023-03-17 15:46:11,190 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
+2023-03-17 15:46:11,190 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x03\x10\x02\x18\xd8\xc7\xdd\xc8\xd5\x90\x11']
+2023-03-17 15:46:11,191 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:11,191 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,191 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,234 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:11,235 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:11,235 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:11,235 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEh', b'', b'\x08\x062\x0c\x08\x01\x10\x01\x18\x9f\xa3\xe1\x8d\x90\xa71']
+2023-03-17 15:46:11,235 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEh']
+2023-03-17 15:46:11,235 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 1
+  count_pub: 1
+  src: 216848632664479
+}
+
+2023-03-17 15:46:11,235 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 216848632664479
+2023-03-17 15:46:11,235 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:11,235 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc1 from src disc18
+2023-03-17 15:46:11,235 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
+2023-03-17 15:46:11,235 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEh', b'', b'\x08\x062\x0c\x08\x01\x10\x01\x18\x9f\xa3\xe1\x8d\x90\xa71']
+2023-03-17 15:46:11,236 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:11,236 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,236 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,248 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:11,248 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:11,248 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:11,248 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x02\x10\x02\x18\xc5\xad\xea\xac\x91\xf2!']
+2023-03-17 15:46:11,248 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'\x00k\x8bEg']
+2023-03-17 15:46:11,248 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 2
+  count_pub: 2
+  src: 149057202460357
+}
+
+2023-03-17 15:46:11,249 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 149057202460357
+2023-03-17 15:46:11,249 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:11,249 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc1 from src disc14
+2023-03-17 15:46:11,249 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
+2023-03-17 15:46:11,249 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x02\x10\x02\x18\xc5\xad\xea\xac\x91\xf2!']
+2023-03-17 15:46:11,249 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:11,249 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,249 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,262 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a3354e0>: 1}
+2023-03-17 15:46:11,262 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 43131617558264
+2023-03-17 15:46:11,262 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:11,263 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'\x00k\x8bEg', b'', b'\x08\x062\x10\x10\xd0\x85\xd3\x9a\x98\xf9%\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:11,263 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'\x00k\x8bEg', b'']
+2023-03-17 15:46:11,263 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc1
+2023-03-17 15:46:11,263 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht received reply from node 43131617558264
+2023-03-17 15:46:11,263 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht propagating reply to source
+2023-03-17 15:46:11,263 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:11,263 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:11,263 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'\x00k\x8bEg', b'', b'\x08\x062\x10\x10\xd0\x85\xd3\x9a\x98\xf9%\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:11,263 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:11,263 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:11,264 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:11,264 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,264 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,282 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:11,282 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:11,282 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:11,282 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'49112187787524', b'43131617558264', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x03\x10\x05\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:11,283 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'49112187787524', b'43131617558264', b'\x00k\x8bEg']
+2023-03-17 15:46:11,283 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 3
+  count_pub: 5
+  src: 43131617558264
+}
+
+2023-03-17 15:46:11,283 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 43131617558264
+2023-03-17 15:46:11,283 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:11,283 - DiscoveryAppln INFO - DiscoveryAppln::isready_loop at source
+2023-03-17 15:46:11,283 - DiscoveryAppln INFO - seen publishers: 5, expected publishers: 5
+2023-03-17 15:46:11,283 - DiscoveryAppln INFO - seen subscribers: 3, expected subscribers: 5
+2023-03-17 15:46:11,283 - DiscoveryAppln INFO - DiscoveryAppln::isready_loop replying with status: False
+2023-03-17 15:46:11,283 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:11,283 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:11,283 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'49112187787524', b'43131617558264', b'\x00k\x8bEg', b'', b'\x08\x062\x10\x10\xf8\xfd\xf8\xe5\xa5\xe7\t\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:11,283 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:11,283 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:11,284 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:11,284 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,284 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,300 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a3354e0>: 1}
+2023-03-17 15:46:11,300 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 43131617558264
+2023-03-17 15:46:11,300 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:11,300 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'\x00k\x8bEg', b'', b'\x08\x062\x10\x10\xd8\xc7\xdd\xc8\xd5\x90\x11\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:11,300 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'\x00k\x8bEg', b'']
+2023-03-17 15:46:11,300 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc1
+2023-03-17 15:46:11,300 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht received reply from node 43131617558264
+2023-03-17 15:46:11,300 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht propagating reply to source
+2023-03-17 15:46:11,300 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:11,301 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:11,301 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'\x00k\x8bEg', b'', b'\x08\x062\x10\x10\xd8\xc7\xdd\xc8\xd5\x90\x11\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:11,301 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:11,301 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:11,301 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:11,301 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,301 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,324 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a3354e0>: 1}
+2023-03-17 15:46:11,324 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 43131617558264
+2023-03-17 15:46:11,324 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:11,324 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEg', b'', b'\x08\x062\x10\x10\x9f\xa3\xe1\x8d\x90\xa71\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:11,324 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEg', b'']
+2023-03-17 15:46:11,324 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc1
+2023-03-17 15:46:11,324 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht received reply from node 43131617558264
+2023-03-17 15:46:11,324 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht propagating reply to source
+2023-03-17 15:46:11,324 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:11,324 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:11,324 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEg', b'', b'\x08\x062\x10\x10\x9f\xa3\xe1\x8d\x90\xa71\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:11,324 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:11,324 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:11,324 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:11,324 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,324 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,334 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:11,334 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:11,334 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:11,334 - DiscoveryAppln DEBUG - [b'\x00k\x8bEg', b'', b'\x08\x01\x12H\x08\x02\x12\x06\n\x04sub5\x1a\x0btemperature\x1a\x08pressure\x1a\x08location\x1a\x08humidity\x1a\x05light\x1a\nairquality']
+2023-03-17 15:46:11,334 - DiscoveryAppln INFO - [b'\x00k\x8bEg']
+2023-03-17 15:46:11,334 - DiscoveryAppln INFO - msg_type: TYPE_REGISTER
+register_req {
+  role: ROLE_SUBSCRIBER
+  info {
+    id: "sub5"
+  }
+  topiclist: "temperature"
+  topiclist: "pressure"
+  topiclist: "location"
+  topiclist: "humidity"
+  topiclist: "light"
+  topiclist: "airquality"
+}
+
+2023-03-17 15:46:11,334 - DiscoveryAppln INFO - DiscoveryAppln::handle_register increment number of seen subscribers
+2023-03-17 15:46:11,335 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply
+2023-03-17 15:46:11,335 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: done building reply
+2023-03-17 15:46:11,335 - DiscoveryAppln DEBUG - Stringified serialized buffer = b'\x08\x01\x12\x02\x08\x01'
+2023-03-17 15:46:11,335 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:11,335 - DiscoveryAppln INFO - DiscoveryMW::register_reply: chain = [b'\x00k\x8bEg']
+2023-03-17 15:46:11,335 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:11,335 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:11,335 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,335 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,347 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:11,347 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:11,347 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:11,347 - DiscoveryAppln DEBUG - [b'\x00k\x8bEg', b'', b'\x08\x02\x1a\x00']
+2023-03-17 15:46:11,347 - DiscoveryAppln INFO - [b'\x00k\x8bEg']
+2023-03-17 15:46:11,347 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY
+isready_req {
+}
+
+2023-03-17 15:46:11,347 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 16229785994540
+2023-03-17 15:46:11,347 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:11,347 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc1 from src disc7
+2023-03-17 15:46:11,347 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
+2023-03-17 15:46:11,347 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'\x00k\x8bEg', b'', b'\x08\x062\n\x08\x01\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:11,347 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:11,347 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,347 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,352 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:11,352 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:11,352 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:11,352 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x02\x10\x03\x18\xd0\xad\xef\xea\xfb\xcb\x1b']
+2023-03-17 15:46:11,352 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'\x00k\x8bEg']
+2023-03-17 15:46:11,352 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 2
+  count_pub: 3
+  src: 121357477861072
+}
+
+2023-03-17 15:46:11,352 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 121357477861072
+2023-03-17 15:46:11,353 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:11,353 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc1 from src disc12
+2023-03-17 15:46:11,353 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
+2023-03-17 15:46:11,353 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x03\x10\x03\x18\xd0\xad\xef\xea\xfb\xcb\x1b']
+2023-03-17 15:46:11,353 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:11,353 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,353 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,356 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a3354e0>: 1}
+2023-03-17 15:46:11,356 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 43131617558264
+2023-03-17 15:46:11,356 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:11,356 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'\x00k\x8bEg', b'', b'\x08\x062\x10\x10\xc5\xad\xea\xac\x91\xf2!\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:11,356 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'\x00k\x8bEg', b'']
+2023-03-17 15:46:11,357 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc1
+2023-03-17 15:46:11,357 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht received reply from node 43131617558264
+2023-03-17 15:46:11,357 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht propagating reply to source
+2023-03-17 15:46:11,357 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:11,357 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:11,357 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'\x00k\x8bEg', b'', b'\x08\x062\x10\x10\xc5\xad\xea\xac\x91\xf2!\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:11,357 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:11,357 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:11,357 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:11,357 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,357 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,364 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a3354e0>: 1}
+2023-03-17 15:46:11,364 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 43131617558264
+2023-03-17 15:46:11,364 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:11,364 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEh', b'', b'\x08\x062\x10\x10\x9f\xa3\xe1\x8d\x90\xa71\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:11,364 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEh', b'']
+2023-03-17 15:46:11,364 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc1
+2023-03-17 15:46:11,364 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht received reply from node 43131617558264
+2023-03-17 15:46:11,364 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht propagating reply to source
+2023-03-17 15:46:11,364 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:11,364 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:11,364 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEh', b'', b'\x08\x062\x10\x10\x9f\xa3\xe1\x8d\x90\xa71\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:11,364 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:11,365 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:11,365 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:11,365 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,365 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,408 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:11,408 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:11,408 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:11,408 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'49112187787524', b'43131617558264', b'\x00k\x8bEh', b'', b'\x08\x062\x0c\x08\x03\x10\x05\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:11,408 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'49112187787524', b'43131617558264', b'\x00k\x8bEh']
+2023-03-17 15:46:11,408 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 3
+  count_pub: 5
+  src: 43131617558264
+}
+
+2023-03-17 15:46:11,408 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 43131617558264
+2023-03-17 15:46:11,408 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:11,408 - DiscoveryAppln INFO - DiscoveryAppln::isready_loop at source
+2023-03-17 15:46:11,408 - DiscoveryAppln INFO - seen publishers: 5, expected publishers: 5
+2023-03-17 15:46:11,408 - DiscoveryAppln INFO - seen subscribers: 4, expected subscribers: 5
+2023-03-17 15:46:11,409 - DiscoveryAppln INFO - DiscoveryAppln::isready_loop replying with status: False
+2023-03-17 15:46:11,409 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:11,409 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:11,409 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'49112187787524', b'43131617558264', b'\x00k\x8bEh', b'', b'\x08\x062\x10\x10\xf8\xfd\xf8\xe5\xa5\xe7\t\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:11,409 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:11,409 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:11,409 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:11,409 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,409 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,414 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a3354e0>: 1}
+2023-03-17 15:46:11,415 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 43131617558264
+2023-03-17 15:46:11,415 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:11,415 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'\x00k\x8bEg', b'', b'\x08\x062\x10\x10\xd0\xad\xef\xea\xfb\xcb\x1b\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:11,415 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'\x00k\x8bEg', b'']
+2023-03-17 15:46:11,415 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc1
+2023-03-17 15:46:11,415 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht received reply from node 43131617558264
+2023-03-17 15:46:11,415 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht propagating reply to source
+2023-03-17 15:46:11,415 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:11,415 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:11,415 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'\x00k\x8bEg', b'', b'\x08\x062\x10\x10\xd0\xad\xef\xea\xfb\xcb\x1b\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:11,415 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:11,415 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:11,415 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:11,415 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,416 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,420 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:11,420 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:11,420 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:11,420 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x04\x10\x03\x18\xcd\xc6\xf4\xa6\xcb\x8b\x0c']
+2023-03-17 15:46:11,420 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'\x00k\x8bEg']
+2023-03-17 15:46:11,420 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 4
+  count_pub: 3
+  src: 53174729515853
+}
+
+2023-03-17 15:46:11,421 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 53174729515853
+2023-03-17 15:46:11,421 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:11,421 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc1 from src disc3
+2023-03-17 15:46:11,421 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
+2023-03-17 15:46:11,421 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x05\x10\x03\x18\xcd\xc6\xf4\xa6\xcb\x8b\x0c']
+2023-03-17 15:46:11,421 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:11,421 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,421 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,427 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a3354e0>: 1}
+2023-03-17 15:46:11,427 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 43131617558264
+2023-03-17 15:46:11,427 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:11,427 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'\x00k\x8bEg', b'', b'\x08\x062\x12\x08\x01\x10\xcd\xc6\xf4\xa6\xcb\x8b\x0c\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:11,427 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'\x00k\x8bEg', b'']
+2023-03-17 15:46:11,427 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc1
+2023-03-17 15:46:11,427 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht received reply from node 43131617558264
+2023-03-17 15:46:11,427 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht propagating reply to source
+2023-03-17 15:46:11,427 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:11,427 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:11,428 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'\x00k\x8bEg', b'', b'\x08\x062\x12\x08\x01\x10\xcd\xc6\xf4\xa6\xcb\x8b\x0c\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:11,428 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:11,428 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:11,428 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:11,428 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,428 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:11,456 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a3354e0>: 1}
+2023-03-17 15:46:11,456 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 43131617558264
+2023-03-17 15:46:11,456 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:11,456 - DiscoveryAppln DEBUG - [b'\x00k\x8bEg', b'', b'\x08\x062\x10\x10\xac\x8a\x84\xd5\xac\xd8\x03\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:11,456 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'\x00k\x8bEg', b'']
+2023-03-17 15:46:11,456 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc1
+2023-03-17 15:46:11,457 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht received reply from node 43131617558264
+2023-03-17 15:46:11,457 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht sending source reply of status False
+2023-03-17 15:46:11,457 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply
+2023-03-17 15:46:11,457 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:11,457 - DiscoveryAppln DEBUG - Stringified serialized buffer = b'\x08\x02\x1a\x00'
+2023-03-17 15:46:11,457 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:11,457 - DiscoveryAppln INFO - DiscoveryMW::register_reply: chain = [b'\x00k\x8bEg', b'']
+2023-03-17 15:46:11,457 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:11,458 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:11,458 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:11,458 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,308 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:21,308 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:21,308 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:21,308 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x02\x10\x01\x18\xd0\x85\xd3\x9a\x98\xf9%']
+2023-03-17 15:46:21,308 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'\x00k\x8bEg']
+2023-03-17 15:46:21,308 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 2
+  count_pub: 1
+  src: 166891747590864
+}
+
+2023-03-17 15:46:21,308 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 166891747590864
+2023-03-17 15:46:21,309 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:21,309 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc1 from src disc11
+2023-03-17 15:46:21,309 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
+2023-03-17 15:46:21,309 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x03\x10\x01\x18\xd0\x85\xd3\x9a\x98\xf9%']
+2023-03-17 15:46:21,309 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:21,309 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,309 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,352 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a3354e0>: 1}
+2023-03-17 15:46:21,352 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 43131617558264
+2023-03-17 15:46:21,352 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:21,353 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'\x00k\x8bEg', b'', b'\x08\x062\x12\x08\x01\x10\xd0\x85\xd3\x9a\x98\xf9%\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:21,353 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'\x00k\x8bEg', b'']
+2023-03-17 15:46:21,353 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc1
+2023-03-17 15:46:21,353 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht received reply from node 43131617558264
+2023-03-17 15:46:21,353 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht propagating reply to source
+2023-03-17 15:46:21,353 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:21,353 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:21,353 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'\x00k\x8bEg', b'', b'\x08\x062\x12\x08\x01\x10\xd0\x85\xd3\x9a\x98\xf9%\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:21,353 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:21,353 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:21,353 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:21,353 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,353 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,365 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:21,365 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:21,365 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:21,365 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x01\x10\x01\x18\x9f\xa3\xe1\x8d\x90\xa71']
+2023-03-17 15:46:21,366 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEg']
+2023-03-17 15:46:21,366 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 1
+  count_pub: 1
+  src: 216848632664479
+}
+
+2023-03-17 15:46:21,366 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 216848632664479
+2023-03-17 15:46:21,366 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:21,366 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc1 from src disc18
+2023-03-17 15:46:21,366 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
+2023-03-17 15:46:21,366 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x02\x10\x01\x18\x9f\xa3\xe1\x8d\x90\xa71']
+2023-03-17 15:46:21,366 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:21,366 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,366 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,397 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:21,398 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:21,398 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:21,398 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEh', b'', b'\x08\x062\x0c\x08\x01\x10\x01\x18\x9f\xa3\xe1\x8d\x90\xa71']
+2023-03-17 15:46:21,398 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEh']
+2023-03-17 15:46:21,398 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 1
+  count_pub: 1
+  src: 216848632664479
+}
+
+2023-03-17 15:46:21,398 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 216848632664479
+2023-03-17 15:46:21,398 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:21,399 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc1 from src disc18
+2023-03-17 15:46:21,399 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
+2023-03-17 15:46:21,399 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEh', b'', b'\x08\x062\x0c\x08\x02\x10\x01\x18\x9f\xa3\xe1\x8d\x90\xa71']
+2023-03-17 15:46:21,399 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:21,399 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,399 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,440 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:21,440 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:21,440 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:21,440 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x02\x10\x02\x18\xc5\xad\xea\xac\x91\xf2!']
+2023-03-17 15:46:21,440 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'\x00k\x8bEg']
+2023-03-17 15:46:21,441 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 2
+  count_pub: 2
+  src: 149057202460357
+}
+
+2023-03-17 15:46:21,441 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 149057202460357
+2023-03-17 15:46:21,441 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:21,442 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc1 from src disc14
+2023-03-17 15:46:21,442 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
+2023-03-17 15:46:21,442 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x03\x10\x02\x18\xc5\xad\xea\xac\x91\xf2!']
+2023-03-17 15:46:21,442 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:21,442 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,442 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,444 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:21,444 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:21,444 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:21,444 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x03\x10\x03\x18\xd8\xc7\xdd\xc8\xd5\x90\x11']
+2023-03-17 15:46:21,444 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'\x00k\x8bEg']
+2023-03-17 15:46:21,445 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 3
+  count_pub: 3
+  src: 75339516044248
+}
+
+2023-03-17 15:46:21,445 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 75339516044248
+2023-03-17 15:46:21,445 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:21,445 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc1 from src disc20
+2023-03-17 15:46:21,445 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
+2023-03-17 15:46:21,445 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x04\x10\x03\x18\xd8\xc7\xdd\xc8\xd5\x90\x11']
+2023-03-17 15:46:21,445 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:21,446 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,446 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,452 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:21,452 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:21,452 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:21,452 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'49112187787524', b'43131617558264', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x04\x10\x05\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:21,452 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'49112187787524', b'43131617558264', b'\x00k\x8bEg']
+2023-03-17 15:46:21,453 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 4
+  count_pub: 5
+  src: 43131617558264
+}
+
+2023-03-17 15:46:21,453 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 43131617558264
+2023-03-17 15:46:21,453 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:21,453 - DiscoveryAppln INFO - DiscoveryAppln::isready_loop at source
+2023-03-17 15:46:21,453 - DiscoveryAppln INFO - seen publishers: 5, expected publishers: 5
+2023-03-17 15:46:21,453 - DiscoveryAppln INFO - seen subscribers: 5, expected subscribers: 5
+2023-03-17 15:46:21,453 - DiscoveryAppln INFO - DiscoveryAppln::isready_loop replying with status: True
+2023-03-17 15:46:21,453 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:21,453 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:21,453 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'49112187787524', b'43131617558264', b'\x00k\x8bEg', b'', b'\x08\x062\x12\x08\x01\x10\xf8\xfd\xf8\xe5\xa5\xe7\t\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:21,453 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:21,453 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:21,453 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:21,453 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,453 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,462 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a3354e0>: 1}
+2023-03-17 15:46:21,462 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 43131617558264
+2023-03-17 15:46:21,463 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:21,463 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'\x00k\x8bEg', b'', b'\x08\x062\x12\x08\x01\x10\xd8\xc7\xdd\xc8\xd5\x90\x11\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:21,463 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'\x00k\x8bEg', b'']
+2023-03-17 15:46:21,463 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc1
+2023-03-17 15:46:21,463 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht received reply from node 43131617558264
+2023-03-17 15:46:21,463 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht propagating reply to source
+2023-03-17 15:46:21,463 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:21,467 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:21,467 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'\x00k\x8bEg', b'', b'\x08\x062\x12\x08\x01\x10\xd8\xc7\xdd\xc8\xd5\x90\x11\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:21,467 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:21,467 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:21,467 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:21,467 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,467 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,469 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:21,469 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:21,469 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:21,469 - DiscoveryAppln DEBUG - [b'\x00k\x8bEg', b'', b'\x08\x02\x1a\x00']
+2023-03-17 15:46:21,469 - DiscoveryAppln INFO - [b'\x00k\x8bEg']
+2023-03-17 15:46:21,469 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY
+isready_req {
+}
+
+2023-03-17 15:46:21,469 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 16229785994540
+2023-03-17 15:46:21,469 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:21,469 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc1 from src disc7
+2023-03-17 15:46:21,469 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
+2023-03-17 15:46:21,470 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'\x00k\x8bEg', b'', b'\x08\x062\n\x08\x01\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:21,470 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:21,470 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,470 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,502 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a3354e0>: 1}
+2023-03-17 15:46:21,502 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 43131617558264
+2023-03-17 15:46:21,502 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:21,502 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'\x00k\x8bEg', b'', b'\x08\x062\x12\x08\x01\x10\xc5\xad\xea\xac\x91\xf2!\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:21,502 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'\x00k\x8bEg', b'']
+2023-03-17 15:46:21,502 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc1
+2023-03-17 15:46:21,502 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht received reply from node 43131617558264
+2023-03-17 15:46:21,502 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht propagating reply to source
+2023-03-17 15:46:21,503 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:21,503 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:21,503 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'\x00k\x8bEg', b'', b'\x08\x062\x12\x08\x01\x10\xc5\xad\xea\xac\x91\xf2!\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:21,503 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:21,503 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:21,503 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:21,503 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,503 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,515 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:21,516 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:21,516 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:21,516 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x02\x10\x03\x18\xd0\xad\xef\xea\xfb\xcb\x1b']
+2023-03-17 15:46:21,516 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'\x00k\x8bEg']
+2023-03-17 15:46:21,516 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 2
+  count_pub: 3
+  src: 121357477861072
+}
+
+2023-03-17 15:46:21,516 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 121357477861072
+2023-03-17 15:46:21,516 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:21,516 - DiscoveryAppln INFO - DiscoveryMW::propagateIsReady: building dht request to send to disc1 from src disc12
+2023-03-17 15:46:21,516 - DiscoveryAppln DEBUG - DiscoveryMW::propagateIsReaedy: done building dht request
+2023-03-17 15:46:21,516 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'\x00k\x8bEg', b'', b'\x08\x062\x0c\x08\x03\x10\x03\x18\xd0\xad\xef\xea\xfb\xcb\x1b']
+2023-03-17 15:46:21,516 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:21,516 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,516 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,528 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a3354e0>: 1}
+2023-03-17 15:46:21,528 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 43131617558264
+2023-03-17 15:46:21,528 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:21,528 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEg', b'', b'\x08\x062\x12\x08\x01\x10\x9f\xa3\xe1\x8d\x90\xa71\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:21,528 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEg', b'']
+2023-03-17 15:46:21,528 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc1
+2023-03-17 15:46:21,529 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht received reply from node 43131617558264
+2023-03-17 15:46:21,529 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht propagating reply to source
+2023-03-17 15:46:21,529 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:21,529 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:21,529 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEg', b'', b'\x08\x062\x12\x08\x01\x10\x9f\xa3\xe1\x8d\x90\xa71\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:21,529 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:21,529 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:21,529 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:21,529 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,529 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,529 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a3354e0>: 1}
+2023-03-17 15:46:21,529 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 43131617558264
+2023-03-17 15:46:21,529 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:21,529 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEh', b'', b'\x08\x062\x12\x08\x01\x10\x9f\xa3\xe1\x8d\x90\xa71\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:21,529 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEh', b'']
+2023-03-17 15:46:21,529 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc1
+2023-03-17 15:46:21,529 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht received reply from node 43131617558264
+2023-03-17 15:46:21,529 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht propagating reply to source
+2023-03-17 15:46:21,529 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:21,530 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:21,530 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'\x00k\x8bEh', b'', b'\x08\x062\x12\x08\x01\x10\x9f\xa3\xe1\x8d\x90\xa71\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:21,530 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:21,530 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:21,530 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:21,530 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,535 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,558 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a3354e0>: 1}
+2023-03-17 15:46:21,558 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 43131617558264
+2023-03-17 15:46:21,558 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:21,558 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'\x00k\x8bEg', b'', b'\x08\x062\x12\x08\x01\x10\xd0\xad\xef\xea\xfb\xcb\x1b\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:21,558 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'\x00k\x8bEg', b'']
+2023-03-17 15:46:21,558 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc1
+2023-03-17 15:46:21,558 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht received reply from node 43131617558264
+2023-03-17 15:46:21,558 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht propagating reply to source
+2023-03-17 15:46:21,558 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:21,558 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:21,558 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'\x00k\x8bEg', b'', b'\x08\x062\x12\x08\x01\x10\xd0\xad\xef\xea\xfb\xcb\x1b\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:21,558 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:21,558 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:21,558 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:21,559 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,559 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,561 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:21,561 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:21,561 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:21,561 - DiscoveryAppln DEBUG - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'49112187787524', b'43131617558264', b'\x00k\x8bEh', b'', b'\x08\x062\x0c\x08\x04\x10\x05\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:21,561 - DiscoveryAppln INFO - [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'49112187787524', b'43131617558264', b'\x00k\x8bEh']
+2023-03-17 15:46:21,561 - DiscoveryAppln INFO - msg_type: TYPE_ISREADY_DHT
+isready_req_dht {
+  count_sub: 4
+  count_pub: 5
+  src: 43131617558264
+}
+
+2023-03-17 15:46:21,561 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop src = 43131617558264
+2023-03-17 15:46:21,561 - DiscoveryAppln DEBUG - DiscoveryAppln::isready_loop current node = 16229785994540
+2023-03-17 15:46:21,562 - DiscoveryAppln INFO - DiscoveryAppln::isready_loop at source
+2023-03-17 15:46:21,562 - DiscoveryAppln INFO - seen publishers: 5, expected publishers: 5
+2023-03-17 15:46:21,562 - DiscoveryAppln INFO - seen subscribers: 5, expected subscribers: 5
+2023-03-17 15:46:21,562 - DiscoveryAppln INFO - DiscoveryAppln::isready_loop replying with status: True
+2023-03-17 15:46:21,562 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply_dht
+2023-03-17 15:46:21,562 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:21,562 - DiscoveryAppln DEBUG - Stringified serialized buffer = [b'261274528407611', b'245206622529518', b'216848632664479', b'200736216270761', b'179284730639870', b'177038261674044', b'166891747590864', b'149057202460357', b'129858881772006', b'121357477861072', b'117261750833392', b'114878299796286', b'110977344024584', b'92788796846446', b'80647304915107', b'75339516044248', b'53174729515853', b'49112187787524', b'43131617558264', b'\x00k\x8bEh', b'', b'\x08\x062\x12\x08\x01\x10\xf8\xfd\xf8\xe5\xa5\xe7\t\x18\xac\x8a\x84\xd5\xac\xd8\x03']
+2023-03-17 15:46:21,562 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:21,562 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:21,562 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:21,562 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,562 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,614 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a3354e0>: 1}
+2023-03-17 15:46:21,614 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 43131617558264
+2023-03-17 15:46:21,614 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:21,614 - DiscoveryAppln DEBUG - [b'\x00k\x8bEg', b'', b'\x08\x062\x12\x08\x01\x10\xac\x8a\x84\xd5\xac\xd8\x03\x18\xf8\xfd\xf8\xe5\xa5\xe7\t']
+2023-03-17 15:46:21,614 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'\x00k\x8bEg', b'']
+2023-03-17 15:46:21,614 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc1
+2023-03-17 15:46:21,614 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht received reply from node 43131617558264
+2023-03-17 15:46:21,614 - DiscoveryAppln INFO - DiscoveryAppln::handle_isready_reply_dht sending source reply of status True
+2023-03-17 15:46:21,614 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply
+2023-03-17 15:46:21,614 - DiscoveryAppln DEBUG - DiscoveryMW::is_ready_reply: done building reply
+2023-03-17 15:46:21,614 - DiscoveryAppln DEBUG - Stringified serialized buffer = b'\x08\x02\x1a\x02\x18\x01'
+2023-03-17 15:46:21,614 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:21,614 - DiscoveryAppln INFO - DiscoveryMW::register_reply: chain = [b'\x00k\x8bEg', b'']
+2023-03-17 15:46:21,615 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:21,615 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:21,615 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,615 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,615 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.ROUTER) at 0x7f307a335480>: 1}
+2023-03-17 15:46:21,616 - DiscoveryAppln DEBUG - Calling handle_request()
+2023-03-17 15:46:21,616 - DiscoveryAppln INFO - DiscoveryMW::handle_request:
+2023-03-17 15:46:21,616 - DiscoveryAppln DEBUG - [b'\x00k\x8bEg', b'', b'\x08\x03">\n\x0btemperature\n\x08pressure\n\x08location\n\x08humidity\n\x05light\n\nairquality']
+2023-03-17 15:46:21,616 - DiscoveryAppln INFO - [b'\x00k\x8bEg']
+2023-03-17 15:46:21,616 - DiscoveryAppln INFO - msg_type: TYPE_LOOKUP_PUB_BY_TOPIC
+lookup_req {
+  topiclist: "temperature"
+  topiclist: "pressure"
+  topiclist: "location"
+  topiclist: "humidity"
+  topiclist: "light"
+  topiclist: "airquality"
+}
+
+2023-03-17 15:46:21,616 - DiscoveryAppln INFO - DiscoveryAppln::handle_lookup building lookup request for job id 0
+2023-03-17 15:46:21,616 - DiscoveryAppln DEBUG - ExperimentGenerator::hash_func
+2023-03-17 15:46:21,616 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - lookup request for id 196901406296948
+2023-03-17 15:46:21,616 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - checking next node in chord ring
+2023-03-17 15:46:21,616 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - finding closest preceding node
+2023-03-17 15:46:21,616 - DiscoveryAppln INFO - DiscoveryAppln::closest_preceding_node - searching for closest preceding node for id 16229785994540
+2023-03-17 15:46:21,616 - DiscoveryAppln INFO - DiscoveryAppln::closest_preceding_node2 - found closest preceding node 166891747590864
+2023-03-17 15:46:21,616 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - propagating lookup request to node 166891747590864
+2023-03-17 15:46:21,616 - DiscoveryAppln INFO - DiscoveryMW::propagateLookup: building dht request
+2023-03-17 15:46:21,617 - DiscoveryAppln DEBUG - DiscoveryMW::propagateLookup: done building dht request
+2023-03-17 15:46:21,617 - DiscoveryAppln DEBUG - Stringified serialized buffer = b'\x08\x07:\x1f\n\x0btemperature\x18\xf4\x96\x83\xf3\xca\xe2, \xac\x8a\x84\xd5\xac\xd8\x030\x01'
+2023-03-17 15:46:21,617 - DiscoveryAppln DEBUG - ExperimentGenerator::hash_func
+2023-03-17 15:46:21,617 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - lookup request for id 200554645974706
+2023-03-17 15:46:21,617 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - checking next node in chord ring
+2023-03-17 15:46:21,617 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - finding closest preceding node
+2023-03-17 15:46:21,617 - DiscoveryAppln INFO - DiscoveryAppln::closest_preceding_node - searching for closest preceding node for id 16229785994540
+2023-03-17 15:46:21,617 - DiscoveryAppln INFO - DiscoveryAppln::closest_preceding_node2 - found closest preceding node 166891747590864
+2023-03-17 15:46:21,617 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - propagating lookup request to node 166891747590864
+2023-03-17 15:46:21,617 - DiscoveryAppln INFO - DiscoveryMW::propagateLookup: building dht request
+2023-03-17 15:46:21,618 - DiscoveryAppln DEBUG - DiscoveryMW::propagateLookup: done building dht request
+2023-03-17 15:46:21,618 - DiscoveryAppln DEBUG - Stringified serialized buffer = b'\x08\x07:\x1c\n\x08pressure\x18\xb2\xdd\xb9\xa3\xf4\xcc- \xac\x8a\x84\xd5\xac\xd8\x030\x01'
+2023-03-17 15:46:21,618 - DiscoveryAppln DEBUG - ExperimentGenerator::hash_func
+2023-03-17 15:46:21,618 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - lookup request for id 253896624236677
+2023-03-17 15:46:21,618 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - checking next node in chord ring
+2023-03-17 15:46:21,618 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - finding closest preceding node
+2023-03-17 15:46:21,618 - DiscoveryAppln INFO - DiscoveryAppln::closest_preceding_node - searching for closest preceding node for id 16229785994540
+2023-03-17 15:46:21,618 - DiscoveryAppln INFO - DiscoveryAppln::closest_preceding_node2 - found closest preceding node 166891747590864
+2023-03-17 15:46:21,618 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - propagating lookup request to node 166891747590864
+2023-03-17 15:46:21,618 - DiscoveryAppln INFO - DiscoveryMW::propagateLookup: building dht request
+2023-03-17 15:46:21,618 - DiscoveryAppln DEBUG - DiscoveryMW::propagateLookup: done building dht request
+2023-03-17 15:46:21,618 - DiscoveryAppln DEBUG - Stringified serialized buffer = b'\x08\x07:\x1c\n\x08location\x18\x85\xd1\xe3\xd0\xae\xdd9 \xac\x8a\x84\xd5\xac\xd8\x030\x01'
+2023-03-17 15:46:21,618 - DiscoveryAppln DEBUG - ExperimentGenerator::hash_func
+2023-03-17 15:46:21,618 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - lookup request for id 204782700643486
+2023-03-17 15:46:21,618 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - checking next node in chord ring
+2023-03-17 15:46:21,618 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - finding closest preceding node
+2023-03-17 15:46:21,618 - DiscoveryAppln INFO - DiscoveryAppln::closest_preceding_node - searching for closest preceding node for id 16229785994540
+2023-03-17 15:46:21,619 - DiscoveryAppln INFO - DiscoveryAppln::closest_preceding_node2 - found closest preceding node 166891747590864
+2023-03-17 15:46:21,619 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - propagating lookup request to node 166891747590864
+2023-03-17 15:46:21,619 - DiscoveryAppln INFO - DiscoveryMW::propagateLookup: building dht request
+2023-03-17 15:46:21,619 - DiscoveryAppln DEBUG - DiscoveryMW::propagateLookup: done building dht request
+2023-03-17 15:46:21,619 - DiscoveryAppln DEBUG - Stringified serialized buffer = b'\x08\x07:\x1c\n\x08humidity\x18\x9e\x89\x83\x81\xfb\xc7. \xac\x8a\x84\xd5\xac\xd8\x030\x01'
+2023-03-17 15:46:21,619 - DiscoveryAppln DEBUG - ExperimentGenerator::hash_func
+2023-03-17 15:46:21,619 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - lookup request for id 168942578528980
+2023-03-17 15:46:21,619 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - checking next node in chord ring
+2023-03-17 15:46:21,619 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - finding closest preceding node
+2023-03-17 15:46:21,619 - DiscoveryAppln INFO - DiscoveryAppln::closest_preceding_node - searching for closest preceding node for id 16229785994540
+2023-03-17 15:46:21,619 - DiscoveryAppln INFO - DiscoveryAppln::closest_preceding_node2 - found closest preceding node 166891747590864
+2023-03-17 15:46:21,619 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - propagating lookup request to node 166891747590864
+2023-03-17 15:46:21,619 - DiscoveryAppln INFO - DiscoveryMW::propagateLookup: building dht request
+2023-03-17 15:46:21,619 - DiscoveryAppln DEBUG - DiscoveryMW::propagateLookup: done building dht request
+2023-03-17 15:46:21,619 - DiscoveryAppln DEBUG - Stringified serialized buffer = b'\x08\x07:\x19\n\x05light\x18\xd4\xe5\x85\x93\xf0\xb4& \xac\x8a\x84\xd5\xac\xd8\x030\x01'
+2023-03-17 15:46:21,619 - DiscoveryAppln DEBUG - ExperimentGenerator::hash_func
+2023-03-17 15:46:21,619 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - lookup request for id 252913784501280
+2023-03-17 15:46:21,619 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - checking next node in chord ring
+2023-03-17 15:46:21,619 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - finding closest preceding node
+2023-03-17 15:46:21,619 - DiscoveryAppln INFO - DiscoveryAppln::closest_preceding_node - searching for closest preceding node for id 16229785994540
+2023-03-17 15:46:21,619 - DiscoveryAppln INFO - DiscoveryAppln::closest_preceding_node2 - found closest preceding node 166891747590864
+2023-03-17 15:46:21,619 - DiscoveryAppln INFO - DiscoveryAppln::lookup_chord - propagating lookup request to node 166891747590864
+2023-03-17 15:46:21,620 - DiscoveryAppln INFO - DiscoveryMW::propagateLookup: building dht request
+2023-03-17 15:46:21,620 - DiscoveryAppln DEBUG - DiscoveryMW::propagateLookup: done building dht request
+2023-03-17 15:46:21,620 - DiscoveryAppln DEBUG - Stringified serialized buffer = b'\x08\x07:\x1e\n\nairquality\x18\xa0\xe8\xa2\xa2\xe1\xc09 \xac\x8a\x84\xd5\xac\xd8\x030\x01'
+2023-03-17 15:46:21,620 - DiscoveryAppln INFO - DiscoveryAppln::handle_lookup built 6 lookup requests for job id 0
+2023-03-17 15:46:21,620 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling request with timeout = None
+2023-03-17 15:46:21,620 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,620 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,620 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a335600>: 1}
+2023-03-17 15:46:21,620 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 166891747590864
+2023-03-17 15:46:21,621 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:21,621 - DiscoveryAppln DEBUG - [b'\x00k\x8bEg', b'', b'\x08\x07:%\n\x13\n\x04pub4\x12\x0810.0.0.5\x18\xc9+\x10\xac\x8a\x84\xd5\xac\xd8\x03\x18\xd0\x85\xd3\x9a\x98\xf9%']
+2023-03-17 15:46:21,621 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'\x00k\x8bEg', b'']
+2023-03-17 15:46:21,621 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc11
+2023-03-17 15:46:21,621 - DiscoveryAppln INFO - DiscoveryAppln::lookup_pub_by_topic_reply_dht received reply from node 166891747590864
+2023-03-17 15:46:21,621 - DiscoveryAppln INFO - DiscoveryAppln::lookup_pub_by_topic_reply_dht job id 0 has 5 replies left
+2023-03-17 15:46:21,621 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:21,621 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,621 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,624 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a335600>: 1}
+2023-03-17 15:46:21,624 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 166891747590864
+2023-03-17 15:46:21,624 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:21,624 - DiscoveryAppln DEBUG - [b'\x00k\x8bEg', b'', b'\x08\x07:%\n\x13\n\x04pub4\x12\x0810.0.0.5\x18\xc9+\x10\xac\x8a\x84\xd5\xac\xd8\x03\x18\xd0\x85\xd3\x9a\x98\xf9%']
+2023-03-17 15:46:21,625 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'\x00k\x8bEg', b'']
+2023-03-17 15:46:21,625 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc11
+2023-03-17 15:46:21,625 - DiscoveryAppln INFO - DiscoveryAppln::lookup_pub_by_topic_reply_dht received reply from node 166891747590864
+2023-03-17 15:46:21,625 - DiscoveryAppln INFO - DiscoveryAppln::lookup_pub_by_topic_reply_dht job id 0 has 4 replies left
+2023-03-17 15:46:21,625 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:21,625 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,625 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,625 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a335600>: 1}
+2023-03-17 15:46:21,625 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 166891747590864
+2023-03-17 15:46:21,625 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:21,625 - DiscoveryAppln DEBUG - [b'\x00k\x8bEg', b'', b'\x08\x07:%\n\x13\n\x04pub4\x12\x0810.0.0.5\x18\xc9+\x10\xac\x8a\x84\xd5\xac\xd8\x03\x18\xd0\x85\xd3\x9a\x98\xf9%']
+2023-03-17 15:46:21,625 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'\x00k\x8bEg', b'']
+2023-03-17 15:46:21,625 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc11
+2023-03-17 15:46:21,625 - DiscoveryAppln INFO - DiscoveryAppln::lookup_pub_by_topic_reply_dht received reply from node 166891747590864
+2023-03-17 15:46:21,625 - DiscoveryAppln INFO - DiscoveryAppln::lookup_pub_by_topic_reply_dht job id 0 has 3 replies left
+2023-03-17 15:46:21,625 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:21,626 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,626 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,626 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a335600>: 1}
+2023-03-17 15:46:21,626 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 166891747590864
+2023-03-17 15:46:21,626 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:21,627 - DiscoveryAppln DEBUG - [b'\x00k\x8bEg', b'', b'\x08\x07:%\n\x13\n\x04pub4\x12\x0810.0.0.5\x18\xc9+\x10\xac\x8a\x84\xd5\xac\xd8\x03\x18\xd0\x85\xd3\x9a\x98\xf9%']
+2023-03-17 15:46:21,627 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'\x00k\x8bEg', b'']
+2023-03-17 15:46:21,627 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc11
+2023-03-17 15:46:21,627 - DiscoveryAppln INFO - DiscoveryAppln::lookup_pub_by_topic_reply_dht received reply from node 166891747590864
+2023-03-17 15:46:21,627 - DiscoveryAppln INFO - DiscoveryAppln::lookup_pub_by_topic_reply_dht job id 0 has 2 replies left
+2023-03-17 15:46:21,627 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:21,627 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,627 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,628 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a335600>: 1}
+2023-03-17 15:46:21,628 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 166891747590864
+2023-03-17 15:46:21,628 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:21,628 - DiscoveryAppln DEBUG - [b'\x00k\x8bEg', b'', b'\x08\x07:%\n\x13\n\x04pub4\x12\x0810.0.0.5\x18\xc9+\x10\xac\x8a\x84\xd5\xac\xd8\x03\x18\xd0\x85\xd3\x9a\x98\xf9%']
+2023-03-17 15:46:21,628 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'\x00k\x8bEg', b'']
+2023-03-17 15:46:21,628 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc11
+2023-03-17 15:46:21,628 - DiscoveryAppln INFO - DiscoveryAppln::lookup_pub_by_topic_reply_dht received reply from node 166891747590864
+2023-03-17 15:46:21,628 - DiscoveryAppln INFO - DiscoveryAppln::lookup_pub_by_topic_reply_dht job id 0 has 1 replies left
+2023-03-17 15:46:21,628 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:21,628 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,628 - DiscoveryAppln DEBUG - waiting for events...
+2023-03-17 15:46:21,630 - DiscoveryAppln DEBUG - {<zmq.Socket(zmq.DEALER) at 0x7f307a335600>: 1}
+2023-03-17 15:46:21,630 - DiscoveryAppln DEBUG - Calling handle_reply() for hash 166891747590864
+2023-03-17 15:46:21,631 - DiscoveryAppln INFO - DiscoveryMW::handle_reply:
+2023-03-17 15:46:21,631 - DiscoveryAppln DEBUG - [b'\x00k\x8bEg', b'', b'\x08\x07:%\n\x13\n\x04pub4\x12\x0810.0.0.5\x18\xc9+\x10\xac\x8a\x84\xd5\xac\xd8\x03\x18\xd0\x85\xd3\x9a\x98\xf9%']
+2023-03-17 15:46:21,631 - DiscoveryAppln DEBUG - DiscoveryMW::handle_reply: received [b'\x00k\x8bEg', b'']
+2023-03-17 15:46:21,631 - DiscoveryAppln INFO - DiscoveryMW::handle_reply: received a reply from disc11
+2023-03-17 15:46:21,631 - DiscoveryAppln INFO - DiscoveryAppln::lookup_pub_by_topic_reply_dht received reply from node 166891747590864
+2023-03-17 15:46:21,631 - DiscoveryAppln INFO - DiscoveryAppln::lookup_pub_by_topic_reply_dht job id 0 has 0 replies left
+2023-03-17 15:46:21,631 - DiscoveryAppln INFO - DiscoveryAppln::lookup_pub_by_topic_reply_dht sending source reply
+2023-03-17 15:46:21,631 - DiscoveryAppln DEBUG - DiscoveryMW::lookup_reply
+2023-03-17 15:46:21,631 - DiscoveryAppln DEBUG - DiscoveryMW::lookup_reply: done building reply
+2023-03-17 15:46:21,631 - DiscoveryAppln DEBUG - Stringified serialized buffer = b'\x08\x03"~\n\x13\n\x04pub4\x12\x0810.0.0.5\x18\xc9+\n\x13\n\x04pub4\x12\x0810.0.0.5\x18\xc9+\n\x13\n\x04pub4\x12\x0810.0.0.5\x18\xc9+\n\x13\n\x04pub4\x12\x0810.0.0.5\x18\xc9+\n\x13\n\x04pub4\x12\x0810.0.0.5\x18\xc9+\n\x13\n\x04pub4\x12\x0810.0.0.5\x18\xc9+'
+2023-03-17 15:46:21,631 - DiscoveryAppln DEBUG - DiscoveryMW::register_reply: send reply
+2023-03-17 15:46:21,631 - DiscoveryAppln INFO - DiscoveryMW::register_reply: chain = [b'\x00k\x8bEg', b'']
+2023-03-17 15:46:21,632 - DiscoveryAppln INFO - DiscoveryMW::register_reply: done replying to client register request
+2023-03-17 15:46:21,632 - DiscoveryAppln DEBUG - DiscoveryMW::handle_request: done handling reply with timeout None
+2023-03-17 15:46:21,632 - DiscoveryAppln INFO - control back to event loop
+2023-03-17 15:46:21,632 - DiscoveryAppln DEBUG - waiting for events...

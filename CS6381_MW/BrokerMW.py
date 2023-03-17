@@ -119,10 +119,15 @@ class BrokerMW():
         try:
             self.logger.debug("BrokerMW::handle_reply")
             # receive the reply
-            bytesRcvd = self.req.recv()
-            
-            disc_resp = discovery_pb2.DiscoveryResp()
-            disc_resp.ParseFromString(bytesRcvd)
+            bytesRcvd = self.req.recv_multipart()
+            self.logger.debug ("PublisherMW::handle_reply - received {}".format (bytesRcvd))
+
+            # now use protobuf to deserialize the bytes
+            # The way to do this is to first allocate the space for the
+            # message we expect, here DiscoveryResp and then parse
+            # the incoming bytes and populate this structure (via protobuf code)
+            disc_resp = discovery_pb2.DiscoveryResp ()
+            disc_resp.ParseFromString (bytesRcvd[-1])
             
             if (disc_resp.msg_type == discovery_pb2.TYPE_REGISTER):
                 timeout = self.upcall_obj.register_response(disc_resp.register_resp)
